@@ -5,13 +5,31 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
+  <h2>Welcome to ASK-JZ! :) </h2>
   <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
+    This project will do some stuff with some stuff in order to show some stuff. 
   </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-</ion-content>
+
+  <ion-content>
+    <ion-row>
+      <ion-col col-7>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="newItem" placeholder="Add Some Stuff"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <button ion-button (click)="addItem()">Add!</button>
+      </ion-col>
+    </ion-row>
+   
+    <ion-list>
+      <ion-item-sliding *ngFor="let item of shoppingItems | async">
+        <ion-item>
+          {{ item.$value }}
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon name="trash"></ion-icon></button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+ </ion-content>
