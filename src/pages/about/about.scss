@@ -1,8 +1,8 @@
-$bkg-color: #376C87;
+$bkg-color: papayawhip;
 
 .page-about{
+    background-color: $bkg-color;
     #about{
-        background-color: $bkg-color;
         font: {
             family: Calibri;
             size: 12px;
