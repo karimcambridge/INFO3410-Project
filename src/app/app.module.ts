@@ -18,12 +18,12 @@ import { AngularFireModule } from 'angularfire2';
 //import { FirebaseProvider } from './../providers/firebase/firebase';
 
 const firebaseConfig = {
-  apiKey: "YOURKEY",
-  authDomain: "domain.firebaseapp.com",
-  databaseURL: "https://domain.firebaseio.com",
-  projectId: "yourvalues",
-  storageBucket: "dmaoin.appspot.com",
-  messagingSenderId: "yourvalues"
+  apiKey: "AIzaSyBMSsCs7VYro0hyNF6c2_0sK46Yn0B65_s",
+  authDomain: "ask-jz.firebaseapp.com",
+  databaseURL: "https://ask-jz.firebaseio.com",
+  projectId: "ask-jz",
+  storageBucket: "ask-jz.appspot.com",
+  messagingSenderId: "778757169371"
 };
 
 @NgModule({
@@ -39,6 +39,7 @@ const firebaseConfig = {
     BrowserModule,
     HttpModule,
     AngularFireDatabaseModule,
+    AngularFireModule,
     AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp)
   ],
