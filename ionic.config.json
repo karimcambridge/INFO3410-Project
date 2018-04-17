@@ -1,6 +1,6 @@
 {
   "name": "ask-jayz",
-  "app_id": "",
+  "app_id": "810dcd48",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
