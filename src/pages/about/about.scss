@@ -1,3 +1,12 @@
-page-about {
-    background-color: #9233FF 
+$bkg-color: #376C87;
+
+ion-content{
+    color: $bkg-color;
+}
+
+#about{
+    font: {
+        family: Calibri;
+        size: 12px;
+    }
 }
