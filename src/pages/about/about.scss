@@ -2,9 +2,10 @@ $bkg-color: #376C87;
 
 .page-about{
     #about{
+        background-color: $bkg-color;
         font: {
             family: Calibri;
-            size: 32px;
+            size: 12px;
         }
     }
 }
