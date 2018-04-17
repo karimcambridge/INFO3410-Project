@@ -4,6 +4,7 @@
   </ion-navbar>
 </ion-header>
 
+<<<<<<< HEAD
 <ion-content padding class="page-home">
   <h2>Welcome to Ionic!</h2>
   <p id="home">
@@ -15,3 +16,34 @@
     update any existing page or create new pages.
   </p>
 </ion-content>
+=======
+<ion-content padding>
+  <h2>Welcome to ASK-JZ! :) </h2>
+  <p>
+    This project will do some stuff with some stuff in order to show some stuff. 
+  </p>
+
+  <ion-content>
+    <ion-row>
+      <ion-col col-7>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="newItem" placeholder="Add Some Stuff"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <button ion-button (click)="addItem()">Add!</button>
+      </ion-col>
+    </ion-row>
+   
+    <ion-list>
+      <ion-item-sliding *ngFor="let item of shoppingItems | async">
+        <ion-item>
+          {{ item.$value }}
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon name="trash"></ion-icon></button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+ </ion-content>
+>>>>>>> 8f11cd67c02c7d37b0352978f0a6ea8fa8b32647
