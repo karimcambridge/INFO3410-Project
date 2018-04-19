@@ -1,0 +1,12 @@
+Reminders:
+
+	- 
+
+Commands setup:
+
+	- npm install (installs all the dependencies from package.json)
+	- ionic serve (starts the server)
+
+Database:
+
+	- Firebase's Firestore
