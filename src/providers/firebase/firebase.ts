@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+//import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 /*
@@ -23,7 +23,4 @@ export class FirebaseProvider {
   removeItem(id) {
     this.afd.list('/shoppingItems/').remove(id);
   }
-
- 
-
 }
