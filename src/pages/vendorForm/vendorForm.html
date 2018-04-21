@@ -5,10 +5,19 @@
   </ion-header>
 
   <ion-content>
+    <h2>Do You Want To Be A Vendor?</h2>
     <ion-list>
         <ion-item>
           <ion-label fixed>Name</ion-label>
           <ion-input type="text" value=""></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Gender</ion-label>
+          <ion-select [(ngModel)]="gender">
+            <ion-option value="male">Male</ion-option>
+            <ion-option value="female">Female</ion-option>
+          </ion-select>
         </ion-item>
       
         <ion-item>
@@ -21,11 +30,19 @@
           <ion-input type="email"></ion-input>
         </ion-item>
 
-        <ion-item fixed></ion-item>
-      
+        <ion-item>
+            <ion-label>Category</ion-label>
+            <ion-select [(ngModel)]="category">
+              <ion-option value="food">Food</ion-option>
+              <ion-option value="produce">Produce</ion-option>
+              <ion-option value="jewellery">Jewellery</ion-option>
+              <ion-option value="bodycare">Body Care</ion-option>
+            </ion-select>
+          </ion-item>
+
       </ion-list>
 
       <p>
-        <button ion-button color="secondary" clear>Save</button>
+        <button ion-button color="secondary">Save</button>
       </p>
   </ion-content>
