@@ -93,7 +93,6 @@ export class MyErrorHandler implements ErrorHandler {
     SplashScreen,
     FirebaseProvider,
     IonicErrorHandler,
-    Logger,
     [{provide: ErrorHandler, useClass: IonicErrorHandler}]
   ]
 })
