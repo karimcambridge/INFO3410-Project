@@ -1,6 +1,6 @@
 import { Pro } from '@ionic/pro';
 import { NgModule, ErrorHandler, Injectable, Injector } from '@angular/core';
-import { IonicLoggerModule, Logger } from 'ionic-logger';
+//import { IonicLoggerModule, Logger } from 'ionic-logger';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -11,6 +11,8 @@ import { HomePage } from '../pages/home/home';
 import { VendorPage } from '../pages/vendor/vendor';
 //import { SignInPage } from '../pages/sign-in/sign-in';
 import { TabsPage } from '../pages/tabs/tabs';
+import {VendorFormPage} from '../pages/vendorForm/vendorForm';
+import {ListVendorPage} from '../pages/listVendors/listVendors';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -61,7 +63,9 @@ export class MyErrorHandler implements ErrorHandler {
     HomePage,
     VendorPage,
     //SignInPage,
-    TabsPage
+    TabsPage,
+    VendorFormPage,
+    ListVendorPage
   ],
   imports: [
     BrowserModule,
@@ -84,14 +88,15 @@ export class MyErrorHandler implements ErrorHandler {
     HomePage,
     VendorPage,
     //SignInPage,
-    TabsPage
+    TabsPage,
+    VendorFormPage,
+    ListVendorPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     FirebaseProvider,
     IonicErrorHandler,
-    Logger,
     [{provide: ErrorHandler, useClass: IonicErrorHandler}]
   ]
 })

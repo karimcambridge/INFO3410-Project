@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-// import {vendor.html} '../pages/vendor/vendor';
+// import {listVendor.html} '../pages/vendor/vendor';
 @Component({
-  selector: 'page-vedorForm',
-  templateUrl: 'vendorForm.html'
+  selector: 'page-listVendors',
+  templateUrl: 'listVendors.html'
 })
-export class VendorFormPage {
+export class ListVendorPage {
 
   constructor(public navCtrl: NavController) {
 
