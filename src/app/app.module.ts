@@ -63,9 +63,9 @@ export class MyErrorHandler implements ErrorHandler {
 @NgModule({
   declarations: [
     MyApp,
+    HomePage,
     AboutPage,
     ContactPage,
-    HomePage,
     VendorPage,
     TabsPage,
     VendorFormPage,
@@ -85,9 +85,9 @@ export class MyErrorHandler implements ErrorHandler {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    HomePage,
     AboutPage,
     ContactPage,
-    HomePage,
     VendorPage,
     TabsPage,
     VendorFormPage,
