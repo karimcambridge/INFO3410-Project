@@ -88,7 +88,9 @@ export class MyErrorHandler implements ErrorHandler {
     HomePage,
     VendorPage,
     //SignInPage,
-    TabsPage
+    TabsPage,
+    VendorFormPage,
+    ListVendorPage
   ],
   providers: [
     StatusBar,
