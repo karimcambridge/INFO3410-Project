@@ -1,3 +1,11 @@
-page-contact {
+$bkg-color: papayawhip;
 
+.page-contact{
+    background-color: $bkg-color;
+    #contact{
+        font: {
+            family: Calibri;
+            size: 12px;
+        }
+    }
 }
