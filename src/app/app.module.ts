@@ -69,6 +69,7 @@ export class MyErrorHandler implements ErrorHandler {
     AngularFireDatabaseModule,
     AngularFireModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    IonicModule.forRoot(MyApp)
     // IonicModule.forRoot(MyApp) , {}, {
     //   links: [
     //     { component: SignInPage, name: 'SignInPage', segment: 'sign-in' }
