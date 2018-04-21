@@ -17,6 +17,7 @@ import { Platform } from 'ionic-angular';
   selector: 'google-login',
   templateUrl: 'google-login.html'
 })
+
 export class GoogleLoginComponent {
 
   user: Observable<firebase.User>;

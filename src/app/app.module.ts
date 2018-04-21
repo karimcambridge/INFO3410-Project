@@ -12,6 +12,7 @@ import { VendorPage } from '../pages/vendor/vendor';
 import { TabsPage } from '../pages/tabs/tabs';
 import {VendorFormPage} from '../pages/vendorForm/vendorForm';
 import {ListVendorPage} from '../pages/listVendors/listVendors';
+import {ModalContentPage} from '../pages/modal-content/modal-content';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -67,7 +68,8 @@ export class MyErrorHandler implements ErrorHandler {
     //SignInPage,
     TabsPage,
     VendorFormPage,
-    ListVendorPage
+    ListVendorPage,
+    ModalContentPage
   ],
   imports: [
     BrowserModule,
@@ -93,13 +95,14 @@ export class MyErrorHandler implements ErrorHandler {
     //SignInPage,
     TabsPage,
     VendorFormPage,
-    ListVendorPage
+    ListVendorPage,
+    ModalContentPage
   ],
   providers: [
-  GooglePlus,
     StatusBar,
     SplashScreen,
     FirebaseProvider,
+    GooglePlus,
     IonicErrorHandler,
     [{provide: ErrorHandler, useClass: IonicErrorHandler}]
   ]
