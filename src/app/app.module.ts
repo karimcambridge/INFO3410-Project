@@ -12,7 +12,7 @@ import { VendorPage } from '../pages/vendor/vendor';
 import { TabsPage } from '../pages/tabs/tabs';
 import {VendorFormPage} from '../pages/vendorForm/vendorForm';
 import {ListVendorPage} from '../pages/listVendors/listVendors';
-import {ModalContentPage} from '../pages/modal-content/modal-content';
+import {ModalContentPage} from '../pages/listVendors/modal-content';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
