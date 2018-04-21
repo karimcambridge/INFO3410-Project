@@ -73,9 +73,9 @@ export class ModalContentPage {
         quote: 'I sell jewellery!',
         image: 'assets/img/avatar-frodo.jpg',
         items: [
-          { title: 'bracelets' },
-          { title: 'Culture', note: 'Shire Folk' },
-          { title: 'Weapon', note: 'Sting' }
+          { title: 'Bracelets' },
+          { title: 'Earrings' },
+          { title: 'Necklaces' }
         ]
       },
       {
@@ -83,9 +83,9 @@ export class ModalContentPage {
         quote: 'I sell soap!',
         image: 'assets/img/avatar-samwise.jpg',
         items: [
-          { title: 'Race', note: 'Hobbit' },
-          { title: 'Culture', note: 'Shire Folk' },
-          { title: 'Nickname', note: 'Sam' }
+          { title: 'Lavender'},
+          { title: 'Tea Tree' },
+          { title: 'Shea Butter' }
         ]
       },
       {
@@ -93,9 +93,9 @@ export class ModalContentPage {
         quote: 'I sell spices',
         image: 'assets/img/avatar-samwise.jpg',
         items: [
-          { title: 'Race', note: 'Hobbit' },
-          { title: 'Culture', note: 'Shire Folk' },
-          { title: 'Nickname', note: 'Sam' }
+          { title: 'Cinnamon'},
+          { title: 'Nutmeg'},
+          { title: 'Curry' }
         ]
       },
       {
@@ -103,9 +103,9 @@ export class ModalContentPage {
         quote: 'I sell produce local juices',
         image: 'assets/img/avatar-samwise.jpg',
         items: [
-          { title: 'Race', note: 'Hobbit' },
-          { title: 'Culture', note: 'Shire Folk' },
-          { title: 'Nickname', note: 'Sam' }
+          { title: 'Lime' },
+          { title: 'Passion Fruit' },
+          { title: 'Sorrel' }
         ]
       },
       {
@@ -113,9 +113,9 @@ export class ModalContentPage {
         quote: 'I sell pottery!',
         image: 'assets/img/avatar-samwise.jpg',
         items: [
-          { title: 'Race', note: 'Hobbit' },
-          { title: 'Culture', note: 'Shire Folk' },
-          { title: 'Nickname', note: 'Sam' }
+          { title: 'Vases' },
+          { title: 'Plates' },
+          { title: 'Mugs' }
         ]
       },
       {
@@ -123,19 +123,18 @@ export class ModalContentPage {
         quote: 'I sell organic skincare products!',
         image: 'assets/img/avatar-samwise.jpg',
         items: [
-          { title: 'Race', note: 'Hobbit' },
-          { title: 'Culture', note: 'Shire Folk' },
-          { title: 'Nickname', note: 'Sam' }
+          { title: 'Face soaps' },
+          { title: 'Body lotions'},
+          { title: 'Face Moisturizer' }
         ]
       },
       {
         name: 'Xia Crawford',
-        quote: 'I sell doubles!',
+        quote: 'I sell food!',
         image: 'assets/img/avatar-samwise.jpg',
         items: [
-          { title: 'Race', note: 'Hobbit' },
-          { title: 'Culture', note: 'Shire Folk' },
-          { title: 'Nickname', note: 'Sam' }
+          { title: 'Curry Goat'},
+          { title: 'Sweet Bread'},
         ]
       },
       {
@@ -143,9 +142,9 @@ export class ModalContentPage {
         quote: 'I sell jewellery!',
         image: 'assets/img/avatar-samwise.jpg',
         items: [
-          { title: 'Race', note: 'Hobbit' },
-          { title: 'Culture', note: 'Shire Folk' },
-          { title: 'Nickname', note: 'Sam' }
+          { title: 'Anklets'},
+          { title: 'Nose rings' },
+          { title: 'Toe rings' }
         ]
       }
     ];
