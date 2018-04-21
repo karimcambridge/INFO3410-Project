@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { VendorFormPage } from '';
 
 @Component({
   selector: 'page-vendor',
