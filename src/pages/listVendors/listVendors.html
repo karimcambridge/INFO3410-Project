@@ -7,13 +7,19 @@
 <ion-content>
 <ion-searchbar (ionInput)="getVendors($event)"></ion-searchbar>
 <ion-list>
-    <ion-item *ngFor="let vendor of vendors">
+    <!-- <ion-item *ngFor="let vendor of vendors">
         {{ vendor }}
-    </ion-item>
+    </ion-item> -->
 
-    <ion-list-header>Hobbits</ion-list-header>
-        <a ion-item (click)="openModal({charNum: 0})">Gollum</a>
-        <a ion-item (click)="openModal({charNum: 1})">Frodo Baggins</a>
-        <a ion-item (click)="openModal({charNum: 2})">Sam</a>
-    </ion-list>
+    <ion-list-header>Vendors</ion-list-header>
+        <a ion-item (click)="openModal({charNum: 0})">Anna Breton</a>
+        <a ion-item (click)="openModal({charNum: 1})">Brittney Chriton</a>
+        <a ion-item (click)="openModal({charNum: 2})">Justin Maxime</a>
+        <a ion-item (click)="openModal({charNum: 3})">Karim Cambridge</a>
+        <a ion-item (click)="openModal({charNum: 4})">Louis Scott</a>
+        <a ion-item (click)="openModal({charNum: 5})">Ronald Browne</a>
+        <a ion-item (click)="openModal({charNum: 6})">Sade Bowman</a>
+        <a ion-item (click)="openModal({charNum: 7})">Xia Crawford</a>
+        <a ion-item (click)="openModal({charNum: 8})">Zaria Grant</a>
+</ion-list>
 </ion-content>

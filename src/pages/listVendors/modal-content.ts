@@ -42,9 +42,6 @@ export class BasicPage {
   
       <ion-item *ngFor="let item of vendors['items']">
           {{vendor.title}}
-          <ion-note item-end>
-          {{item.note}}
-          </ion-note>
       </ion-item>
   </ion-list>
 </ion-content>
