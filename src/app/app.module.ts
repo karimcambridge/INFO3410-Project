@@ -14,6 +14,7 @@ import {VendorFormPage} from '../pages/vendorForm/vendorForm';
 import {ListVendorPage} from '../pages/listVendors/listVendors';
 import {ModalContentPage} from '../pages/listVendors/modal-content';
 
+import { Geolocation } from '@ionic-native/geolocation';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -95,6 +96,7 @@ export class MyErrorHandler implements ErrorHandler {
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     FirebaseProvider,
     GooglePlus,
     Calendar,
