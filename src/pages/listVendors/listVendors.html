@@ -1,15 +1,15 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>Vendor Form</ion-title>
-        <div class="bar bar-header item-input-inset">
-        <label class="item-input-wrapper">
-            <i class="icon ion-ios-search placeholder-icon"></i>
-            <input ng-model="search_text" type="text" placeholder="Search for vendors" focus-me my-enter="search_model(search_text)" autofocus>
-        </label>
-        </div>
+        <ion-title>Vendor List</ion-title>
+        <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar> -->
     </ion-navbar>
   </ion-header>
 
   <ion-content>
-    <p>Hello world</p>
+    <ion-searchbar (ionInput)="getVendors($event)"></ion-searchbar>
+    <ion-list>
+        <ion-item *ngFor="let vendor of vendors">
+          {{ vendor }}
+        </ion-item>
+      </ion-list>
   </ion-content>
