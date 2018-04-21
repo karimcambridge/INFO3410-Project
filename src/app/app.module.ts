@@ -9,7 +9,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { VendorPage } from '../pages/vendor/vendor';
-import { SignInPage } from '../pages/sign-in/sign-in';
+//import { SignInPage } from '../pages/sign-in/sign-in';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -60,7 +60,7 @@ export class MyErrorHandler implements ErrorHandler {
     ContactPage,
     HomePage,
     VendorPage,
-    SignInPage,
+    //SignInPage,
     TabsPage
   ],
   imports: [
@@ -69,11 +69,11 @@ export class MyErrorHandler implements ErrorHandler {
     AngularFireDatabaseModule,
     AngularFireModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    IonicModule.forRoot(MyApp, {}, {
-      links: [
-        { component: SignInPage, name: 'SignInPage', segment: 'sign-in' }
-      ]
-    })
+    // IonicModule.forRoot(MyApp) , {}, {
+    //   links: [
+    //     { component: SignInPage, name: 'SignInPage', segment: 'sign-in' }
+    //   ]
+    // })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -82,7 +82,7 @@ export class MyErrorHandler implements ErrorHandler {
     ContactPage,
     HomePage,
     VendorPage,
-    SignInPage,
+    //SignInPage,
     TabsPage
   ],
   providers: [
