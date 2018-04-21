@@ -11,6 +11,14 @@
           <ion-label fixed>Name</ion-label>
           <ion-input type="text" value=""></ion-input>
         </ion-item>
+
+        <ion-item>
+          <ion-label>Gender</ion-label>
+          <ion-select [(ngModel)]="gender">
+            <ion-option value="male">Male</ion-option>
+            <ion-option value="female">Female</ion-option>
+          </ion-select>
+        </ion-item>
       
         <ion-item>
           <ion-label fixed>Phone</ion-label>
@@ -31,10 +39,10 @@
               <ion-option value="bodycare">Body Care</ion-option>
             </ion-select>
           </ion-item>
-      
+
       </ion-list>
 
       <p>
-        <button ion-button color="secondary" clear>Save</button>
+        <button ion-button color="secondary">Save</button>
       </p>
   </ion-content>
