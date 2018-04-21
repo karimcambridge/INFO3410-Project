@@ -14,5 +14,28 @@
 
 
 <ion-content padding>
+    <form [formGroup]="credentialsForm">
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input [formControl]="credentialsForm.controls['email']" type="email"></ion-input>
+      </ion-item>
 
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input [formControl]="credentialsForm.controls['password']" type="password"></ion-input>
+      </ion-item>      
+      
+      <ion-row>
+        <ion-col text-center>
+          <button ion-button block color="secondary" (click)="onSignIn()">Sign in</button>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col text-center>
+          <button ion-button clear color="light" (click)="onForgotPassword()">Forgot your password?</button>
+        </ion-col>
+      </ion-row>
+      
+    </form>
 </ion-content>
