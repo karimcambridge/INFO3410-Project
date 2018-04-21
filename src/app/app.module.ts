@@ -96,10 +96,10 @@ export class MyErrorHandler implements ErrorHandler {
     ListVendorPage
   ],
   providers: [
-  GooglePlus,
     StatusBar,
     SplashScreen,
     FirebaseProvider,
+    GooglePlus,
     IonicErrorHandler,
     [{provide: ErrorHandler, useClass: IonicErrorHandler}]
   ]
