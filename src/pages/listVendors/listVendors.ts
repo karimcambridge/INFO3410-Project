@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-// import {listVendor.html} '../pages/vendor/vendor';
+import { NavController, NavParams } from 'ionic-angular';
+
 @Component({
   selector: 'page-listVendors',
   templateUrl: 'listVendors.html'
@@ -8,8 +8,9 @@ import { NavController } from 'ionic-angular';
 export class ListVendorPage {
   vendors;
 
-  constructor(public navCtrl: NavController) {
+  constructor(navCtl: NavController) {
     this.initializeVendors();
+    // this.vendors = params.data.vendors;
   }
 
   initializeVendors(){
@@ -40,4 +41,5 @@ export class ListVendorPage {
       })
     }
   }
+
 }
