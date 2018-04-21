@@ -17,15 +17,18 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HttpModule } from '@angular/http';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 
-Pro.init('810dcd48', {
+import { GooglePlus } from '@ionic-native/google-plus';
+
+Pro.init('810dcd48', { // DON'T TOUCH THIS
   appVersion: '0.0.1'
 })
 
-const firebaseConfig = {
+const firebaseConfig = { // DON'T TOUCH THIS
   apiKey: "AIzaSyBMSsCs7VYro0hyNF6c2_0sK46Yn0B65_s",
   authDomain: "ask-jz.firebaseapp.com",
   databaseURL: "https://ask-jz.firebaseio.com",
@@ -34,7 +37,7 @@ const firebaseConfig = {
   messagingSenderId: "778757169371"
 };
 
-@Injectable()
+@Injectable() // DON'T TOUCH THIS
 export class MyErrorHandler implements ErrorHandler {
   ionicErrorHandler: IonicErrorHandler;
 
@@ -68,11 +71,12 @@ export class MyErrorHandler implements ErrorHandler {
   ],
   imports: [
     BrowserModule,
+    IonicModule.forRoot(MyApp),
     HttpModule,
-    AngularFireDatabaseModule,
     AngularFireModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    IonicModule.forRoot(MyApp)
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
     // IonicModule.forRoot(MyApp) , {}, {
     //   links: [
     //     { component: SignInPage, name: 'SignInPage', segment: 'sign-in' }
@@ -92,6 +96,7 @@ export class MyErrorHandler implements ErrorHandler {
     ListVendorPage
   ],
   providers: [
+  GooglePlus,
     StatusBar,
     SplashScreen,
     FirebaseProvider,

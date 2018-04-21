@@ -87,4 +87,7 @@
         <variable name="CHANNEL_NAME" value="Production" />
         <variable name="UPDATE_METHOD" value="auto" />
     </plugin>
+    <plugin name="cordova-plugin-googleplus" spec="^5.3.0">
+        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.778757169371-rroareinqt09clopvolt72mmn9ffe3jc" />
+    </plugin>
 </widget>
