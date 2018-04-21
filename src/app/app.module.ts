@@ -1,5 +1,6 @@
 import { Pro } from '@ionic/pro';
 import { NgModule, ErrorHandler, Injectable, Injector } from '@angular/core';
+import { IonicLoggerModule, Logger } from 'ionic-logger';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -89,6 +90,7 @@ export class MyErrorHandler implements ErrorHandler {
     SplashScreen,
     FirebaseProvider,
     IonicErrorHandler,
+    Logger,
     [{provide: ErrorHandler, useClass: IonicErrorHandler}]
   ]
 })
