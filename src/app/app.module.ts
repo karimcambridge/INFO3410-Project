@@ -24,6 +24,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 
 import { GooglePlus } from '@ionic-native/google-plus';
+import { Calendar } from '@ionic-native/calendar';
 
 Pro.init('810dcd48', { // DON'T TOUCH THIS
   appVersion: '0.0.1'
@@ -61,9 +62,9 @@ export class MyErrorHandler implements ErrorHandler {
 @NgModule({
   declarations: [
     MyApp,
+    HomePage,
     AboutPage,
     ContactPage,
-    HomePage,
     VendorPage,
     //SignInPage,
     TabsPage,
@@ -79,20 +80,14 @@ export class MyErrorHandler implements ErrorHandler {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule
-    // IonicModule.forRoot(MyApp) , {}, {
-    //   links: [
-    //     { component: SignInPage, name: 'SignInPage', segment: 'sign-in' }
-    //   ]
-    // })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    HomePage,
     AboutPage,
     ContactPage,
-    HomePage,
     VendorPage,
-    //SignInPage,
     TabsPage,
     VendorFormPage,
     ListVendorPage,
@@ -103,6 +98,7 @@ export class MyErrorHandler implements ErrorHandler {
     SplashScreen,
     FirebaseProvider,
     GooglePlus,
+    Calendar,
     IonicErrorHandler,
     [{provide: ErrorHandler, useClass: IonicErrorHandler}]
   ]
