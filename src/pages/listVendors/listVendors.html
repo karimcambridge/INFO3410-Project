@@ -1,14 +1,15 @@
 <ion-header>
     <ion-navbar>
-      <ion-title>Vendor Form</ion-title>
+        <ion-title>Vendor Form</ion-title>
+        <div class="bar bar-header item-input-inset">
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input ng-model="search_text" type="text" placeholder="Search for vendors" focus-me my-enter="search_model(search_text)" autofocus>
+        </label>
+        </div>
     </ion-navbar>
   </ion-header>
 
   <ion-content>
-    <!-- <ion-searchbar
-    [(ngModel)]="myInput"
-    [showCancelButton]="shouldShowCancel"
-    (ionInput)="onInput($event)"
-    (ionCancel)="onCancel($event)">
-  </ion-searchbar> -->
+
   </ion-content>
