@@ -8,6 +8,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { VendorPage } from '../pages/vendor/vendor';
+import { GoogleLoginComponent } from '../components/google-login/google-login';
 //import { SignInPage } from '../pages/sign-in/sign-in';
 import { TabsPage } from '../pages/tabs/tabs';
 import {VendorFormPage} from '../pages/vendorForm/vendorForm';
@@ -66,11 +67,11 @@ export class MyErrorHandler implements ErrorHandler {
     ContactPage,
     HomePage,
     VendorPage,
-    //SignInPage,
     TabsPage,
     VendorFormPage,
     ListVendorPage,
-    ModalContentPage
+    ModalContentPage,
+    GoogleLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +92,8 @@ export class MyErrorHandler implements ErrorHandler {
     TabsPage,
     VendorFormPage,
     ListVendorPage,
-    ModalContentPage
+    ModalContentPage,
+    GoogleLoginComponent
   ],
   providers: [
     StatusBar,
