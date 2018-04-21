@@ -11,6 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { VendorPage } from '../pages/vendor/vendor';
 //import { SignInPage } from '../pages/sign-in/sign-in';
 import { TabsPage } from '../pages/tabs/tabs';
+import {VendorFormPage} from '../pages/vendorForm/vendorForm';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
