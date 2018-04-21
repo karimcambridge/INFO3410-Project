@@ -63,7 +63,9 @@ export class MyErrorHandler implements ErrorHandler {
     HomePage,
     VendorPage,
     //SignInPage,
-    TabsPage
+    TabsPage,
+    VendorFormPage,
+    ListVendorPage
   ],
   imports: [
     BrowserModule,
