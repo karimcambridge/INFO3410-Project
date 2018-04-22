@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 
@@ -9,9 +9,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 
 import { FirebaseProvider } from './../../providers/firebase/firebase';
-
-import * as moment from 'moment';
-import * as _ from "lodash";
 
 @Component({
   selector: 'page-home',
