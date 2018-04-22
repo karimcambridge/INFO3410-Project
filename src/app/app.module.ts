@@ -101,7 +101,7 @@ export class MyErrorHandler implements ErrorHandler {
     GooglePlus,
     Calendar,
     IonicErrorHandler,
-    [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}

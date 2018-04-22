@@ -30,7 +30,6 @@ export class HomePage {
               public geolocation: Geolocation) {
 
     this.user = this.afAuth.authState;
-
   }
   
 
@@ -74,9 +73,9 @@ export class HomePage {
       console.log(err);
     });
 
-    (success) => {
-      console.log(success);
-  }
+  //   (success) => {
+  //     console.log(success);
+  // }
  
   }
 
