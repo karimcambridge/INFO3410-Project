@@ -11,7 +11,6 @@ export class ListVendorPage {
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
     this.initializeVendors();
-    // this.vendors = params.data.vendors;
   }
 
   openModal(characterNum) {
