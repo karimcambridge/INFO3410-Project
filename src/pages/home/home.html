@@ -10,30 +10,6 @@
     This project will do some stuff with some stuff in order to show some stuff.
   </p>
 
-  <ion-content class="page-home">
-    <ion-row>
-      <ion-col col-7>
-        <ion-item>
-          <ion-input type="text" [(ngModel)]="newItem" placeholder="Add Some Stuff"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <button ion-button (click)="addItem()">Add!</button>
-      </ion-col>
-    </ion-row>
-
-    <ion-list>
-      <ion-item-sliding *ngFor="let item of shoppingItems | async">
-        <ion-item>
-          {{ item.$value }}
-        </ion-item>
-        <ion-item-options side="right">
-          <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon name="trash"></ion-icon></button>
-        </ion-item-options>
-      </ion-item-sliding>
-    </ion-list>
-
-
     <ion-content>
         <div #map id="map"></div>
     </ion-content>
@@ -43,6 +19,4 @@
             <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onDaySelect($event)" (onMonthSelect)="onMonthSelect($event)"></ion-calendar>
             <button ion-button (click)="calendar.today()">Jump to Today</button>
     </ion-content>
-</ion-content>
-
 </ion-content>

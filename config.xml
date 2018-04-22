@@ -77,11 +77,6 @@
         <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
     </platform>
     <plugin name="cordova-plugin-firebase" spec="^1.0.0" />
-    <plugin name="cordova-plugin-ionic" spec="^4.1.4">
-        <variable name="APP_ID" value="810dcd48" />
-        <variable name="CHANNEL_NAME" value="Production" />
-        <variable name="UPDATE_METHOD" value="auto" />
-    </plugin>
     <plugin name="cordova-plugin-googleplus" spec="^5.3.0">
         <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.778757169371-rroareinqt09clopvolt72mmn9ffe3jc" />
         <variable name="WEB_APPLICATION_CLIENT_ID" value="778757169371-sfvo49oa0fspfmvocvedkfucash23d0a.apps.googleusercontent.com" />
@@ -90,8 +85,19 @@
     <plugin name="cordova-plugin-ionic-webview" spec="^1.2.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
-    <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <plugin name="cordova-plugin-calendar" spec="^5.0.0" />
     <engine name="ios" spec="~4.5.4" />
     <plugin name="cordova-plugin-email-composer" spec="https://github.com/katzer/cordova-plugin-email-composer.git" />
+    <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
+    </plugin>
+    <plugin name="cordova-plugin-ionic" spec="^4.1.5">
+        <variable name="APP_ID" value="810dcd48" />
+        <variable name="CHANNEL_NAME" value="Production" />
+        <variable name="UPDATE_METHOD" value="auto" />
+        <variable name="WARN_DEBUG" value="true" />
+        <variable name="UPDATE_API" value="https://api.ionicjs.com" />
+        <variable name="MAX_STORE" value="2" />
+    </plugin>
+    <plugin name="cordova-plugin-device" spec="^2.0.2" />
 </widget>
