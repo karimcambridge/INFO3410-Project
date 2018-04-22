@@ -1,9 +1,5 @@
 import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Geolocation } from '@ionic-native/geolocation';
-
-declare var google;
-
 import * as firebase from 'firebase/app';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { Geolocation } from '@ionic-native/geolocation';
