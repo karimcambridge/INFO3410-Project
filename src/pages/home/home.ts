@@ -51,6 +51,29 @@ export class HomePage {
     }
   }
 
+  async webGoogleLogin(): Promise<void> {
+    try {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      const credential = await this.afAuth.auth.signInWithPopup(provider);
+
+    } catch(err) {
+      console.log(err)
+    }
+
+  }
+
+  googleLogin() {
+    if (this.platform.is('cordova')) {
+      this.nativeGoogleLogin();
+    } else {
+      this.webGoogleLogin();
+    }
+  }
+
+  signOut() {
+    this.afAuth.auth.signOut();
+  }
+
   ionViewDidLoad(){
     this.loadMap();
   }
@@ -103,29 +126,6 @@ export class HomePage {
       infoWindow.open(this.map, marker);
     });
    
-  }
-
-  async webGoogleLogin(): Promise<void> {
-    try {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      const credential = await this.afAuth.auth.signInWithPopup(provider);
-
-    } catch(err) {
-      console.log(err)
-    }
-
-  }
-
-  googleLogin() {
-    if (this.platform.is('cordova')) {
-      this.nativeGoogleLogin();
-    } else {
-      this.webGoogleLogin();
-    }
-  }
-
-  signOut() {
-    this.afAuth.auth.signOut();
   }
 
 }
