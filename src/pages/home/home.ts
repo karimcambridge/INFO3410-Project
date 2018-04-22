@@ -62,6 +62,14 @@ export class HomePage {
     ];
   }
 
+  onDaySelect() {
+
+  }
+
+  onMonthSelect() {
+    
+  }
+
   initMap() {
     this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((resp) => {
         let mylocation = new google.maps.LatLng(resp.coords.latitude,resp.coords.longitude);
