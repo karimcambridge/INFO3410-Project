@@ -26,6 +26,8 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Calendar } from '@ionic-native/calendar';
 
+import { LoginPage } from '../pages/login/login';
+
 Pro.init('810dcd48', { // DON'T TOUCH THIS
   appVersion: '0.0.1'
 })
@@ -62,6 +64,7 @@ export class MyErrorHandler implements ErrorHandler {
 @NgModule({
   declarations: [
     MyApp,
+    LoginPage,
     HomePage,
     AboutPage,
     ContactPage,
@@ -100,7 +103,8 @@ export class MyErrorHandler implements ErrorHandler {
     GooglePlus,
     Calendar,
     IonicErrorHandler,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AngularFireAuthModule
   ]
 })
 export class AppModule {}
