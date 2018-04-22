@@ -31,6 +31,60 @@ export class HomePage {
 
     this.user = this.afAuth.authState;
   }
+<<<<<<< HEAD
+=======
+  
+	get authenticated(): boolean {
+	  return this.user !== null;
+	}
+
+  getEmail() {
+    return this.user && this.user.email;
+  }
+
+  signOut(): Promise<void> {
+    return this.afAuth.auth.signOut();
+  }
+
+  async nativeGoogleLogin(): Promise<void> {
+    try {
+
+      const gplusUser = await this.gplus.login({
+        'webClientId': '833083649643-snd72roi89uhcsc47me8l96j8tocamkk.apps.googleusercontent.com',
+        'offline': true,
+        'scopes': 'profile email'
+      })
+
+      return await this.afAuth.auth.signInWithCredential(firebase.auth.GoogleAuthProvider.credential(gplusUser.idToken))
+
+    } catch(err) {
+      console.log(err)
+    }
+  }
+>>>>>>> 4fdecb382510c034a5acedb6330e0288b563750f
+
+  async webGoogleLogin(): Promise<void> {
+    try {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      const credential = await this.afAuth.auth.signInWithPopup(provider);
+
+    } catch(err) {
+      console.log(err)
+    }
+
+  }
+
+  googleLogin() {
+    if (this.platform.is('cordova')) {
+      this.nativeGoogleLogin();
+    } else {
+      this.webGoogleLogin();
+    }
+  }
+
+  signOut() {
+    this.afAuth.auth.signOut();
+  }
 
   ionViewDidLoad(){
     this.loadMap();
@@ -105,28 +159,5 @@ export class HomePage {
     }
   }
 
-
-  async webGoogleLogin(): Promise<void> {
-    try {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      const credential = await this.afAuth.auth.signInWithPopup(provider);
-
-    } catch(err) {
-      console.log(err)
-    }
-
-  }
-
-  googleLogin() {
-    if (this.platform.is('cordova')) {
-      this.nativeGoogleLogin();
-    } else {
-      this.webGoogleLogin();
-    }
-  }
-
-  signOut() {
-    this.afAuth.auth.signOut();
-  }
 
 }
