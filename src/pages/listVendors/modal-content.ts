@@ -39,8 +39,8 @@ export class BasicPage {
           <p>{{vendor.quote}}</p>
       </ion-item>
   
-      <ion-item *ngFor="let item of vendors['items']">
-          {{vendor.title}}
+      <ion-item *ngFor="let item of vendor['items']">
+          {{item.title}}
       </ion-item>
   </ion-list>
 </ion-content>
