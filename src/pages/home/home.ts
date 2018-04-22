@@ -15,13 +15,34 @@ import { FirebaseProvider } from './../../providers/firebase/firebase';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  currentEvents;
   user: Observable<firebase.User>;
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   constructor(public navCtrl: NavController,
               public geolocation: Geolocation) {
+      
+      this.currentEvents = [
+          {
+              year: 2018,
+              month: 4,
+              date: 22
+          },
+          {
+              year: 2018,
+              month: 6,
+              date: 16
+          }
+      ];
+  }
+
+  onDaySelect() {
+
+  }
+
+  onMonthSelect() {
+      
   }
 
   ionViewDidLoad(){

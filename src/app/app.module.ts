@@ -31,7 +31,7 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
 import { AuthService } from '../services/auth.service';
 
 import { GooglePlus } from '@ionic-native/google-plus';
-import { Calendar } from '@ionic-native/calendar';
+import { CalendarModule } from 'ionic3-calendar-en';
 
 Pro.init('810dcd48', { // DON'T TOUCH THIS
   appVersion: '0.0.1'
@@ -90,7 +90,8 @@ export class MyErrorHandler implements ErrorHandler {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    NgxErrorsModule
+    NgxErrorsModule,
+    CalendarModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -112,7 +113,6 @@ export class MyErrorHandler implements ErrorHandler {
     Geolocation,
     FirebaseProvider,
     GooglePlus,
-    Calendar,
     IonicErrorHandler,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireAuthModule,
