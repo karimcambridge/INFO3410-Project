@@ -32,8 +32,17 @@ export class HomePage {
     this.user = this.afAuth.authState;
   }
   
+	get authenticated(): boolean {
+	  return this.user !== null;
+	}
 
-  /// Our login Methods will go here
+  getEmail() {
+    return this.user && this.user.email;
+  }
+
+  signOut(): Promise<void> {
+    return this.afAuth.auth.signOut();
+  }
 
   async nativeGoogleLogin(): Promise<void> {
     try {
