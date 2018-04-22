@@ -10,10 +10,14 @@
 			<button ion-button (click)="logout()" *ngIf="auth.authenticated" item-right>
 				<ion-icon name="log-out" item-right></ion-icon> Log out
 			</button>
-			
+
 			<button ion-button (click)="login()" *ngIf="!auth.authenticated" item-right>
 				<ion-icon name="log-in" item-right></ion-icon> Log in
 			</button>
+
+			<!--<button ion-button color="danger" (click)="gotoHomePage()" *ngIf="!auth.authenticated" item-right>
+				<ion-icon name="log-in" item-right></ion-icon> Go Back
+			</button>-->
 		</ion-buttons>
     </ion-navbar>
 </ion-header>
