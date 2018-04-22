@@ -14,7 +14,7 @@ declare var google: any;
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  currentEvents;
   user: Observable<firebase.User>;
 
   @ViewChild('map') mapElement: ElementRef;
@@ -45,6 +45,18 @@ export class HomePage {
         }
       });
     });
+    this.currentEvents = [
+        {
+            year: 2018,
+            month: 4,
+            date: 22
+        },
+        {
+            year: 2018,
+            month: 6,
+            date: 16
+        }
+    ];
   }
 
   initMap() {
