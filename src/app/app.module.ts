@@ -11,8 +11,7 @@ import { VendorPage } from '../pages/vendor/vendor';
 import { TabsPage } from '../pages/tabs/tabs';
 import { VendorFormPage } from '../pages/vendorForm/vendorForm';
 import { ListVendorPage } from '../pages/listVendors/listVendors';
-import { ModalContentPage } from '../pages/listVendors/modal-content';
-// import { BasicPage } from '../pages/listVendors/modal-content';
+import { ModalContentPage } from '../pages/listVendors/listVendors';
 
 import { Geolocation } from '@ionic-native/geolocation';
 import { StatusBar } from '@ionic-native/status-bar';
