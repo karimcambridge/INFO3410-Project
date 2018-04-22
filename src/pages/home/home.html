@@ -5,18 +5,16 @@
 </ion-header>
 
 <ion-content padding class="page-home">
-  <h2>Welcome to ASK-JZ! :) </h2>
-  <p>
-    This project will do some stuff with some stuff in order to show some stuff.
-  </p>
+  <h2>Welcome to ASK-JZ! :)</h2>
+  <p>This project will do some stuff with some stuff in order to show some stuff.</p>
 
-    <ion-content>
-        <div #map id="map"></div>
-    </ion-content>
+  <ion-content>
+      <div #map id="map"></div>
+  </ion-content>
 
-    <ion-content class="calendar">
-            <h3>Calendar of Events</h3>
-            <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onDaySelect($event)" (onMonthSelect)="onMonthSelect($event)"></ion-calendar>
-            <button ion-button (click)="calendar.today()">Jump to Today</button>
-    </ion-content>
+  <ion-content class="calendar">
+    <h3>Calendar of Events</h3>
+    <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onDaySelect($event)" (onMonthSelect)="onMonthSelect($event)"></ion-calendar>
+    <button ion-button (click)="calendar.today()">Jump to Today</button>
+  </ion-content>
 </ion-content>
