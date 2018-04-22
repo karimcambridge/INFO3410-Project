@@ -31,8 +31,6 @@ export class HomePage {
 
     this.user = this.afAuth.authState;
   }
-<<<<<<< HEAD
-=======
   
 	get authenticated(): boolean {
 	  return this.user !== null;
@@ -53,7 +51,6 @@ export class HomePage {
       console.log(err)
     }
   }
->>>>>>> 4fdecb382510c034a5acedb6330e0288b563750f
 
   async webGoogleLogin(): Promise<void> {
     try {
