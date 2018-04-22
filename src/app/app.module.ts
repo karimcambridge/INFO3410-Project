@@ -8,11 +8,11 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { VendorPage } from '../pages/vendor/vendor';
-//import { SignInPage } from '../pages/sign-in/sign-in';
 import { TabsPage } from '../pages/tabs/tabs';
-import {VendorFormPage} from '../pages/vendorForm/vendorForm';
-import {ListVendorPage} from '../pages/listVendors/listVendors';
-import {ModalContentPage} from '../pages/listVendors/modal-content';
+import { VendorFormPage } from '../pages/vendorForm/vendorForm';
+import { ListVendorPage } from '../pages/listVendors/listVendors';
+import { ModalContentPage } from '../pages/listVendors/modal-content';
+// import { BasicPage } from '../pages/listVendors/modal-content';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
