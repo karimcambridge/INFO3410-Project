@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NavController } from 'ionic-angular';
-import { HomePage } from '../home/home.html';
+import { HomePage } from '../home/home';
 import { AuthService } from '../../services/auth.service';
 
 @IonicPage()
