@@ -26,20 +26,34 @@
       </ion-item>
   </ion-list>
 
-  <aside id="sidebar">
-      <div class="dark">
-      <h3> How Do You Like Our App? </h3>
+  <style>
+    input[type=text]{
+      text-align:left;
+      width: 35%;
+      border: 2px solid #aaa;
+      border-radius: 4px;
+      margin:8px;
+      outline:none;
+      padding:80px;
+      box-sizing:border-box;
+      transition:.3s;
+    }
 
-      <form id="feedback">
-        <input id= "lol" type="text" name="feeback" placeholder="Leave your feedback and comments here." size="40">
-      </form>
-      
-        <!-- <button class="button" onclick=myFunction()>Click Here For A Fun Fact</button>
-        <button class="button" onclick=myFunction3()>Click Here For Quick Maths</button>
-        <p id="quickmaths"></p> -->
-      </div>
-    </aside>
+    input[type=text]:focus{
+      border-color:dodgerBlue;
+      box-shadow:0 0 10px 0 dodgerBlue;
+    }
+  
+  </style>
 
+
+  <div class="dark">
+    <h3>         How Do You Like Our App? </h3>
+    <form id="feedback">
+        <input id= "lol" type="text" name="feeback" placeholder="Leave your feedback and comments here." size="40" >
+    </form>
+  </div>
+    
 </ion-content>
 
 
