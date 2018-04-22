@@ -31,25 +31,6 @@ export class HomePage {
 
     this.user = this.afAuth.authState;
   }
-  
-
-  /// Our login Methods will go here
-
-  async nativeGoogleLogin(): Promise<void> {
-    try {
-
-      const gplusUser = await this.gplus.login({
-        'webClientId': '833083649643-snd72roi89uhcsc47me8l96j8tocamkk.apps.googleusercontent.com',
-        'offline': true,
-        'scopes': 'profile email'
-      })
-
-      return await this.afAuth.auth.signInWithCredential(firebase.auth.GoogleAuthProvider.credential(gplusUser.idToken))
-
-    } catch(err) {
-      console.log(err)
-    }
-  }
 
   ionViewDidLoad(){
     this.loadMap();
@@ -104,6 +85,26 @@ export class HomePage {
     });
    
   }
+  
+
+  /// Our login Methods will go here
+
+  async nativeGoogleLogin(): Promise<void> {
+    try {
+
+      const gplusUser = await this.gplus.login({
+        'webClientId': '833083649643-snd72roi89uhcsc47me8l96j8tocamkk.apps.googleusercontent.com',
+        'offline': true,
+        'scopes': 'profile email'
+      })
+
+      return await this.afAuth.auth.signInWithCredential(firebase.auth.GoogleAuthProvider.credential(gplusUser.idToken))
+
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
 
   async webGoogleLogin(): Promise<void> {
     try {

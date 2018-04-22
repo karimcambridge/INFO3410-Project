@@ -94,6 +94,7 @@ export class BasicPage {
           {{item.title}}
       </ion-item>
   </ion-list>
+  <button ion-button color = "secondary" (click)="goBack()">Back</button>
 </ion-content>
 `
 })
@@ -103,13 +104,14 @@ export class ModalContentPage {
   constructor(
     public platform: Platform,
     public params: NavParams,
-    public viewCtrl: ViewController
+    public viewCtrl: ViewController,
+    public navCtrl: NavController
   ) {
     var vendors = [
       {
         name: 'Anna Breton',
         quote: 'I sell food!',
-        image: 'assets/img/avatar-gollum.jpg',
+        image: 'assets/imgs/Hugging.png',
         items: [
           { title: 'Doubles' },
           { title: 'Alloo Pie' }
@@ -118,7 +120,7 @@ export class ModalContentPage {
       {
         name: 'Brittney Chriton',
         quote: 'I sell jewellery!',
-        image: 'assets/img/avatar-frodo.jpg',
+        image: 'assets/imgs/tongue.png',
         items: [
           { title: 'Bracelets' },
           { title: 'Earrings' },
@@ -128,7 +130,7 @@ export class ModalContentPage {
       {
         name: 'Justin Maxime',
         quote: 'I sell soap!',
-        image: 'assets/img/avatar-samwise.jpg',
+        image: 'assets/imgs/relieved-face.png',
         items: [
           { title: 'Lavender'},
           { title: 'Tea Tree' },
@@ -138,7 +140,7 @@ export class ModalContentPage {
       {
         name: 'Karim Cambridge',
         quote: 'I sell spices',
-        image: 'assets/img/avatar-samwise.jpg',
+        image: 'assets/imgs/neutral-face.png',
         items: [
           { title: 'Cinnamon'},
           { title: 'Nutmeg'},
@@ -148,7 +150,7 @@ export class ModalContentPage {
       {
         name: 'Louis Scott',
         quote: 'I sell produce local juices',
-        image: 'assets/img/avatar-samwise.jpg',
+        image: 'assets/imgs/money.png',
         items: [
           { title: 'Lime' },
           { title: 'Passion Fruit' },
@@ -158,7 +160,7 @@ export class ModalContentPage {
       {
         name: 'Ronald Browne',
         quote: 'I sell pottery!',
-        image: 'assets/img/avatar-samwise.jpg',
+        image: 'assets/imgs/clown.png',
         items: [
           { title: 'Vases' },
           { title: 'Plates' },
@@ -168,7 +170,7 @@ export class ModalContentPage {
       {
         name: 'Sade Bowman',
         quote: 'I sell organic skincare products!',
-        image: 'assets/img/avatar-samwise.jpg',
+        image: 'assets/imgs/kiss.png',
         items: [
           { title: 'Face soaps' },
           { title: 'Body lotions'},
@@ -178,7 +180,7 @@ export class ModalContentPage {
       {
         name: 'Xia Crawford',
         quote: 'I sell food!',
-        image: 'assets/img/avatar-samwise.jpg',
+        image: 'assets/imgs/hearteyes.png',
         items: [
           { title: 'Curry Goat'},
           { title: 'Sweet Bread'},
@@ -187,7 +189,7 @@ export class ModalContentPage {
       {
         name: 'Zaria Grant',
         quote: 'I sell jewellery!',
-        image: 'assets/img/avatar-samwise.jpg',
+        image: 'assets/imgs/skull.png',
         items: [
           { title: 'Anklets'},
           { title: 'Nose rings' },
@@ -200,6 +202,10 @@ export class ModalContentPage {
 
   dismiss() {
     this.viewCtrl.dismiss();
+  }
+
+  goBack() {
+    this.navCtrl.setRoot(ListVendorPage);
   }
 }
 
