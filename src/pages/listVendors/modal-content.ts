@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController, Platform, NavParams, ViewController } from 'ionic-angular';
-
+import { EmailComposer } from '@ionic-native/email-composer';
 
 @Component({
   templateUrl: 'modal-content.html'
