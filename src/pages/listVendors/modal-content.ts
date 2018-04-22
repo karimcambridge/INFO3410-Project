@@ -65,7 +65,7 @@ export class ModalContentPage {
         ]
       },
       {
-        name: 'Brittney Chriton',
+        name: 'Brittney Crichton',
         quote: 'I sell jewellery!',
         image: 'assets/img/avatar-frodo.jpg',
         items: [
