@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-//import { NavController, ModalController } from 'ionic-angular';
 import { NavController, ModalController, Platform, NavParams, ViewController } from 'ionic-angular';
 import { VendorPage } from '../vendor/vendor';
-//import { ModalContentPage } from '../listVendors/modal-content';
-//import { BasicPage } from '../listVendors/modal-content';
 
 @Component({
   selector: 'page-listVendors',
