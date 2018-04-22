@@ -17,10 +17,10 @@ import { ListVendorPage } from '../pages/listVendors/listVendors';
 import { ModalContentPage } from '../pages/listVendors/listVendors';
 import { TabsPage } from '../pages/tabs/tabs';
 
-import { Geolocation } from '@ionic-native/geolocation';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { Geolocation } from '@ionic-native/geolocation';
+import { Device } from '@ionic-native/device';
 import { EmailComposer } from '@ionic-native/email-composer';
 
 import { HttpModule } from '@angular/http';
@@ -111,6 +111,7 @@ export class MyErrorHandler implements ErrorHandler {
     StatusBar,
     SplashScreen,
     Geolocation,
+    Device,
     FirebaseProvider,
     GooglePlus,
     IonicErrorHandler,

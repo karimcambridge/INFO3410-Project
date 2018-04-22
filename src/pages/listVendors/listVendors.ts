@@ -117,7 +117,7 @@ export class ModalContentPage {
         ]
       },
       {
-        name: 'Brittney Chrciton',
+        name: 'Brittney Crichton',
         quote: 'I sell jewellery!',
         image: 'assets/imgs/tongue.png',
         items: [
