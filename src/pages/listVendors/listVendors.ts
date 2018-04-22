@@ -72,10 +72,7 @@ export class BasicPage {
   <ion-toolbar>
       <ion-title>Description</ion-title>
       <ion-buttons start>
-      <button ion-button (click)="dismiss()">
-          <span ion-text color="primary" showWhen="ios">Cancel</span>
-          <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
-      </button>
+      <button ion-button color = "black" clear (click)="goBack()">Close</button>
       </ion-buttons>
   </ion-toolbar>
   </ion-header>
@@ -94,7 +91,6 @@ export class BasicPage {
           {{item.title}}
       </ion-item>
   </ion-list>
-  <button ion-button color = "secondary" (click)="goBack()">Back</button>
 </ion-content>
 `
 })

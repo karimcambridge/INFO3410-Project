@@ -37,6 +37,7 @@
     "cordova-ios": "4.5.4",
     "cordova-plugin-calendar": "^5.0.0",
     "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-email-composer": "^0.8.15",
     "cordova-plugin-firebase": "^1.0.0",
     "cordova-plugin-googleplus": "^5.3.0",
     "cordova-plugin-ionic": "^4.1.5",
@@ -80,7 +81,8 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-calendar": {
         "CALENDAR_USAGE_DESCRIPTION": " "
-      }
+      },
+      "cordova-plugin-email-composer": {}
     },
     "platforms": [
       "ios"
