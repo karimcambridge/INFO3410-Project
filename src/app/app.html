@@ -1,11 +1,19 @@
 <ion-nav [root]="rootPage" #nav swipeBackEnabled="false"></ion-nav>
 
-<ion-menu [content]="nav"></ion-menu>
-    <ion-header class="head">
-        <ion-toolbar>
-            <ion-title><img alt="logo" height="40" src="/assets/imgs/GreenMarket.png"/>ASK-JZ's Green App
-            </ion-title>
-        </ion-toolbar>
+<ion-header class="head">
+    <ion-navbar>
+        <ion-title>
+        	<img alt="logo" height="40" src="/assets/imgs/GreenMarket.png"/>ASK-JZ's Green App
+        </ion-title>
+	    <!--<ion-list-header *ngIf="auth.getEmail()">{{auth.getEmail()}}</ion-list-header>-->
+	    <ion-buttons right>
+			<button ion-button (click)="logout()" *ngIf="auth.authenticated" item-right>
+				<ion-icon name="log-out" item-right></ion-icon> Log out
+			</button>
+			
+			<button ion-button (click)="login()" *ngIf="!auth.authenticated" item-right>
+				<ion-icon name="log-in" item-right></ion-icon> Log in
+			</button>
+		</ion-buttons>
+    </ion-navbar>
 </ion-header>
-
-

@@ -1,17 +1,21 @@
 import { Pro } from '@ionic/pro';
 import { NgModule, ErrorHandler, Injectable, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { NgxErrorsModule } from '@ultimate/ngxerrors';
 import { MyApp } from './app.component';
 
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
+import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
 import { VendorPage } from '../pages/vendor/vendor';
-import { TabsPage } from '../pages/tabs/tabs';
 import { VendorFormPage } from '../pages/vendorForm/vendorForm';
 import { ListVendorPage } from '../pages/listVendors/listVendors';
 import { ModalContentPage } from '../pages/listVendors/listVendors';
+import { TabsPage } from '../pages/tabs/tabs';
 
 import { Geolocation } from '@ionic-native/geolocation';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -24,11 +28,10 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { FirebaseProvider } from '../providers/firebase/firebase';
+import { AuthService } from '../services/auth.service';
 
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Calendar } from '@ionic-native/calendar';
-
-import { LoginPage } from '../pages/login/login';
 
 Pro.init('810dcd48', { // DON'T TOUCH THIS
   appVersion: '0.0.1'
@@ -67,6 +70,7 @@ export class MyErrorHandler implements ErrorHandler {
   declarations: [
     MyApp,
     LoginPage,
+    SignupPage,
     HomePage,
     AboutPage,
     ContactPage,
@@ -78,17 +82,21 @@ export class MyErrorHandler implements ErrorHandler {
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    FormsModule,
+    ReactiveFormsModule,
     HttpModule,
+    IonicModule.forRoot(MyApp),
     AngularFireModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    NgxErrorsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     LoginPage,
+    SignupPage,
     HomePage,
     AboutPage,
     ContactPage,
@@ -108,6 +116,7 @@ export class MyErrorHandler implements ErrorHandler {
     IonicErrorHandler,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireAuthModule,
+    AuthService,
     EmailComposer
   ]
 })
