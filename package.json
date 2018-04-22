@@ -24,6 +24,7 @@
     "@firebase/app": "^0.2.0",
     "@ionic-native/calendar": "^4.7.0",
     "@ionic-native/core": "^4.7.0",
+    "@ionic-native/device": "^4.7.0",
     "@ionic-native/email-composer": "^4.7.0",
     "@ionic-native/firebase": "^4.7.0",
     "@ionic-native/geolocation": "^4.7.0",
@@ -41,6 +42,7 @@
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-email-composer": "git+https://github.com/katzer/cordova-plugin-email-composer.git",
     "cordova-plugin-firebase": "^1.0.0",
+    "cordova-plugin-geolocation": "^4.0.1",
     "cordova-plugin-googleplus": "^5.3.0",
     "cordova-plugin-ionic": "^4.1.5",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
@@ -84,7 +86,10 @@
       "cordova-plugin-calendar": {
         "CALENDAR_USAGE_DESCRIPTION": " "
       },
-      "cordova-plugin-email-composer": {}
+      "cordova-plugin-email-composer": {},
+      "cordova-plugin-geolocation": {
+        "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
+      }
     },
     "platforms": [
       "ios"

@@ -1,14 +1,13 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Geolocation } from '@ionic-native/geolocation';
-
-declare var google;
-
+import { Platform, NavController } from 'ionic-angular';
 import * as firebase from 'firebase/app';
+import { FirebaseProvider } from './../../providers/firebase/firebase';
+import { Geolocation } from '@ionic-native/geolocation';
+import { Device } from '@ionic-native/device';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 
-import { FirebaseProvider } from './../../providers/firebase/firebase';
+declare var google: any;
 
 @Component({
   selector: 'page-home',
@@ -20,62 +19,109 @@ export class HomePage {
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
+  markers = [];
+  ref = firebase.database().ref('geolocations/');
+
   constructor(public navCtrl: NavController,
-              public geolocation: Geolocation) {
-  }
-
-  ionViewDidLoad(){
-    this.loadMap();
-  }
- 
-  loadMap(){
- 
-    this.geolocation.getCurrentPosition().then((position) => {
- 
-      let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
- 
-      let mapOptions = {
-        center: latLng,
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      }
- 
-      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
- 
-    }, (err) => {
-      console.log(err);
+              public platform: Platform,
+              private geolocation: Geolocation,
+              private device: Device) {
+    platform.ready().then(() => {
+      this.initMap();
     });
-
-  //   (success) => {
-  //     console.log(success);
-  // }
- 
+    this.ref.on('value', resp => {
+      this.deleteMarkers();
+      snapshotToArray(resp).forEach(data => {
+        if(data.uuid !== this.device.uuid) {
+          let image = 'assets/imgs/green-bike.png';
+          let updatelocation = new google.maps.LatLng(data.latitude,data.longitude);
+          this.addMarker(updatelocation,image);
+          this.setMapOnAll(this.map);
+        } else {
+          let image = 'assets/imgs/blue-bike.png';
+          let updatelocation = new google.maps.LatLng(data.latitude,data.longitude);
+          this.addMarker(updatelocation,image);
+          this.setMapOnAll(this.map);
+        }
+      });
+    });
   }
 
-  addMarker(){
- 
+  initMap() {
+    this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((resp) => {
+        let mylocation = new google.maps.LatLng(resp.coords.latitude,resp.coords.longitude);
+        this.map = new google.maps.Map(this.mapElement.nativeElement, {
+          zoom: 15,
+          center: mylocation
+        });
+      },
+      // Here is the error catching that needs to be added
+      err => {
+           console.log('Error : ' + JSON.stringify(err));
+      });
+      let watch = this.geolocation.watchPosition();
+      watch.subscribe((data) => {
+        this.deleteMarkers();
+        //this.updateGeolocation(this.device.uuid, data.coords.latitude,data.coords.longitude);
+        let updatelocation = new google.maps.LatLng(data.coords.latitude,data.coords.longitude);
+        let image = 'assets/imgs/blue-bike.png';
+        this.addMarker(updatelocation,image);
+        this.setMapOnAll(this.map);
+      });
+  }
+
+  addMarker(location, image) {
     let marker = new google.maps.Marker({
+      position: location,
       map: this.map,
-      animation: google.maps.Animation.DROP,
-      position: this.map.getCenter()
+      icon: image
     });
-   
-    let content = "<h4>Information!</h4>";         
-   
-    this.addInfoWindow(marker, content);
-   
+    this.markers.push(marker);
   }
 
-  addInfoWindow(marker, content){
- 
-    let infoWindow = new google.maps.InfoWindow({
-      content: content
-    });
-   
-    google.maps.event.addListener(marker, 'click', () => {
-      infoWindow.open(this.map, marker);
-    });
-   
+  setMapOnAll(map) {
+    for (var i = 0; i < this.markers.length; i++) {
+      this.markers[i].setMap(map);
+    }
+  }
+
+  clearMarkers() {
+    this.setMapOnAll(null);
+  }
+
+  deleteMarkers() {
+    this.clearMarkers();
+    this.markers = [];
+  }
+
+  updateGeolocation(uuid, lat, lng) {
+    if(localStorage.getItem('mykey')) {
+      firebase.database().ref('geolocations/'+localStorage.getItem('mykey')).set({
+        uuid: uuid,
+        latitude: lat,
+        longitude : lng
+      });
+    } else {
+      let newData = this.ref.push();
+      newData.set({
+        uuid: uuid,
+        latitude: lat,
+        longitude: lng
+      });
+      localStorage.setItem('mykey', newData.key);
+    }
   }
 
 }
+
+export const snapshotToArray = snapshot => {
+    let returnArr = [];
+
+    snapshot.forEach(childSnapshot => {
+        let item = childSnapshot.val();
+        item.key = childSnapshot.key;
+        returnArr.push(item);
+    });
+
+    return returnArr;
+};
