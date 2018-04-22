@@ -212,7 +212,7 @@ export class ModalContentPage {
 sendEmail() {
   let email = {
     to: 'mygreenapp@gmail.com',
-    cc: 'max@mustermann.de',
+    cc: '',
     // attachments: [
     //   this.currentImage
     // ],
