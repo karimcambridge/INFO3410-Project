@@ -21,6 +21,8 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { EmailComposer } from '@ionic-native/email-composer';
+
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -114,7 +116,8 @@ export class MyErrorHandler implements ErrorHandler {
     IonicErrorHandler,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireAuthModule,
-    AuthService
+    AuthService,
+    EmailComposer
   ]
 })
 export class AppModule {}

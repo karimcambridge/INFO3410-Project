@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EmailComposer } from '@ionic-native/email-composer';
 import { NavController, ModalController, Platform, NavParams, ViewController } from 'ionic-angular';
 import { VendorPage } from '../vendor/vendor';
 
@@ -9,7 +10,8 @@ import { VendorPage } from '../vendor/vendor';
 export class ListVendorPage {
   vendors;
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, 
+              public modalCtrl: ModalController) {
     this.initializeVendors();
   }
 
@@ -72,10 +74,7 @@ export class BasicPage {
   <ion-toolbar>
       <ion-title>Description</ion-title>
       <ion-buttons start>
-      <button ion-button (click)="dismiss()">
-          <span ion-text color="primary" showWhen="ios">Cancel</span>
-          <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
-      </button>
+      <button ion-button color = "black" clear (click)="goBack()">Close</button>
       </ion-buttons>
   </ion-toolbar>
   </ion-header>
@@ -94,7 +93,7 @@ export class BasicPage {
           {{item.title}}
       </ion-item>
   </ion-list>
-  <button ion-button color = "secondary" (click)="goBack()">Back</button>
+  <button ion-button full (click)="sendEmail()">Send Email</button>
 </ion-content>
 `
 })
@@ -105,8 +104,8 @@ export class ModalContentPage {
     public platform: Platform,
     public params: NavParams,
     public viewCtrl: ViewController,
-    public navCtrl: NavController
-  ) {
+    public navCtrl: NavController,
+    private emailComposer: EmailComposer) {
     var vendors = [
       {
         name: 'Anna Breton',
@@ -207,6 +206,23 @@ export class ModalContentPage {
   goBack() {
     this.navCtrl.setRoot(ListVendorPage);
   }
+
+
+
+sendEmail() {
+  let email = {
+    to: 'mygreenapp@gmail.com',
+    cc: 'max@mustermann.de',
+    // attachments: [
+    //   this.currentImage
+    // ],
+    subject: 'Contact Vendor',
+    body: ' ',
+    isHtml: true
+  };
+
+  this.emailComposer.open(email);
+}
 }
 
 
