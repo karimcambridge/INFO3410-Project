@@ -1,6 +1,3 @@
-
-declare var google;
-
 import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Platform, NavController } from 'ionic-angular';
 import * as firebase from 'firebase/app';
