@@ -73,7 +73,7 @@ export class ModalContentPage2 {
       var tips = [
         {
             category: 'Food',
-            tip: 'Let casava boil for 15 minutes'
+            tip: 'Boil Cassava for 15 minutes.'
         },
         {
             category: 'Farming',

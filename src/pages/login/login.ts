@@ -4,7 +4,7 @@ import { Platform, NavController } from 'ionic-angular';
 import { HomePage } from '../home/home';;
 import * as firebase from 'firebase/app';
 import { SignupPage } from '../signup/signup';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../app/core/auth.service';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { AngularFireAuth } from 'angularfire2/auth';
 
@@ -20,8 +20,8 @@ export class LoginPage {
 				private navCtrl: NavController,
 				private auth: AuthService,
 				private afAuth: AngularFireAuth,
-        private gplus: GooglePlus,
-        private platform: Platform,
+        		private gplus: GooglePlus,
+        		private platform: Platform,
 				fb: FormBuilder
 	) {
 		this.loginForm = fb.group({
@@ -71,7 +71,10 @@ export class LoginPage {
   async webGoogleLogin(): Promise<void> {
     try {
       const provider = new firebase.auth.GoogleAuthProvider();
-      await this.afAuth.auth.signInWithPopup(provider); // const credential = 
+      await this.afAuth.auth.signInWithPopup(provider) // const credential = 
+	      .then((credential) => {
+	        () => this.navCtrl.setRoot(HomePage)
+	      });
       
     } catch(err) {
       console.log(err)
