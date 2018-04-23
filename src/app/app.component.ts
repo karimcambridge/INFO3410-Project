@@ -38,24 +38,4 @@ export class MyApp {
   gotoHomePage() {
     this.nav.setRoot(HomePage);
   }
-
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-    });
-
-    this.auth.afAuth.authState
-      .subscribe(
-        user => {
-          if (user) {
-            this.rootPage = HomePage;
-          } else {
-            this.rootPage = LoginPage;
-          }
-        },
-        () => {
-          this.rootPage = LoginPage;
-        }
-      );
-  }
 }
