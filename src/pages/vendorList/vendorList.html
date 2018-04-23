@@ -7,10 +7,6 @@
 <ion-content>
 <ion-searchbar (ionInput)="getVendors($event)"></ion-searchbar>
 <ion-list>
-    <!-- <ion-item *ngFor="let vendor of vendors">
-        {{ vendor }}
-    </ion-item> -->
-
     <ion-list-header>Vendors</ion-list-header>
         <a ion-item (click)="openModal({charNum: 0})">Anna Breton</a>
         <a ion-item (click)="openModal({charNum: 1})">Brittney Crichton</a>
@@ -22,6 +18,4 @@
         <a ion-item (click)="openModal({charNum: 7})">Xia Crawford</a>
         <a ion-item (click)="openModal({charNum: 8})">Zaria Grant</a>
 </ion-list>
-
-<button ion-button color="secondary" (click)="goBack()">Back</button>
 </ion-content>
