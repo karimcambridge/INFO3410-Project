@@ -77,7 +77,8 @@
         "MAX_STORE": "2"
       },
       "cordova-plugin-googleplus": {
-        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.778757169371-rroareinqt09clopvolt72mmn9ffe3jc"
+        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.778757169371-rroareinqt09clopvolt72mmn9ffe3jc",
+        "WEB_APPLICATION_CLIENT_ID": "778757169371-sfvo49oa0fspfmvocvedkfucash23d0a.apps.googleusercontent.com"
       },
       "cordova-plugin-whitelist": {},
       "cordova-plugin-device": {},
@@ -93,7 +94,8 @@
       }
     },
     "platforms": [
-      "ios"
+      "ios",
+      "android"
     ]
   }
 }
