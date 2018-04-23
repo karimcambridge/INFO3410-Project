@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { VendorFormPage } from '../vendorForm/vendorForm';
-import { ListVendorPage } from '../listVendors/listVendors';
+import { ListVendorPage } from '../vendorList/vendorList';
 
 @Component({
   selector: 'page-vendor',
@@ -13,11 +13,11 @@ export class VendorPage {
   constructor(public navCtrl: NavController) {
 
   }
-  vendorform() {
+  vendorForm() {
     this.navCtrl.setRoot(VendorFormPage);
   }
 
-  listvendors() {
+  vendorList() {
     this.navCtrl.setRoot(ListVendorPage);
   }
 

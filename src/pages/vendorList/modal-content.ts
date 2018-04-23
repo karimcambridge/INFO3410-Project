@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ModalController, Platform, NavParams, ViewController } from 'ionic-angular';
-import { EmailComposer } from '@ionic-native/email-composer';
 
 @Component({
   templateUrl: 'modal-content.html'
@@ -51,8 +50,7 @@ export class ModalContentPage {
   constructor(
     public platform: Platform,
     public params: NavParams,
-    public viewCtrl: ViewController, 
-    private emailComposer: EmailComposer
+    public viewCtrl: ViewController,
   ) {
     var vendors = [
       {

@@ -1,10 +1,8 @@
-import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Platform, NavController } from 'ionic-angular';
 import * as firebase from 'firebase/app';
-import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Device } from '@ionic-native/device';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 
 declare var google: any;

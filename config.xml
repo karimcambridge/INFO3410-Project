@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ionicframework.ask-jz" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ionicframework.askjz" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ask-jayz</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="karimcambridge@gmail.com" href="http://ionicframework.com/">ASK-JZ Team</author>
@@ -86,7 +86,6 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-calendar" spec="^5.0.0" />
-    <engine name="ios" spec="~4.5.4" />
     <plugin name="cordova-plugin-email-composer" spec="https://github.com/katzer/cordova-plugin-email-composer.git" />
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
@@ -100,4 +99,6 @@
         <variable name="MAX_STORE" value="2" />
     </plugin>
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
+    <engine name="ios" spec="4.5.4" />
+    <engine name="android" spec="~7.0.0" />
 </widget>
