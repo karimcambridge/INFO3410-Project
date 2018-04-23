@@ -21,21 +21,10 @@
       <div #map id="map" style="width:100%; height: 400px;"></div>
     </ion-row>
 
-<<<<<<< HEAD
-  <ion-content class="calendar">
-    <div id="cal">
-        
-        <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onDaySelect($event)" (onMonthSelect)="onMonthSelect($event)"></ion-calendar>
-        <button ion-button (click)="calendar.today()">Jump to Today</button>
-    </div>
-    
-  </ion-content>
-=======
     <ion-row justify-content-end class="calender">
       <h3 ion-text>Calendar of Events</h3>
       <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onDaySelect($event)" (onMonthSelect)="onMonthSelect($event)"></ion-calendar>
       <button ion-button (click)="calendar.today()">Jump to Today</button>
     </ion-row>
   </ion-grid>
->>>>>>> b0a351fcac51c47eb55c9806118fb5f76e5ed1a3
 </ion-content>
