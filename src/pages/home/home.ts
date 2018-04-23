@@ -77,10 +77,8 @@ export class HomePage {
           zoom: 15,
           center: mylocation
         });
-      },
-      // Here is the error catching that needs to be added
-      err => {
-           console.log('Error : ' + JSON.stringify(err));
+      }).catch((error) => {
+        console.log('Error getting location', error);
       });
       let watch = this.geolocation.watchPosition();
       watch.subscribe((data) => {
