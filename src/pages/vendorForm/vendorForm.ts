@@ -11,6 +11,10 @@ export class VendorFormPage {
 
   }
 
+  save() {
+    alert("Your information has been saved");
+  }
+
   goBack() {
     this.navCtrl.setRoot(VendorPage);
   }

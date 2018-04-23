@@ -1,3 +1,6 @@
+
+declare var google;
+
 import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Platform, NavController } from 'ionic-angular';
 import * as firebase from 'firebase/app';
@@ -6,9 +9,6 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { Device } from '@ionic-native/device';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
-
-import * as moment from 'moment';
-import * as _ from "lodash";
 
 declare var google: any;
 
