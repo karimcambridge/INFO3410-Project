@@ -75,10 +75,8 @@ export class HomePage {
           zoom: 15,
           center: mylocation
         });
-      },
-      // Here is the error catching that needs to be added
-      err => {
-           console.log('Error : ' + JSON.stringify(err));
+      }).catch((error) => {
+        console.log('Error getting location ' + error);
       });
       let watch = this.geolocation.watchPosition();
       watch.subscribe((data) => {
@@ -120,7 +118,7 @@ export class HomePage {
       firebase.database().ref('geolocations/'+localStorage.getItem('mykey')).set({
         uuid: uuid,
         latitude: lat,
-        longitude : lng
+        longitude: lng
       });
     } else {
       let newData = this.ref.push();
