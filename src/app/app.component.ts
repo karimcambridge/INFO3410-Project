@@ -7,7 +7,7 @@ import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { HomePage } from '../pages/home/home';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from './core/auth.service';
 
 @Component({
   templateUrl: 'app.html'
