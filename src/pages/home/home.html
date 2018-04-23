@@ -4,27 +4,21 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <ion-grid>
-    <ion-row>
-      <ion-content>
-        <h2>My Green App</h2>
-      </ion-content>
+    <ion-row justify-content-center>
+      <h2>My Green App</h2>
     </ion-row>
 
-    <ion-row>
-      <ion-content>
-        <h6>We are situated in St Augustine, Trinidad. Check out our location below!</h6>
-        <div #map id="map" style="width:100%; height: 400px;"></div>
-      </ion-content>
+    <ion-row justify-content-center>
+      <h6>We are situated in St Augustine, Trinidad. Check out our location below!</h6>
+      <div #map id="map" style="width:100%; height: 400px;"></div>
     </ion-row>
 
-    <ion-row>
-      <ion-content class="calendar">
-        <h3>Calendar of Events</h3>
-        <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onDaySelect($event)" (onMonthSelect)="onMonthSelect($event)"></ion-calendar>
-        <button ion-button (click)="calendar.today()">Jump to Today</button>
-      </ion-content>
+    <ion-row justify-content-end class="calender">
+      <h3 ion-text>Calendar of Events</h3>
+      <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onDaySelect($event)" (onMonthSelect)="onMonthSelect($event)"></ion-calendar>
+      <button ion-button (click)="calendar.today()">Jump to Today</button>
     </ion-row>
   </ion-grid>
 </ion-content>
