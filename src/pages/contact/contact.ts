@@ -12,7 +12,7 @@ export class ContactPage {
   }
 
   myFunction() {
-    alert("Your feedback has been duley noted!");
+    alert("Your feedback has been duley noted!"); 
 }
 
 }
