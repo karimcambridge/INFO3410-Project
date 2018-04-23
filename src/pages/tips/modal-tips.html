@@ -1,8 +1,10 @@
 <ion-header>
     <ion-toolbar>
         <ion-title>Tips</ion-title>
-        <ion-buttons start>
-        <button ion-button color = "black" clear (click)="goBack()">Close</button>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="closeModal()">
+                <ion-icon item-right name="ios-close-outline"></ion-icon>
+            </button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>

@@ -13,6 +13,7 @@ export class TipsPage {
     this.initializeTips();
 }
 
+
 openModal(characterNum) {
     let modal = this.modalCtrl.create(ModalContentPage2, characterNum);
     modal.present();
@@ -44,10 +45,12 @@ openModal(characterNum) {
 template: `
 <ion-header>
   <ion-toolbar>
-      <ion-title>Tips</ion-title>
-      <ion-buttons start>
-      <button ion-button color = "black" clear (click)="goBack()">Close</button>
-      </ion-buttons>
+    <ion-title>Tips</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="closeModal()">
+        <ion-icon item-right name="ios-close-outline"></ion-icon>
+    </button>
+  </ion-buttons>
   </ion-toolbar>
   </ion-header>
     
@@ -96,8 +99,12 @@ export class ModalContentPage2 {
         this.viewCtrl.dismiss();
       }
     
-      goBack() {
+    goBack() {
         this.navCtrl.setRoot(TipsPage);
-      }
+    }
+    
+    closeModal() {
+        this.navCtrl.pop();
+    }
 
 }

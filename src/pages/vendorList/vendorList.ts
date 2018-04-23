@@ -73,8 +73,10 @@ export class BasicPage {
   <ion-header>
   <ion-toolbar>
       <ion-title>Description</ion-title>
-      <ion-buttons start>
-      <button ion-button color = "black" clear (click)="goBack()">Close</button>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="closeModal()">
+            <ion-icon item-right name="ios-close-outline"></ion-icon>
+        </button>
       </ion-buttons>
   </ion-toolbar>
   </ion-header>
@@ -94,6 +96,7 @@ export class BasicPage {
       </ion-item>
   </ion-list>
   <button ion-button full (click)="sendEmail()">Send Email</button>
+  
 </ion-content>
 `
 })
@@ -203,9 +206,17 @@ export class ModalContentPage {
     this.viewCtrl.dismiss();
   }
 
-  goBack() {
+  goBack1() {
     this.navCtrl.setRoot(ListVendorPage);
   }
+
+  goBack() {
+    this.navCtrl.setRoot(VendorPage);
+  }
+
+  closeModal() {
+    this.navCtrl.pop();
+}
 
   sendEmail() {
     let email = {

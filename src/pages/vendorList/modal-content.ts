@@ -11,6 +11,7 @@ export class BasicPage {
     let modal = this.modalCtrl.create(ModalContentPage, characterNum);
     modal.present();
   }
+  
 }
 
 @Component({
@@ -19,9 +20,8 @@ export class BasicPage {
   <ion-toolbar>
       <ion-title>Description</ion-title>
       <ion-buttons start>
-      <button ion-button (click)="dismiss()">
-          <span ion-text color="primary" showWhen="ios">Cancel</span>
-          <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      <button ion-button icon-only (click)="closemodal()">
+        <ion-icon name="close"></ion-icon>
       </button>
       </ion-buttons>
   </ion-toolbar>
@@ -148,5 +148,6 @@ export class ModalContentPage {
   dismiss() {
     this.viewCtrl.dismiss();
   }
+  
 
 }
