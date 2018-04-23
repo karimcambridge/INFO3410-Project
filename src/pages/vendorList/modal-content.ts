@@ -19,10 +19,10 @@ export class BasicPage {
   <ion-header>
   <ion-toolbar>
       <ion-title>Description</ion-title>
-      <ion-buttons start>
-      <button ion-button icon-only (click)="closemodal()">
-        <ion-icon name="close"></ion-icon>
-      </button>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="closeModal()">
+          <ion-icon item-right name="ios-close-outline"></ion-icon>
+        </button>
       </ion-buttons>
   </ion-toolbar>
   </ion-header>

@@ -46,11 +46,11 @@ template: `
 <ion-header>
   <ion-toolbar>
     <ion-title>Tips</ion-title>
-        <ion-buttons end>
-            <button ion-button icon-only (click)="closeModal()">
-        <ion-icon item-right name="ios-close-outline"></ion-icon>
-    </button>
-  </ion-buttons>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="closeModal()">
+            <ion-icon item-right name="ios-close-outline"></ion-icon>
+        </button>
+    </ion-buttons>
   </ion-toolbar>
   </ion-header>
     
