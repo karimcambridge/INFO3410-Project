@@ -22,7 +22,10 @@ $bkg-color: green;
 }
 
 .footer {
-	position: fixed;
+	position:fixed;
+ 	bottom:0;
+ 	left:0;
+   	background: #fefefe;
 }
 
 .button-header {
