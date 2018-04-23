@@ -28,7 +28,6 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { FirebaseProvider } from '../providers/firebase/firebase';
 import { AuthService } from '../services/auth.service';
 
 import { GooglePlus } from '@ionic-native/google-plus';
@@ -117,7 +116,6 @@ export class MyErrorHandler implements ErrorHandler {
     SplashScreen,
     Geolocation,
     Device,
-    FirebaseProvider,
     GooglePlus,
     IonicErrorHandler,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
