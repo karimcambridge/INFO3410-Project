@@ -18,12 +18,6 @@ export class MyApp {
   rootPage:any = HomePage;
   @ViewChild(Nav) nav: Nav;
 
-  tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
-  tab4Root = VendorPage;
-  tab5Root = TipsPage;
-
   constructor(private platform: Platform, private statusBar: StatusBar, splashScreen: SplashScreen, private auth: AuthService) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -45,5 +39,21 @@ export class MyApp {
 
   gotoHomePage() {
     this.nav.setRoot(HomePage);
+  }
+
+  gotoAboutPage() {
+    this.nav.setRoot(HomePage);
+  }
+
+  gotoContactsPage() {
+    this.nav.setRoot(HomePage);
+  }
+
+  gotoVendorPage() {
+    this.nav.setRoot(VendorPage);
+  }
+
+  gotoTipsPage() {
+    this.nav.setRoot(TipsPage);
   }
 }
