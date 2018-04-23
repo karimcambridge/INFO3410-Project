@@ -42,11 +42,11 @@ export class MyApp {
   }
 
   gotoAboutPage() {
-    this.nav.setRoot(HomePage);
+    this.nav.setRoot(AboutPage);
   }
 
   gotoContactsPage() {
-    this.nav.setRoot(HomePage);
+    this.nav.setRoot(ContactPage);
   }
 
   gotoVendorPage() {
