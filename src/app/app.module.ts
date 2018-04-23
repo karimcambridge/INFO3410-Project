@@ -13,9 +13,10 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { VendorPage } from '../pages/vendor/vendor';
 import { VendorFormPage } from '../pages/vendorForm/vendorForm';
-import { ListVendorPage } from '../pages/listVendors/listVendors';
-import { ModalContentPage } from '../pages/listVendors/listVendors';
+import { ListVendorPage, ModalContentPage } from '../pages/vendorList/vendorList';
 import { TabsPage } from '../pages/tabs/tabs';
+import { TipsPage } from '../pages/tips/tips';
+import { ModalContentPage2 } from '../pages/tips/tips';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,7 +29,6 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { FirebaseProvider } from '../providers/firebase/firebase';
 import { AuthService } from '../services/auth.service';
 
 import { GooglePlus } from '@ionic-native/google-plus';
@@ -79,7 +79,9 @@ export class MyErrorHandler implements ErrorHandler {
     TabsPage,
     VendorFormPage,
     ListVendorPage,
-    ModalContentPage
+    ModalContentPage,
+    TipsPage,
+    ModalContentPage2
   ],
   imports: [
     BrowserModule,
@@ -106,14 +108,15 @@ export class MyErrorHandler implements ErrorHandler {
     TabsPage,
     VendorFormPage,
     ListVendorPage,
-    ModalContentPage
+    ModalContentPage,
+    TipsPage,
+    ModalContentPage2
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Geolocation,
     Device,
-    FirebaseProvider,
     GooglePlus,
     IonicErrorHandler,
     {provide: ErrorHandler, useClass: IonicErrorHandler},

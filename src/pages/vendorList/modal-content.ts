@@ -1,59 +1,5 @@
 import { Component } from '@angular/core';
-import { EmailComposer } from '@ionic-native/email-composer';
-import { NavController, ModalController, Platform, NavParams, ViewController } from 'ionic-angular';
-import { VendorPage } from '../vendor/vendor';
-
-@Component({
-  selector: 'page-listVendors',
-  templateUrl: 'listVendors.html'
-})
-export class ListVendorPage {
-  vendors;
-
-  constructor(public navCtrl: NavController, 
-              public modalCtrl: ModalController) {
-    this.initializeVendors();
-  }
-
-  openModal(characterNum) {
-    let modal = this.modalCtrl.create(ModalContentPage, characterNum);
-    modal.present();
-  }
-
-  goBack() {
-    this.navCtrl.setRoot(VendorPage);
-  }
-
-  initializeVendors(){
-    this.vendors = [
-      "Anna Breton",
-      "Brittney Chriton",
-      "India Jones",
-      "Justin Maxime",
-      "Karim Cambridge",
-      "Louis Scott",
-      "Ronald Browne",
-      "Sade Bowman",
-      "Xia Crawford",
-      "Zaria Grant"
-    ];
-  }
-
-  getVendors(ev){
-    this.initializeVendors();
-
-    this.initializeVendors();
-    // set val to the value of the ev target
-    var val = ev.target.value;
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.vendors = this.vendors.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
-  }
-
-}
+import { ModalController, Platform, NavParams, ViewController } from 'ionic-angular';
 
 @Component({
   templateUrl: 'modal-content.html'
@@ -67,14 +13,16 @@ export class BasicPage {
   }
 }
 
-
 @Component({
   template: `
   <ion-header>
   <ion-toolbar>
       <ion-title>Description</ion-title>
       <ion-buttons start>
-      <button ion-button color = "black" clear (click)="goBack()">Close</button>
+      <button ion-button (click)="dismiss()">
+          <span ion-text color="primary" showWhen="ios">Cancel</span>
+          <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
       </ion-buttons>
   </ion-toolbar>
   </ion-header>
@@ -93,7 +41,6 @@ export class BasicPage {
           {{item.title}}
       </ion-item>
   </ion-list>
-  <button ion-button full (click)="sendEmail()">Send Email</button>
 </ion-content>
 `
 })
@@ -104,13 +51,12 @@ export class ModalContentPage {
     public platform: Platform,
     public params: NavParams,
     public viewCtrl: ViewController,
-    public navCtrl: NavController,
-    private emailComposer: EmailComposer) {
+  ) {
     var vendors = [
       {
         name: 'Anna Breton',
         quote: 'I sell food!',
-        image: 'assets/imgs/Hugging.png',
+        image: 'assets/img/avatar-gollum.jpg',
         items: [
           { title: 'Doubles' },
           { title: 'Alloo Pie' }
@@ -119,7 +65,7 @@ export class ModalContentPage {
       {
         name: 'Brittney Crichton',
         quote: 'I sell jewellery!',
-        image: 'assets/imgs/tongue.png',
+        image: 'assets/img/avatar-frodo.jpg',
         items: [
           { title: 'Bracelets' },
           { title: 'Earrings' },
@@ -129,7 +75,7 @@ export class ModalContentPage {
       {
         name: 'Justin Maxime',
         quote: 'I sell soap!',
-        image: 'assets/imgs/relieved-face.png',
+        image: 'assets/img/avatar-samwise.jpg',
         items: [
           { title: 'Lavender'},
           { title: 'Tea Tree' },
@@ -139,7 +85,7 @@ export class ModalContentPage {
       {
         name: 'Karim Cambridge',
         quote: 'I sell spices',
-        image: 'assets/imgs/neutral-face.png',
+        image: 'assets/img/avatar-samwise.jpg',
         items: [
           { title: 'Cinnamon'},
           { title: 'Nutmeg'},
@@ -149,7 +95,7 @@ export class ModalContentPage {
       {
         name: 'Louis Scott',
         quote: 'I sell produce local juices',
-        image: 'assets/imgs/money.png',
+        image: 'assets/img/avatar-samwise.jpg',
         items: [
           { title: 'Lime' },
           { title: 'Passion Fruit' },
@@ -159,7 +105,7 @@ export class ModalContentPage {
       {
         name: 'Ronald Browne',
         quote: 'I sell pottery!',
-        image: 'assets/imgs/clown.png',
+        image: 'assets/img/avatar-samwise.jpg',
         items: [
           { title: 'Vases' },
           { title: 'Plates' },
@@ -169,7 +115,7 @@ export class ModalContentPage {
       {
         name: 'Sade Bowman',
         quote: 'I sell organic skincare products!',
-        image: 'assets/imgs/kiss.png',
+        image: 'assets/img/avatar-samwise.jpg',
         items: [
           { title: 'Face soaps' },
           { title: 'Body lotions'},
@@ -179,7 +125,7 @@ export class ModalContentPage {
       {
         name: 'Xia Crawford',
         quote: 'I sell food!',
-        image: 'assets/imgs/hearteyes.png',
+        image: 'assets/img/avatar-samwise.jpg',
         items: [
           { title: 'Curry Goat'},
           { title: 'Sweet Bread'},
@@ -188,7 +134,7 @@ export class ModalContentPage {
       {
         name: 'Zaria Grant',
         quote: 'I sell jewellery!',
-        image: 'assets/imgs/skull.png',
+        image: 'assets/img/avatar-samwise.jpg',
         items: [
           { title: 'Anklets'},
           { title: 'Nose rings' },
@@ -203,26 +149,4 @@ export class ModalContentPage {
     this.viewCtrl.dismiss();
   }
 
-  goBack() {
-    this.navCtrl.setRoot(ListVendorPage);
-  }
-
-
-
-sendEmail() {
-  let email = {
-    to: 'mygreenapp@gmail.com',
-    cc: '',
-    // attachments: [
-    //   this.currentImage
-    // ],
-    subject: 'Contact Vendor',
-    body: ' ',
-    isHtml: true
-  };
-
-  this.emailComposer.open(email);
 }
-}
-
-

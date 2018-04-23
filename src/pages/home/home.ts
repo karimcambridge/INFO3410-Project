@@ -1,13 +1,15 @@
+<<<<<<< HEAD
 
 //declare var google;
 
 import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+=======
+import { Component, ViewChild, ElementRef } from '@angular/core';
+>>>>>>> b0a351fcac51c47eb55c9806118fb5f76e5ed1a3
 import { Platform, NavController } from 'ionic-angular';
 import * as firebase from 'firebase/app';
-import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Device } from '@ionic-native/device';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 
 import * as moment from 'moment';

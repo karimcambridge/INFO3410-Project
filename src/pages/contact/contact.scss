@@ -28,7 +28,7 @@ $bkg-color: #d8fccc;
 
 textarea[type=text]{
     text-align:left;
-    width: 25%;
+    width: 50%;
     border: 2px solid #aaa;
     border-radius: 4px;
     margin:8px;
@@ -44,7 +44,8 @@ textarea[type=text]:focus{
 }
 
 h3 {
+    color: limegreen;
     position: absolute;
-    left: 50px;
-    top: 170px;
+    left: 200px;
+    top: 165px;
 }

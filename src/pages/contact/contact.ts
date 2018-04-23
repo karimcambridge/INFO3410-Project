@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, ViewController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
 })
 export class ContactPage {
+  @ViewChild('loll') loll ;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, params: NavParams) {
 
   }
 
   myFunction() {
-    alert("Your feedback has been duley noted!");
+    alert("Your feedback has been duley noted!"); 
+    this.loll= " ";
 }
 
 }

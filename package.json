@@ -61,6 +61,7 @@
     "zone.js": "0.8.26"
   },
   "devDependencies": {
+    "@angular/cli": "^1.7.4",
     "@ionic/app-scripts": "^3.1.9",
     "typescript": "~2.6.2"
   },
@@ -77,7 +78,8 @@
         "MAX_STORE": "2"
       },
       "cordova-plugin-googleplus": {
-        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.778757169371-rroareinqt09clopvolt72mmn9ffe3jc"
+        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.778757169371-rroareinqt09clopvolt72mmn9ffe3jc",
+        "WEB_APPLICATION_CLIENT_ID": "778757169371-sfvo49oa0fspfmvocvedkfucash23d0a.apps.googleusercontent.com"
       },
       "cordova-plugin-whitelist": {},
       "cordova-plugin-device": {},
@@ -91,7 +93,8 @@
       }
     },
     "platforms": [
-      "ios"
+      "ios",
+      "android"
     ]
   }
 }

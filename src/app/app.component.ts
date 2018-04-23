@@ -1,9 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform, Nav, App } from 'ionic-angular';
+import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
-
+//import { TipsPage } from '../pages/tips/tips';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { HomePage } from '../pages/home/home';

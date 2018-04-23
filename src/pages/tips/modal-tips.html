@@ -1,0 +1,17 @@
+<ion-header>
+        <ion-toolbar>
+            <ion-title>Tips</ion-title>
+            <ion-buttons start>
+            <button ion-button color = "black" clear (click)="goBack()">Close</button>
+            </ion-buttons>
+        </ion-toolbar>
+        </ion-header>
+          
+      <ion-content>
+          <ion-list>
+              <ion-item>
+                  <h3>{{t.category}}</h3>
+                  <p>{{t.tip}}</p>
+              </ion-item>
+            </ion-list>
+      </ion-content> 
