@@ -11,7 +11,7 @@ interface User {
   uid: string;
   email: string;
   first_name?: string;
-  last_string?: string;
+  last_name?: string;
   display_name?: string;
   registration_date?: string;
   photo_url?: string;
@@ -77,7 +77,7 @@ export class AuthService {
       uid: user.uid,
       email: user.email,
       first_name: user.first_name || '',
-      last_string: user.last_string || '',
+      last_name: user.last_name || '',
       display_name: user.display_name || '',
       registration_date: user.registration_date || '',
       photo_url: user.photo_url || ''
