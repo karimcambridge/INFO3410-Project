@@ -38,7 +38,7 @@
     "cordova-android": "7.0.0",
     "cordova-browser": "5.0.3",
     "cordova-ios": "4.5.4",
-    "cordova-plugin-calendar": "^5.0.0",
+    "cordova-plugin-calendar": "git+https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-email-composer": "git+https://github.com/katzer/cordova-plugin-email-composer.git",
     "cordova-plugin-firebase": "^1.0.0",
@@ -61,6 +61,7 @@
     "zone.js": "0.8.26"
   },
   "devDependencies": {
+    "@angular/cli": "^1.7.4",
     "@ionic/app-scripts": "^3.1.9",
     "typescript": "~2.6.2"
   },
@@ -85,9 +86,7 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-calendar": {
-        "CALENDAR_USAGE_DESCRIPTION": " "
-      },
+      "cordova-plugin-calendar": {},
       "cordova-plugin-email-composer": {},
       "cordova-plugin-geolocation": {
         "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"

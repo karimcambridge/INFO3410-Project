@@ -1,4 +1,4 @@
-$bkg-color: #d8fccc;
+$bkg-color: #59e929;
 
 .page-home {
     background-color: $bkg-color;
@@ -8,7 +8,6 @@ $bkg-color: #d8fccc;
             size: 12px;
         }
     }
-
 }
 
 .ios, .md {
@@ -23,8 +22,13 @@ $bkg-color: #d8fccc;
         width: 100%;
         height: 100%;
       }
- 
     }
- 
+}
+
+.calendar {
+    #cal {
+        width: 90%;
+        height: 90%;
+    }
 }
 

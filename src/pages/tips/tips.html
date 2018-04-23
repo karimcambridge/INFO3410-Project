@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Tips</ion-title>
+    </ion-navbar>
+</ion-header>
+      
+<ion-content padding class="page-vendor">
+    <ion-list>
+        <ion-list-header>Tips</ion-list-header>
+            <a ion-item (click)="openModal({charNum: 0})">Food Tips</a>
+            <a ion-item (click)="openModal({charNum: 1})">Farming Tips</a>
+            <a ion-item (click)="openModal({charNum: 2})">Jewellery Tips</a>
+            <a ion-item (click)="openModal({charNum: 3})">Body Care Tips</a>
+    </ion-list>
+    <button ion-button color="secondary" (click)="goBack()">Back</button>
+</ion-content>
+      

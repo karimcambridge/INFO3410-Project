@@ -210,10 +210,7 @@ export class ModalContentPage {
   sendEmail() {
     let email = {
       to: 'mygreenapp@gmail.com',
-      cc: '',
-      // attachments: [
-      //   this.currentImage
-      // ],
+      cc: ' ',
       subject: 'Contact Vendor',
       body: ' ',
       isHtml: true

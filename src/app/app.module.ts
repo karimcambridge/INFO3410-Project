@@ -15,12 +15,15 @@ import { VendorPage } from '../pages/vendor/vendor';
 import { VendorFormPage } from '../pages/vendorForm/vendorForm';
 import { ListVendorPage, ModalContentPage } from '../pages/vendorList/vendorList';
 import { TabsPage } from '../pages/tabs/tabs';
+import { TipsPage } from '../pages/tips/tips';
+import { ModalContentPage2 } from '../pages/tips/tips';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Device } from '@ionic-native/device';
 import { EmailComposer } from '@ionic-native/email-composer';
+//import { Calendar } from '@ionic-native/calendar';
 
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
@@ -76,7 +79,9 @@ export class MyErrorHandler implements ErrorHandler {
     TabsPage,
     VendorFormPage,
     ListVendorPage,
-    ModalContentPage
+    ModalContentPage,
+    TipsPage,
+    ModalContentPage2
   ],
   imports: [
     BrowserModule,
@@ -103,7 +108,9 @@ export class MyErrorHandler implements ErrorHandler {
     TabsPage,
     VendorFormPage,
     ListVendorPage,
-    ModalContentPage
+    ModalContentPage,
+    TipsPage,
+    ModalContentPage2
   ],
   providers: [
     StatusBar,
