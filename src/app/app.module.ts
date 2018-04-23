@@ -2,6 +2,7 @@ import { Pro } from '@ionic/pro';
 import { NgModule, ErrorHandler, Injectable, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//import { Routes, RouterModule } from '@angular/router';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { NgxErrorsModule } from '@ultimate/ngxerrors';
 import { MyApp } from './app.component';
@@ -28,10 +29,13 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from './core/auth.service';
+import { CoreModule } from './core/core.module';
+import { AuthGuard } from './core/auth.guard';
 
 import { GooglePlus } from '@ionic-native/google-plus';
 import { CalendarModule } from 'ionic3-calendar-en';
+//import { UserProfileComponent } from './user-profile/user-profile.component';
 
 Pro.init('810dcd48', { // DON'T TOUCH THIS
   appVersion: '0.0.1'
@@ -45,6 +49,10 @@ const firebaseConfig = { // DON'T TOUCH THIS
   storageBucket: "ask-jz.appspot.com",
   messagingSenderId: "778757169371"
 };
+
+/*const routes: Routes = [
+  { path: 'home', component: HomePage,  canActivate: [AuthGuard] },
+];*/
 
 @Injectable() // DON'T TOUCH THIS
 export class MyErrorHandler implements ErrorHandler {
@@ -81,6 +89,7 @@ export class MyErrorHandler implements ErrorHandler {
     ModalContentPage,
     TipsPage,
     ModalContentPage2
+    //UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -92,8 +101,10 @@ export class MyErrorHandler implements ErrorHandler {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    CoreModule,
     NgxErrorsModule,
-    CalendarModule
+    CalendarModule//,
+    //RouterModule.forRoot(routes, {useHash: true})
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -121,7 +132,9 @@ export class MyErrorHandler implements ErrorHandler {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireAuthModule,
     AuthService,
-    EmailComposer
+    AuthGuard,
+    EmailComposer//,
+    //RouterModule
   ]
 })
 export class AppModule {}
