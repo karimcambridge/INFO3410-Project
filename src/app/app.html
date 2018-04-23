@@ -3,22 +3,40 @@
 </div>
 
 <ng-template #guest>
-  <ion-nav-bar class="bar-positive">
-      <ion-nav-buttons side="left">
-        <button class="button button-icon ion-navicon"></button>
-      </ion-nav-buttons>
-      <ion-nav-buttons side="right">
-        <button class="button button-icon ion-search"></button>
-        <button class="button button-icon ion-ios-email"></button>
-        <button class="button button-icon ion-ios-person"></button>
-      </ion-nav-buttons>
-         <h1 class="title"> Main Nav bar</h1>
-      </ion-nav-bar>
-     <ion-header-bar class="bar-balanced bar-subheader">
-        <button class="button button-icon icon ion-chevron-left"></button>
-       <h2 class="title">Sub Header</h2>
-       
-     </ion-header-bar>
+  <ion-header class="head">
+    <ion-list>
+      <ion-title>
+        <a href="/"><img alt="logo" height="40" src="/assets/imgs/GreenMarket.png"></a>ASK-JZ's Green App
+      </ion-title>
+
+      <!--<ion-buttons right>
+        <button ion-item (click)="login()" item-right>
+          <ion-icon item-start name="home"></ion-icon>
+          <span ion-text>HOME</span>
+        </button>
+        <button ion-item (click)="login()" item-right>
+          <ion-icon item-start name="information-circle"></ion-icon>
+          <span ion-text>ABOUT</span>
+        </button>
+        <button ion-item (click)="login()" item-right>
+          <ion-icon item-start name="contacts"></ion-icon>
+          <span ion-text>CONTACT</span>
+        </button>
+        <button ion-item (click)="login()" item-right>
+          <ion-icon item-start name="ios-basket"></ion-icon>
+          <span ion-text>VENDORS</span>
+        </button>
+        <button ion-item (click)="login()" item-right>
+          <ion-icon item-start name="ios-bulb"></ion-icon>
+          <span ion-text>TIPS</span>
+        </button>
+        <button ion-item (click)="login()" item-right>
+          <ion-icon item-start name="log-in"></ion-icon>
+          <span ion-text>Log in</span>
+        </button>
+      </ion-buttons>-->
+    </ion-list>
+  </ion-header>
   <!--<ion-content>
     <ion-tabs tabsPlacement="top">
       <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
