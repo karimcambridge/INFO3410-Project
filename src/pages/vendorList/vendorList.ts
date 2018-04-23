@@ -4,8 +4,8 @@ import { NavController, ModalController, Platform, NavParams, ViewController } f
 import { VendorPage } from '../vendor/vendor';
 
 @Component({
-  selector: 'page-listVendors',
-  templateUrl: 'listVendors.html'
+  selector: 'page-vendorList',
+  templateUrl: 'vendorList.html'
 })
 export class ListVendorPage {
   vendors;
@@ -24,7 +24,7 @@ export class ListVendorPage {
     this.navCtrl.setRoot(VendorPage);
   }
 
-  initializeVendors(){
+  initializeVendors() {
     this.vendors = [
       "Anna Breton",
       "Brittney Chriton",
@@ -207,22 +207,20 @@ export class ModalContentPage {
     this.navCtrl.setRoot(ListVendorPage);
   }
 
+  sendEmail() {
+    let email = {
+      to: 'mygreenapp@gmail.com',
+      cc: '',
+      // attachments: [
+      //   this.currentImage
+      // ],
+      subject: 'Contact Vendor',
+      body: ' ',
+      isHtml: true
+    };
 
-
-sendEmail() {
-  let email = {
-    to: 'mygreenapp@gmail.com',
-    cc: '',
-    // attachments: [
-    //   this.currentImage
-    // ],
-    subject: 'Contact Vendor',
-    body: ' ',
-    isHtml: true
-  };
-
-  this.emailComposer.open(email);
-}
+    this.emailComposer.open(email);
+  }
 }
 
 
