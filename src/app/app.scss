@@ -20,3 +20,13 @@ $bkg-color: green;
 .head {
     background-color: $bkg-color;
 }
+
+.footer {
+	position: fixed;
+}
+
+.button-header {
+  background: none !important;
+  background-color: none !important;
+  box-shadow: none !important;
+}
