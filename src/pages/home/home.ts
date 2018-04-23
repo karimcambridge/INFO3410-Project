@@ -120,7 +120,7 @@ export class HomePage {
       firebase.database().ref('geolocations/'+localStorage.getItem('mykey')).set({
         uuid: uuid,
         latitude: lat,
-        longitude : lng
+        longitude: lng
       });
     } else {
       let newData = this.ref.push();
