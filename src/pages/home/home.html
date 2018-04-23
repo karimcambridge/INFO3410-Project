@@ -14,9 +14,9 @@
       <h6 ion-text>We are situated in St Augustine, Trinidad. Check out our location below!</h6>
       <div #map id="map" style="width:100%; height: 400px;"></div>
     </ion-row>
-
+    <hr>
     <ion-row justify-content-end class="calender">
-      <h3 ion-text>Calendar of Events</h3>
+      <h2 align="left" style="color: green" ion-text>Calendar of Events</h2>
       <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onDaySelect($event)" (onMonthSelect)="onMonthSelect($event)"></ion-calendar>
       <button ion-button (click)="calendar.today()">Jump to Today</button>
     </ion-row>

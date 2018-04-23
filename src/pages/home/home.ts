@@ -5,6 +5,9 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { Device } from '@ionic-native/device';
 import { Observable } from 'rxjs/Observable';
 
+import * as moment from 'moment';
+import * as _ from "lodash";
+
 declare var google: any;
 
 @Component({
@@ -57,11 +60,11 @@ export class HomePage {
     ];
   }
 
-  onDaySelect() {
+  onDaySelect(ev) {
 
   }
 
-  onMonthSelect() {
+  onMonthSelect(ev) {
     
   }
 
@@ -72,8 +75,10 @@ export class HomePage {
           zoom: 15,
           center: mylocation
         });
-      }).catch((error) => {
-        console.log('Error getting location', error);
+      },
+      // Here is the error catching that needs to be added
+      err => {
+           console.log('Error : ' + JSON.stringify(err));
       });
       let watch = this.geolocation.watchPosition();
       watch.subscribe((data) => {
@@ -115,7 +120,7 @@ export class HomePage {
       firebase.database().ref('geolocations/'+localStorage.getItem('mykey')).set({
         uuid: uuid,
         latitude: lat,
-        longitude: lng
+        longitude : lng
       });
     } else {
       let newData = this.ref.push();

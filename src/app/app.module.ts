@@ -24,6 +24,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Device } from '@ionic-native/device';
 import { EmailComposer } from '@ionic-native/email-composer';
+//import { Calendar } from '@ionic-native/calendar';
 
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
