@@ -11,7 +11,7 @@
     </div>
 	
   
-  <div id="segment">
+  <!-- <div id="segment"> -->
         <ion-toolbar no-border-top>
             <ion-segment [(ngModel)]="products">
                 <ion-segment-button value="items">Items</ion-segment-button>
@@ -58,21 +58,21 @@
                 <h2>Handmade Jewellery Set</h2>
                 <button ion-button color="primary" clear (click)="add2Cart()">Add to Cart</button>
             </ion-item>
+            <ion-item>
+                <ion-thumbnail item-start>
+                    <img src="assets/imgs/jewel2.jpg">
+                </ion-thumbnail>
+                <h2>Handmade Jewellery Set</h2>
+                <button ion-button color="primary" clear (click)="add2Cart()">Add to Cart</button>
+            </ion-item>
         </ion-list>
-        <ion-item>
-            <ion-thumbnail item-start>
-                <img src="assets/imgs/jewel2.jpg">
-            </ion-thumbnail>
-            <h2>Handmade Jewellery Set</h2>
-            <button ion-button color="primary" clear (click)="add2Cart()">Add to Cart</button>
-        </ion-item>
     
         <ion-list *ngSwitchCase="'orders'">
             <ion-item>
                 <ion-thumbnail item-start>
                     <img src="assets/imgs/portugal.jpg">
                 </ion-thumbnail>
-                <h2>Luna</h2>
+                <h2>Portugal</h2>
             </ion-item>
         </ion-list>
     
@@ -104,6 +104,6 @@
         </ion-list>
         </div>
     </ion-content>
-  </div>
+  <!-- </div> -->
 </ion-content>
   

@@ -10,7 +10,7 @@ import { ListVendorPage } from '../vendorList/vendorList';
 
 export class VendorPage {
   products: string = "items";
-  isAndroid: boolean = false;
+  isAndroid: boolean = true;
 
   constructor(public navCtrl: NavController,
               platform: Platform) {
@@ -26,7 +26,7 @@ export class VendorPage {
   }
 
   add2Cart() {
-    
+
   }
 
 }
