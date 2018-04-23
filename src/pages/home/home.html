@@ -7,7 +7,7 @@
 <ion-content padding>
   <ion-grid>
     <ion-row justify-content-center>
-      <h2 ion-text>My Green App</h2>
+      <h2 ion-text style="background-color:green;"><font face="Georgia" color="white">My Green App</font></h2>
     </ion-row>
 
     <ion-row justify-content-center>
@@ -15,8 +15,12 @@
       <div #map id="map" style="width:100%; height: 400px;"></div>
     </ion-row>
     <hr>
+    <ion-row justify-content-center>
+      <h4  style="background-color:green;"><font face="Georgia" color="white">Calendar of Events</font></h4>
+    </ion-row>
+
     <ion-row justify-content-end class="calender">
-      <h2 align="left" style="color: green" ion-text>Calendar of Events</h2>
+
       <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onDaySelect($event)" (onMonthSelect)="onMonthSelect($event)"></ion-calendar>
       <button ion-button (click)="calendar.today()">Jump to Today</button>
     </ion-row>
