@@ -15,3 +15,36 @@ $bkg-color: #d8fccc;
     }
 }
 
+.button_1{
+    height: 5%;
+    border:12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    position: absolute;
+    left: 10px;
+}
+
+textarea[type=text]{
+    text-align:left;
+    width: 25%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin:8px;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+}
+
+textarea[type=text]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 15px 0 dodgerBlue;
+}
+
+h3 {
+    position: absolute;
+    left: 50px;
+    top: 170px;
+}

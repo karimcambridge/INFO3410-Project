@@ -1,3 +1,5 @@
+<html>
+  
 <ion-header>
   <ion-navbar>
     <ion-title>
@@ -25,36 +27,25 @@
         </a>
       </ion-item>
   </ion-list>
+  <br><br>
 
   <style>
-    textarea[type=text]{
-      text-align:left;
-      width: 35%;
-      border: 2px solid #aaa;
-      border-radius: 4px;
-      margin:8px;
-      outline:none;
-      padding:8px;
-      box-sizing:border-box;
-      transition:.3s;
-    }
-
-    textarea[type=text]:focus{
-      border-color:dodgerBlue;
-      box-shadow:0 0 15px 0 dodgerBlue;
-    }
-  
+   
+   
   </style>
 
   <div class="dark">
     <h3>How Do You Like Our App? </h3>
     <form id="feedback">
-      <textarea type="text" name="feeback" placeholder="Leave your feedback and comments here." cols="500" rows="5">
+      <textarea id="loll" type="text" name="feeback" placeholder="Leave your feedback and comments here." cols="6" rows="9">
       </textarea>
     </form>
-  </div>
     
+    <!-- <button class="button_1" onclick="myFunction()">Submit</button> -->
+    <button ion-button color="secondary" round (click)="myFunction()" class="button_1">Submit</button>
+  </div>
+ 
 </ion-content>
-
+</html>
 
 
