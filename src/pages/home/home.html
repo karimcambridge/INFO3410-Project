@@ -16,7 +16,7 @@
     </ion-row>
     <hr>
     <ion-row justify-content-end class="calender">
-      <h2 style="color: green" ion-text>Calendar of Events</h2>
+      <h2 align="left" style="color: green" ion-text>Calendar of Events</h2>
       <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onDaySelect($event)" (onMonthSelect)="onMonthSelect($event)"></ion-calendar>
       <button ion-button (click)="calendar.today()">Jump to Today</button>
     </ion-row>
