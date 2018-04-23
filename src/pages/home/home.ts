@@ -1,3 +1,6 @@
+
+//declare var google;
+
 import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Platform, NavController } from 'ionic-angular';
 import * as firebase from 'firebase/app';
@@ -6,6 +9,9 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { Device } from '@ionic-native/device';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
+
+import * as moment from 'moment';
+import * as _ from "lodash";
 
 declare var google: any;
 
@@ -59,11 +65,11 @@ export class HomePage {
     ];
   }
 
-  onDaySelect() {
+  onDaySelect(ev) {
 
   }
 
-  onMonthSelect() {
+  onMonthSelect(ev) {
     
   }
 
@@ -74,8 +80,10 @@ export class HomePage {
           zoom: 15,
           center: mylocation
         });
-      }).catch((error) => {
-        console.log('Error getting location', error);
+      },
+      // Here is the error catching that needs to be added
+      err => {
+           console.log('Error : ' + JSON.stringify(err));
       });
       let watch = this.geolocation.watchPosition();
       watch.subscribe((data) => {
@@ -117,7 +125,7 @@ export class HomePage {
       firebase.database().ref('geolocations/'+localStorage.getItem('mykey')).set({
         uuid: uuid,
         latitude: lat,
-        longitude: lng
+        longitude : lng
       });
     } else {
       let newData = this.ref.push();

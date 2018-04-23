@@ -8,7 +8,6 @@ $bkg-color: #F3F5F2;
             size: 12px;
         }
     }
-
 }
 
 .ios, .md {
@@ -23,8 +22,13 @@ $bkg-color: #F3F5F2;
         width: 100%;
         height: 100%;
       }
- 
     }
- 
+}
+
+.calendar {
+    #cal {
+        width: 90%;
+        height: 90%;
+    }
 }
 
