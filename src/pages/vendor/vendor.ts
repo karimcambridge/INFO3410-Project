@@ -13,11 +13,11 @@ export class VendorPage {
   constructor(public navCtrl: NavController) {
 
   }
-  vendorform() {
+  vendorForm() {
     this.navCtrl.setRoot(VendorFormPage);
   }
 
-  listvendors() {
+  vendorList() {
     this.navCtrl.setRoot(ListVendorPage);
   }
 
