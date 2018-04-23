@@ -4,38 +4,32 @@
 
 <ng-template #guest>
   <ion-header class="head">
-    <ion-list>
+    <ion-navbar>
       <ion-title>
         <a href="/"><img alt="logo" height="40" src="/assets/imgs/GreenMarket.png"></a>ASK-JZ's Green App
       </ion-title>
 
       <ion-buttons right>
         <button ion-button (click)="gotoHomePage()" item-right class="button-header">
-          <ion-icon item-start name="home"></ion-icon>
-          <span ion-text>HOME</span>
+          <ion-icon item-start name="home"> HOME</ion-icon>
         </button>
         <button ion-button (click)="gotoAboutPage()" item-right class="button-header">
-          <ion-icon item-start name="information-circle"></ion-icon>
-          <span ion-text>ABOUT</span>
+          <ion-icon item-start name="information-circle"> ABOUT</ion-icon>
         </button>
         <button ion-button (click)="gotoContactsPage()" item-right class="button-header">
-          <ion-icon item-start name="contacts"></ion-icon>
-          <span ion-text>CONTACT</span>
+          <ion-icon item-start name="contacts"> CONTACT</ion-icon>
         </button>
         <button ion-button (click)="gotoVendorPage()" item-right class="button-header">
-          <ion-icon item-start name="ios-basket"></ion-icon>
-          <span ion-text>VENDORS</span>
+          <ion-icon item-start name="ios-basket"> VENDORS</ion-icon>
         </button>
         <button ion-button (click)="gotoTipsPage()" item-right class="button-header">
-          <ion-icon item-start name="ios-bulb"></ion-icon>
-          <span ion-text>TIPS</span>
+          <ion-icon item-start name="ios-bulb"> TIPS</ion-icon>
         </button>
         <button ion-button (click)="login()" item-right class="button-header">
-          <ion-icon item-start name="log-in"></ion-icon>
-          <span ion-text>Log in</span>
+          <ion-icon item-start name="log-in"> LOG IN</ion-icon>
         </button>
       </ion-buttons>
-    </ion-list>
+    </ion-navbar>
   </ion-header>
   <!--<ion-content>
     <ion-tabs tabsPlacement="top">
