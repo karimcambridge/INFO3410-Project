@@ -12,8 +12,11 @@
         <a href="/"><img alt="logo" height="40" src="/assets/imgs/GreenMarket.png"></a>ASK-JZ's Green App
       </ion-title>
       <ion-buttons right>
+        <button ion-button (click)="gotoHomePage()" item-right>
+          <span ion-text>HOME</span>
+        </button>
         <button ion-button (click)="login()" item-right>
-          <ion-icon name="log-in" item-right></ion-icon> Log in
+          <span ion-text>Log in</span>
         </button>
       </ion-buttons>
     </ion-navbar>
@@ -29,8 +32,11 @@
       </ion-title>
         <!--<ion-list-header *ngIf="auth.getEmail()">{{auth.getEmail()}}</ion-list-header>-->
         <ion-buttons right>
+          <button ion-button (click)="gotoHomePage()" item-right>
+            <span ion-text>HOME</span>
+          </button>
           <button ion-button (click)="logout()" item-right>
-            <ion-icon name="log-out" item-right></ion-icon> Log out
+            <span ion-text>Log out</span>
           </button>
       </ion-buttons>
     </ion-navbar>
