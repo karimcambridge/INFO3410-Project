@@ -71,7 +71,10 @@ export class LoginPage {
   async webGoogleLogin(): Promise<void> {
     try {
       const provider = new firebase.auth.GoogleAuthProvider();
-      await this.afAuth.auth.signInWithPopup(provider); // const credential = 
+      await this.afAuth.auth.signInWithPopup(provider) // const credential = 
+	      .then((credential) => {
+	        () => this.navCtrl.setRoot(HomePage)
+	      });
       
     } catch(err) {
       console.log(err)

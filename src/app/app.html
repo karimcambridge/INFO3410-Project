@@ -1,23 +1,38 @@
+<div *ngIf="auth.user | async; then authenticated else guest">
+        <!-- template will replace this div -->
+</div>
+
 <ion-nav [root]="rootPage" #nav swipeBackEnabled="false"></ion-nav>
 
-<ion-header class="head">
+
+<ng-template #guest>
+  <ion-header class="head">
     <ion-navbar>
-        <ion-title>
-        	<img alt="logo" height="40" src="/assets/imgs/GreenMarket.png">ASK-JZ's Green App
-        </ion-title>
-	    <!--<ion-list-header *ngIf="auth.getEmail()">{{auth.getEmail()}}</ion-list-header>-->
-	    <ion-buttons right>
-			<button ion-button (click)="logout()" *ngIf="auth.authenticated" item-right>
-				<ion-icon name="log-out" item-right></ion-icon> Log out
-			</button>
-
-			<button ion-button (click)="login()" *ngIf="!auth.authenticated" item-right>
-				<ion-icon name="log-in" item-right></ion-icon> Log in
-			</button>
-
-			<!--<button ion-button color="danger" (click)="gotoHomePage()" *ngIf="!auth.authenticated" item-right>
-				<ion-icon name="log-in" item-right></ion-icon> Go Back
-			</button>-->
-		</ion-buttons>
+      <ion-title>
+        <img alt="logo" height="40" src="/assets/imgs/GreenMarket.png">ASK-JZ's Green App
+      </ion-title>
+      <ion-buttons right>
+        <button ion-button (click)="login()" item-right>
+          <ion-icon name="log-in" item-right></ion-icon> Log in
+        </button>
+      </ion-buttons>
     </ion-navbar>
-</ion-header>
+  </ion-header>
+</ng-template>
+
+<!-- User logged in -->
+<ng-template #authenticated>
+  <ion-header class="head">
+    <ion-navbar>
+      <ion-title>
+        <img alt="logo" height="40" src="/assets/imgs/GreenMarket.png">ASK-JZ's Green App
+      </ion-title>
+        <!--<ion-list-header *ngIf="auth.getEmail()">{{auth.getEmail()}}</ion-list-header>-->
+        <ion-buttons right>
+          <button ion-button (click)="logout()" item-right>
+            <ion-icon name="log-out" item-right></ion-icon> Log out
+          </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+</ng-template>
