@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Platform } from 'ionic-angular';
 import { VendorFormPage } from '../vendorForm/vendorForm';
 import { ListVendorPage } from '../vendorList/vendorList';
 
@@ -9,8 +9,12 @@ import { ListVendorPage } from '../vendorList/vendorList';
 })
 
 export class VendorPage {
+  products: string = "items";
+  isAndroid: boolean = false;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,
+              platform: Platform) {
+      this.isAndroid = platform.is('android');
 
   }
   vendorForm() {
@@ -21,4 +25,10 @@ export class VendorPage {
     this.navCtrl.setRoot(ListVendorPage);
   }
 
+  add2Cart() {
+    
+  }
+
 }
+
+
