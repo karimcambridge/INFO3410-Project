@@ -5,9 +5,6 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { Device } from '@ionic-native/device';
 import { Observable } from 'rxjs/Observable';
 
-import * as moment from 'moment';
-import * as _ from "lodash";
-
 declare var google: any;
 
 @Component({
