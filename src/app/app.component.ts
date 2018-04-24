@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthService } from './core/auth.service';
 
+import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home'
 import { AboutPage } from '../pages/about/about';
@@ -15,15 +16,8 @@ import { TipsPage } from '../pages/tips/tips';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = TabsPage;
   @ViewChild(Nav) nav: Nav;
-
-  tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
-  tab4Root = VendorPage;
-  tab5Root = TipsPage;
-
   //tabsPlacement: string = 'bottom';
   tabsLayout: string = 'icon-top';
 
