@@ -21,15 +21,19 @@ export class MyApp {
   //tabsPlacement: string = 'bottom';
   tabsLayout: string = 'icon-top';
 
-  constructor(private platform: Platform,
-              private statusBar: StatusBar,
-              splashScreen: SplashScreen,
+  constructor(public platform: Platform,
+              public statusBar: StatusBar,
+              public splashScreen: SplashScreen,
               private auth: AuthService) {
-    platform.ready().then(() => {
+    this.initializeApp();
+  }
+
+  initializeApp() {
+    this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available. Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
-      if(!platform.is('mobile')) {
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
+      if(!this.platform.is('mobile')) {
         //this.tabsPlacement = 'top';
         this.tabsLayout = 'icon-left';
       }

@@ -6,13 +6,6 @@ import { ContactPage } from '../contact/contact';
 import { VendorPage } from '../vendor/vendor';
 import { TipsPage } from '../tips/tips';
 
-/**
- * Generated class for the TabsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-tabs',
@@ -26,12 +19,7 @@ export class TabsPage {
   tab4Root = VendorPage;
   tab5Root = TipsPage;
 
-
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TabsPage');
   }
 
 }
