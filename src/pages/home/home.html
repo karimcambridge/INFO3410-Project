@@ -1,6 +1,16 @@
+<div *ngIf="user | async; then authenticated else guest">
+        <!-- template will replace this div -->
+</div>
 <ion-header>
   <ion-navbar>
     <ion-title>My Green App</ion-title>
+    <ng-template #guest>
+      <ion-buttons start>
+      <button ion-button (click)="login()" item-right class="button-header">
+          <ion-icon item-start name="log-in"> LOG IN</ion-icon>
+        </button>
+      </ion-buttons>
+    </ng-template>
   </ion-navbar>
 </ion-header>
 

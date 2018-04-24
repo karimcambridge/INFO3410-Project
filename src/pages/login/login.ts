@@ -13,44 +13,44 @@ import { AngularFireAuth } from 'angularfire2/auth';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-	loginForm: FormGroup;
-	loginError: string;
+  loginForm: FormGroup;
+  loginError: string;
 
-	constructor(
-				private navCtrl: NavController,
-				private auth: AuthService,
-				private afAuth: AngularFireAuth,
-        		private gplus: GooglePlus,
-        		private platform: Platform,
-				fb: FormBuilder
-	) {
-		this.loginForm = fb.group({
-			email: ['', Validators.compose([Validators.required, Validators.email])],
-			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
-		});
-	}
+  constructor(
+        private navCtrl: NavController,
+        private auth: AuthService,
+        private afAuth: AngularFireAuth,
+        private gplus: GooglePlus,
+        private platform: Platform,
+        fb: FormBuilder
+  ) {
+    this.loginForm = fb.group({
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
+    });
+  }
 
-	signUpPage(): void {
-	  this.navCtrl.push(SignupPage);
-	}
+  signUpPage(): void {
+    this.navCtrl.push(SignupPage);
+  }
 
-	login() {
-		let data = this.loginForm.value;
+  login() {
+    let data = this.loginForm.value;
 
-		if (!data.email) {
-			return;
-		}
+    if(!data.email) {
+      return;
+    }
 
-		let credentials = {
-			email: data.email,
-			password: data.password
-		};
-		this.auth.signInWithEmail(credentials)
-			.then(
-				() => this.navCtrl.setRoot(HomePage),
-				error => this.loginError = error.message
-			);
-	}
+    let credentials = {
+      email: data.email,
+      password: data.password
+    };
+    this.auth.signInWithEmail(credentials)
+      .then(
+        () => this.navCtrl.setRoot(HomePage),
+        error => this.loginError = error.message
+      );
+  }
 
   async nativeGoogleLogin(): Promise<void> {
     try {
@@ -72,9 +72,9 @@ export class LoginPage {
     try {
       const provider = new firebase.auth.GoogleAuthProvider();
       await this.afAuth.auth.signInWithPopup(provider) // const credential = 
-	      .then((credential) => {
-	        () => this.navCtrl.setRoot(HomePage)
-	      });
+        .then((credential) => {
+          () => this.navCtrl.setRoot(HomePage)
+        });
       
     } catch(err) {
       console.log(err)

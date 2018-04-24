@@ -1,9 +1,6 @@
-<!--<div *ngIf="auth.user | async; then authenticated else guest"> -->
-        <!-- template will replace this div -->
-<!--</div> -->
 <ion-nav [root]="rootPage"></ion-nav>
 
-<ion-tabs [tabsPlacement]="tabsPlacement" [tabsLayout]="tabsLayout">
+<ion-tabs [tabsPlacement]="tabsPlacement" [tabsLayout]="tabsLayout" selectedIndex=0>
   <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
   <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
   <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
