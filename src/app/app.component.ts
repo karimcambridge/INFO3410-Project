@@ -24,7 +24,7 @@ export class MyApp {
   tab4Root = VendorPage;
   tab5Root = TipsPage;
 
-  tabsPlacement: string = 'bottom';
+  //tabsPlacement: string = 'bottom';
   tabsLayout: string = 'icon-top';
 
   constructor(private platform: Platform, private statusBar: StatusBar, splashScreen: SplashScreen, private auth: AuthService) {
@@ -33,10 +33,9 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
       if(!platform.is('mobile')) {
-        this.tabsPlacement = 'top';
+        //this.tabsPlacement = 'top';
         this.tabsLayout = 'icon-left';
       }
-      console.log(this.tabsPlacement);
     });
   }
 

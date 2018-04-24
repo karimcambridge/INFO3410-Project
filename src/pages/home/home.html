@@ -1,3 +1,5 @@
+<ion-nav [root]="rootPage"></ion-nav>
+
 <div *ngIf="user | async; then authenticated else guest">
         <!-- template will replace this div -->
 </div>
@@ -12,7 +14,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="page-home">
+<ion-content padding class="page-home" overflow-scroll="true">
   <ion-grid>
     <ion-row justify-content-center>
       <h6 ion-text text-center>We are situated in St Augustine, Trinidad. Check out our location below!</h6>
