@@ -220,7 +220,7 @@ export class ModalContentPage {
 
   sendEmail() {
     let email = {
-      to: 'mygreenapp@gmail.com',
+      to: 'vendor@example.com',
       cc: ' ',
       subject: 'Contact Vendor',
       body: ' ',
