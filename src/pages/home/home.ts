@@ -58,7 +58,7 @@ export class HomePage {
     ];
   }
 
-  gotoLoginPage(): void {
+  gotoLoginPage() {
     this.navCtrl.push(LoginPage);
   }
 
