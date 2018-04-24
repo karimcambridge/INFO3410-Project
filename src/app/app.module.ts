@@ -27,6 +27,7 @@ import { EmailComposer } from '@ionic-native/email-composer';
 
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
+
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './core/auth.service';
