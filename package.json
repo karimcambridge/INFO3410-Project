@@ -69,7 +69,6 @@
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
-      "cordova-plugin-firebase": {},
       "cordova-plugin-ionic": {
         "APP_ID": "810dcd48",
         "CHANNEL_NAME": "Production",
@@ -78,6 +77,9 @@
         "UPDATE_API": "https://api.ionicjs.com",
         "MAX_STORE": "2"
       },
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-firebase": {},
       "cordova-plugin-googleplus": {
         "REVERSED_CLIENT_ID": "com.googleusercontent.apps.778757169371-rroareinqt09clopvolt72mmn9ffe3jc",
         "WEB_APPLICATION_CLIENT_ID": "778757169371-sfvo49oa0fspfmvocvedkfucash23d0a.apps.googleusercontent.com"
@@ -85,8 +87,6 @@
       "cordova-plugin-whitelist": {},
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
-      "cordova-plugin-ionic-webview": {},
-      "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-calendar": {},
       "cordova-plugin-email-composer": {},
       "cordova-plugin-geolocation": {
