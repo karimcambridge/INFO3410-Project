@@ -31,10 +31,21 @@ export class HomePage {
               private afAuth: AngularFireAuth,
               private authService: AuthService) {
     this.isLoggedIn = authService.authenticated();
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if(user) {
+        this.isLoggedIn = false;
+      } else {
+        this.isLoggedIn = false;
+      }
+    });
+
     console.log("is logged in: " + this.isLoggedIn);
+
     platform.ready().then(() => {
       this.initMap();
     });
+
     this.ref.on('value', resp => {
       this.deleteMarkers();
       snapshotToArray(resp).forEach(data => {
@@ -51,6 +62,7 @@ export class HomePage {
         }
       });
     });
+
     this.currentEvents = [
       {
         year: 2018,

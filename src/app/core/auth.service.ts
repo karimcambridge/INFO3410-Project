@@ -19,7 +19,8 @@ interface User {
 
 @Injectable()
 export class AuthService {
-	user: Observable<User>; //private user: firebase.User;
+	user: Observable<User>;
+  private userDetails: firebase.User;
 
 	constructor(public afAuth: AngularFireAuth,
               private afs: AngularFirestore) {
@@ -32,6 +33,10 @@ export class AuthService {
         }
     })
 	}
+
+  //isLoggedIn(): boolean {
+  //  return this.userDetails.currentUser != null;
+  //}
 
   authenticated(): boolean {
     return this.afAuth.authState.pipe(first()) !== Observable.of(null);
