@@ -35,7 +35,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './core/auth.service';
 import { CoreModule } from './core/core.module';
 import { AuthGuard } from './core/auth.guard';
-
+import { Component, ViewChild } from '@angular/core';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { CalendarModule } from 'ionic3-calendar-en';
 //import { UserProfileComponent } from './user-profile/user-profile.component';
