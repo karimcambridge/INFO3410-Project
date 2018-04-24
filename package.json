@@ -68,7 +68,7 @@
     "@ionic/app-scripts": "^3.1.9",
     "typescript": "^2.8.3"
   },
-  "description": "An Ionic project",
+  "description": "An Ionic based project for the ASK-JZ team",
   "cordova": {
     "plugins": {
       "cordova-plugin-ionic": {
