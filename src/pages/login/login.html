@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-    <form (ngSubmit)="login()" [formGroup]="loginForm">
+    <form (ngSubmit)="authService.login()" [formGroup]="authService.loginForm">
         <ion-list inset>
 
             <ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched', 'dirty']) }">
@@ -42,7 +42,7 @@
             </div>
 
             <ion-list>
-                <button ion-button icon-left block clear (click)="googleLogin()">
+                <button ion-button icon-left block clear (click)="authService.googleLogin()">
                     <ion-icon name="logo-google"></ion-icon>
                     Log in with Google
                 </button>

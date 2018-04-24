@@ -6,7 +6,7 @@ import { AuthService } from './core/auth.service';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
-import { HomePage } from '../pages/home/home'
+import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { VendorPage } from '../pages/vendor/vendor';

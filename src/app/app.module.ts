@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { Routes, RouterModule } from '@angular/router';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, Nav } from 'ionic-angular';
 import { NgxErrorsModule } from '@ultimate/ngxerrors';
 import { MyApp } from './app.component';
 
@@ -82,6 +82,7 @@ export class MyErrorHandler implements ErrorHandler {
     TabsPage,
     LoginPage,
     SignupPage,
+    AccountPage,
     HomePage,
     AboutPage,
     ContactPage,
@@ -90,8 +91,7 @@ export class MyErrorHandler implements ErrorHandler {
     ListVendorPage,
     ModalContentPage,
     TipsPage,
-    ModalContentPage2,
-    AccountPage
+    ModalContentPage2
   ],
   imports: [
     BrowserModule,
@@ -114,6 +114,7 @@ export class MyErrorHandler implements ErrorHandler {
     TabsPage,
     LoginPage,
     SignupPage,
+    AccountPage,
     HomePage,
     AboutPage,
     ContactPage,
@@ -122,14 +123,14 @@ export class MyErrorHandler implements ErrorHandler {
     ListVendorPage,
     ModalContentPage,
     TipsPage,
-    ModalContentPage2,
-    AccountPage
+    ModalContentPage2
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Geolocation,
     Device,
+    Nav,
     GooglePlus,
     IonicErrorHandler,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
