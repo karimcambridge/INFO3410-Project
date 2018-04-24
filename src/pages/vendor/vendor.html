@@ -10,6 +10,19 @@
         <button ion-button  color="secondary" (click)="vendorList()">List Vendors</button>
     </div>
 	
+<<<<<<< HEAD
+  
+    <ion-toolbar no-border-top>
+        <ion-segment [(ngModel)]="products">
+            <ion-segment-button value="items">Items</ion-segment-button>
+        <ion-segment-button value="orders">Orders</ion-segment-button>
+        <ion-segment-button icon-only value="cart">
+            <ion-badge *ngIf="itemsInCart.length" [@cartBadge]="cartBadgeState">{{itemsInCart.length}}</ion-badge>
+            <ion-icon [@cartBadge]="cartBadgeState" name="cart"></ion-icon>
+        </ion-segment-button>
+    </ion-segment>
+    </ion-toolbar>
+=======
   <!-- <div id="segment"> -->
         <ion-toolbar no-border-top>
             <ion-segment [(ngModel)]="products">
@@ -18,91 +31,93 @@
             <ion-segment-button value="cart">Cart</ion-segment-button>
         </ion-segment>
         </ion-toolbar>
+>>>>>>> 026d7bedf700dde292d315b30a6698946ff43ebd
     
     <ion-content id="product">
-        <div [ngSwitch]="products">
-        <ion-list *ngSwitchCase="'items'">
-            <ion-item>
-            <ion-thumbnail item-start>
-                <img src="assets/imgs/guava.jpg">
-            </ion-thumbnail>
-            <h2>Guava</h2>
-            <button ion-button color="primary" clear (click)="add2Cart()">Add to Cart</button>
-            </ion-item>
-            <ion-item>
-            <ion-thumbnail item-start>
-                <img src="assets/imgs/watermelon.jpg">
-            </ion-thumbnail>
-            <h2>Watermelon</h2>
-            <button ion-button color="primary" clear (click)="add2Cart()">Add to Cart</button>
-            </ion-item>
-            <ion-item>
-            <ion-thumbnail item-start>
-                <img src="assets/imgs/ginnip.jpg">
-            </ion-thumbnail>
-            <h2>Ginnip</h2>
-            <button ion-button color="primary" clear (click)="add2Cart()">Add to Cart</button>
-            </ion-item>
-            <ion-item>
-            <ion-thumbnail item-start>
-                <img src="assets/imgs/portugal.jpg">
-            </ion-thumbnail>
-            <h2>Portugal</h2>
-            <button ion-button color="primary" clear (click)="add2Cart()">Add to Cart</button>
-            </ion-item>
-            <ion-item>
+        <ion-card *ngFor="let item of items">
+            <div [ngSwitch]="products">
+            <ion-list *ngSwitchCase="'items'">
+                <ion-item>
                 <ion-thumbnail item-start>
-                    <img src="assets/imgs/jewel1.jpg">
+                    <img src="assets/imgs/guava.jpg">
                 </ion-thumbnail>
-                <h2>Handmade Jewellery Set</h2>
-                <button ion-button color="primary" clear (click)="add2Cart()">Add to Cart</button>
-            </ion-item>
-            <ion-item>
+                <h2>Guava</h2>
+                <button (click)="addToCart(item)" ion-button icon-left small> 
+                    <ion-icon name="add"></ion-icon>Add to Cart
+                </button>
+                </ion-item>
+
+                <ion-item>
                 <ion-thumbnail item-start>
-                    <img src="assets/imgs/jewel2.jpg">
+                    <img src="assets/imgs/watermelon.jpg">
                 </ion-thumbnail>
-                <h2>Handmade Jewellery Set</h2>
-                <button ion-button color="primary" clear (click)="add2Cart()">Add to Cart</button>
-            </ion-item>
-        </ion-list>
-    
-        <ion-list *ngSwitchCase="'orders'">
-            <ion-item>
+                <h2>Watermelon</h2>
+                <button (click)="addToCart(item)" ion-button icon-left small> 
+                    <ion-icon name="add"></ion-icon>Add to Cart
+                </button>
+                </ion-item>
+
+                <ion-item>
+                <ion-thumbnail item-start>
+                    <img src="assets/imgs/ginnip.jpg">
+                </ion-thumbnail>
+                <h2>Ginnip</h2>
+                <button (click)="addToCart(item)" ion-button icon-left small>
+                    <ion-icon name="add"></ion-icon>Add to Cart
+                </button>
+                </ion-item>
+
+                <ion-item>
                 <ion-thumbnail item-start>
                     <img src="assets/imgs/portugal.jpg">
                 </ion-thumbnail>
                 <h2>Portugal</h2>
-            </ion-item>
-        </ion-list>
-    
-        <ion-list *ngSwitchCase="'cart'">
-            <ion-item>
-            <ion-thumbnail item-start>
-                <img src="assets/img/thumbnail-duckling-1.jpg">
-            </ion-thumbnail>
-            <h2>Daffy</h2>
-            </ion-item>
-            <ion-item>
-            <ion-thumbnail item-start>
-                <img src="assets/img/thumbnail-duckling-2.jpg">
-            </ion-thumbnail>
-            <h2>Huey</h2>
-            </ion-item>
-            <ion-item>
-            <ion-thumbnail item-start>
-                <img src="assets/img/thumbnail-duckling-3.jpg">
-            </ion-thumbnail>
-            <h2>Dewey</h2>
-            </ion-item>
-            <ion-item>
-            <ion-thumbnail item-start>
-                <img src="assets/img/thumbnail-duckling-4.jpg">
-            </ion-thumbnail>
-            <h2>Louie</h2>
-            </ion-item>
-        </ion-list>
-    </div>
+                <button (click)="addToCart(item)" ion-button icon-left small> 
+                    <ion-icon name="add"></ion-icon>Add to Cart
+                </button>
+                </ion-item>
+
+                <ion-item>
+                    <ion-thumbnail item-start>
+                        <img src="assets/imgs/jewel1.jpg">
+                    </ion-thumbnail>
+                    <h2>Handmade Jewellery Set</h2>
+                    <button (click)="addToCart(item)" ion-button icon-left small> 
+                        <ion-icon name="add"></ion-icon>Add to Cart 
+                    </button>
+                </ion-item>
+
+                <ion-item>
+                    <ion-thumbnail item-start>
+                        <img src="assets/imgs/jewel2.jpg">
+                    </ion-thumbnail>
+                    <h2>Handmade Jewellery Set</h2>
+                    <button (click)="addToCart(item)" ion-button icon-left small>
+                        <ion-icon name="add"></ion-icon>Add to Cart 
+                    </button>
+                </ion-item>
+            </ion-list>
+        
+            <ion-list *ngSwitchCase="'orders'">
+                <ion-item>
+                    <ion-thumbnail item-start>
+                        <img src="assets/imgs/portugal.jpg">
+                    </ion-thumbnail>
+                    <h2>Portugal</h2>
+                    <p>Order Date</p>
+                </ion-item>
+            </ion-list>
+        
+            <ion-list *ngSwitchCase="'cart'">
+                <ion-item>
+                <ion-thumbnail item-start>
+                    <img src="assets/img/thumbnail-duckling-1.jpg">
+                </ion-thumbnail>
+                <h2>Daffy</h2>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-card>
     </ion-content>
-  <!-- </div> -->
 </ion-content>
   
