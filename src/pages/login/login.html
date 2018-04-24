@@ -18,6 +18,7 @@
 		<ion-list inset>
 
 			<ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched', 'dirty']) }">
+				<ion-label floating>Email</ion-label>
 				<ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
 			</ion-item>
 
@@ -26,6 +27,7 @@
 			</div>
 
 			<ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
+				<ion-label floating>Password</ion-label>
 				<ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
 			</ion-item>
 

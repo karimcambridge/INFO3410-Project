@@ -4,6 +4,7 @@ import * as firebase from 'firebase/app';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Device } from '@ionic-native/device';
 import { Observable } from 'rxjs/Observable';
+import { LoginPage } from '../login/login';
 
 declare var google: any;
 
@@ -55,6 +56,10 @@ export class HomePage {
             date: 16
         }
     ];
+  }
+
+  gotoLoginPage(): void {
+    this.navCtrl.push(LoginPage);
   }
 
   onDaySelect(ev) {
