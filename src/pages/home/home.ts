@@ -6,7 +6,6 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { Device } from '@ionic-native/device';
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../../app/core/auth.service';
-import { LoginPage } from '../login/login';
 
 declare var google: any;
 
@@ -71,15 +70,6 @@ export class HomePage {
         date: 16
       }
     ];
-  }
-
-  gotoLoginPage() {
-    this.navCtrl.push(LoginPage);
-  }
-
-  logout() {
-    this.authService.signOut();
-    this.navCtrl.setRoot(HomePage);
   }
 
   onDaySelect(ev) {
