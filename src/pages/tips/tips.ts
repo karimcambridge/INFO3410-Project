@@ -83,32 +83,36 @@ export class ModalContentPage2 {
             category: 'Food',
             tip: [
                 { quote: 'Boil Cassava for 15 minutes.' },
-                { quote: 'Body lotions'},
-                { quote: 'Face Moisturizer' }
+                { quote: 'For rich, creamy dressings made healthy, substitute half the mayo with Greek-style yogurt.'},
+                { quote: 'When chopping herbs, toss a little salt onto the cutting board; it will keep the herbs from flying around.' },
+                { quote: 'For best results when baking, leave butter and eggs at room temperature overnight.' }
             ]
         },
         {
             category: 'Farming',
             tip: [
                 { quote: 'Watermelons need to be watered everyday' },
-                { quote: 'Body lotions'},
-                { quote: 'Face Moisturizer' }
+                { quote: 'Repect animals and ensure they are in good health.'},
+                { quote: 'Crop rotation is important to reduce pressure from insects, weeds, while supplementing nutrients in the soil.'},
+                { quote: 'Use organic fertilizer to promote healthy soil and crops.' }
             ]
         },
         {
             category: 'Jewellery',
             tip: [
                 { quote: 'Bend the wire at the end of the bracelet so that the beads do not fall off!' },
-                { quote: 'Body lotions'},
-                { quote: 'Face Moisturizer' }
+                { quote: 'Use a bead board to make your designs.'},
+                { quote: 'Always use fireline with crystals.'},
+                { quote: 'Use strong quality jump rings that can stand constant use and weight.' }
             ]
         },
         {
             category: 'Body Care',
             tip: [
                 { quote: 'Grade A organic shea butter is the best for making body lotion!' },
-                { quote: 'Body lotions'},
-                { quote: 'Face Moisturizer' }
+                { quote: 'Use chilled tea bags to eliminate tired puffy eyes.'},
+                { quote: 'Use papaya masks to remove dead skin and revitalize face.'},
+                { quote: 'Use rasberries and coconut oil for brighter lips.' }
             ]
         }
 
