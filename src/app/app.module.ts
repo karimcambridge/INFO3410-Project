@@ -8,6 +8,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { NgxErrorsModule } from '@ultimate/ngxerrors';
 import { MyApp } from './app.component';
 
+import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { HomePage } from '../pages/home/home';
@@ -79,6 +80,7 @@ export class MyErrorHandler implements ErrorHandler {
 @NgModule({
   declarations: [
     MyApp,
+    TabsPage,
     LoginPage,
     SignupPage,
     HomePage,
@@ -111,6 +113,7 @@ export class MyErrorHandler implements ErrorHandler {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    TabsPage,
     LoginPage,
     SignupPage,
     HomePage,
