@@ -19,6 +19,7 @@ import { VendorFormPage } from '../pages/vendorForm/vendorForm';
 import { ListVendorPage, ModalContentPage } from '../pages/vendorList/vendorList';
 import { TipsPage } from '../pages/tips/tips';
 import { ModalContentPage2 } from '../pages/tips/tips';
+import { AccountPage } from '../pages/account/account';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -38,7 +39,6 @@ import { AuthGuard } from './core/auth.guard';
 
 import { GooglePlus } from '@ionic-native/google-plus';
 import { CalendarModule } from 'ionic3-calendar-en';
-//import { UserProfileComponent } from './user-profile/user-profile.component';
 
 Pro.init('810dcd48', { // DON'T TOUCH THIS
   appVersion: '0.0.1'
@@ -65,8 +65,7 @@ export class MyErrorHandler implements ErrorHandler {
     try {
       this.ionicErrorHandler = injector.get(IonicErrorHandler);
     } catch(e) {
-      // Unable to get the IonicErrorHandler provider, ensure
-      // IonicErrorHandler has been added to the providers list below
+      // Unable to get the IonicErrorHandler provider, ensure IonicErrorHandler has been added to the providers list below
     }
   }
 
@@ -91,8 +90,8 @@ export class MyErrorHandler implements ErrorHandler {
     ListVendorPage,
     ModalContentPage,
     TipsPage,
-    ModalContentPage2
-    //UserProfileComponent
+    ModalContentPage2,
+    AccountPage
   ],
   imports: [
     BrowserModule,
@@ -104,7 +103,6 @@ export class MyErrorHandler implements ErrorHandler {
     AngularFireModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule,
     CoreModule,
     NgxErrorsModule,
     CalendarModule//,
@@ -124,7 +122,8 @@ export class MyErrorHandler implements ErrorHandler {
     ListVendorPage,
     ModalContentPage,
     TipsPage,
-    ModalContentPage2
+    ModalContentPage2,
+    AccountPage
   ],
   providers: [
     StatusBar,
