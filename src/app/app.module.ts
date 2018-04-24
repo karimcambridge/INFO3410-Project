@@ -16,7 +16,6 @@ import { ContactPage } from '../pages/contact/contact';
 import { VendorPage } from '../pages/vendor/vendor';
 import { VendorFormPage } from '../pages/vendorForm/vendorForm';
 import { ListVendorPage, ModalContentPage } from '../pages/vendorList/vendorList';
-import { TabsPage } from '../pages/tabs/tabs';
 import { TipsPage } from '../pages/tips/tips';
 import { ModalContentPage2 } from '../pages/tips/tips';
 
@@ -85,7 +84,6 @@ export class MyErrorHandler implements ErrorHandler {
     AboutPage,
     ContactPage,
     VendorPage,
-    TabsPage,
     VendorFormPage,
     ListVendorPage,
     ModalContentPage,
@@ -118,7 +116,6 @@ export class MyErrorHandler implements ErrorHandler {
     AboutPage,
     ContactPage,
     VendorPage,
-    TabsPage,
     VendorFormPage,
     ListVendorPage,
     ModalContentPage,

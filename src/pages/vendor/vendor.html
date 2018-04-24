@@ -10,6 +10,7 @@
         <button ion-button  color="secondary" (click)="vendorList()">List Vendors</button>
     </div>
 	
+<<<<<<< HEAD
   
     <ion-toolbar no-border-top>
         <ion-segment [(ngModel)]="products">
@@ -21,6 +22,16 @@
         </ion-segment-button>
     </ion-segment>
     </ion-toolbar>
+=======
+  <!-- <div id="segment"> -->
+        <ion-toolbar no-border-top>
+            <ion-segment [(ngModel)]="products">
+                <ion-segment-button value="items">Items</ion-segment-button>
+            <ion-segment-button value="orders">Orders</ion-segment-button>
+            <ion-segment-button value="cart">Cart</ion-segment-button>
+        </ion-segment>
+        </ion-toolbar>
+>>>>>>> 026d7bedf700dde292d315b30a6698946ff43ebd
     
     <ion-content id="product">
         <ion-card *ngFor="let item of items">

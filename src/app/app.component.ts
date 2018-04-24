@@ -2,18 +2,20 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { LoginPage } from '../pages/login/login';
-//import { TipsPage } from '../pages/tips/tips';
-import { TabsPage } from '../pages/tabs/tabs';
-
-import { HomePage } from '../pages/home/home';
 import { AuthService } from './core/auth.service';
+
+import { LoginPage } from '../pages/login/login';
+import { HomePage } from '../pages/home/home'
+import { AboutPage } from '../pages/about/about';
+import { ContactPage } from '../pages/contact/contact';
+import { VendorPage } from '../pages/vendor/vendor';
+import { TipsPage } from '../pages/tips/tips';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  rootPage:any = HomePage;
   @ViewChild(Nav) nav: Nav;
 
   constructor(private platform: Platform, private statusBar: StatusBar, splashScreen: SplashScreen, private auth: AuthService) {
@@ -37,5 +39,21 @@ export class MyApp {
 
   gotoHomePage() {
     this.nav.setRoot(HomePage);
+  }
+
+  gotoAboutPage() {
+    this.nav.setRoot(AboutPage);
+  }
+
+  gotoContactsPage() {
+    this.nav.setRoot(ContactPage);
+  }
+
+  gotoVendorPage() {
+    this.nav.setRoot(VendorPage);
+  }
+
+  gotoTipsPage() {
+    this.nav.setRoot(TipsPage);
   }
 }
