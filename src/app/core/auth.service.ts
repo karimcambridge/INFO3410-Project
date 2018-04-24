@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 //import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Platform, App } from 'ionic-angular';
+import { Platform } from 'ionic-angular';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
@@ -9,7 +9,6 @@ import { Observable } from 'rxjs/Observable';
 import { GooglePlus } from '@ionic-native/google-plus';
 //import { first } from 'rxjs/operators';
 import 'rxjs/add/operator/switchMap';
-import { HomePage } from '../../pages/home/home';
 
 interface User {
   uid: string;
@@ -28,10 +27,8 @@ export class AuthService {
   isLoggedIn: boolean = false;
   loginForm: FormGroup;
   loginError: string;
-  navCtrl = this.app.getActiveNav();
 
-	constructor(private app: App,
-              private platform: Platform,
+	constructor(private platform: Platform,
               private afAuth: AngularFireAuth,
               private afs: AngularFirestore,
               private gplus: GooglePlus,
@@ -91,10 +88,10 @@ export class AuthService {
       password: data.password
     };
     this.signInWithEmail(credentials)
-      //.then(
-      //  () => this.navCtrl.setRoot(HomePage),
-      //  error => this.loginError = error.message
-      //);
+      /*.then(
+        () => this.navCtrl.setRoot(HomePage),
+        error => this.loginError = error.message
+      );*/
   }
 
   async nativeGoogleLogin(): Promise<void> {

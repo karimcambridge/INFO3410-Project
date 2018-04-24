@@ -2,10 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { AuthService } from './core/auth.service';
 
 import { TabsPage } from '../pages/tabs/tabs';
-import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -16,16 +14,25 @@ import { TipsPage } from '../pages/tips/tips';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
   @ViewChild(Nav) nav: Nav;
-  //tabsPlacement: string = 'bottom';
-  tabsLayout: string = 'icon-top';
+
+  rootPage:any = TabsPage;
+
+  pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform,
               public statusBar: StatusBar,
-              public splashScreen: SplashScreen,
-              private auth: AuthService) {
+              public splashScreen: SplashScreen) {
     this.initializeApp();
+
+    // used for an example of ngFor and navigation
+    this.pages = [
+      { title: 'Home', component: HomePage },
+      { title: 'About', component: AboutPage },
+      { title: 'Contact', component: ContactPage },
+      { title: 'Vendors', component: VendorPage },
+      { title: 'Tips', component: TipsPage }
+    ];
   }
 
   initializeApp() {
@@ -33,40 +40,13 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available. Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      if(!this.platform.is('mobile')) {
-        //this.tabsPlacement = 'top';
-        this.tabsLayout = 'icon-left';
-      }
     });
   }
 
-  login() {
-    this.auth.signOut();
-    this.nav.setRoot(LoginPage);
+  openPage(page) {
+    // Reset the content nav to have just this page
+    // we wouldn't want the back button to show in this scenario
+    this.nav.setRoot(page.component);
   }
 
-  logout() {
-    this.auth.signOut();
-    this.gotoHomePage();
-  }
-
-  gotoHomePage() {
-    this.nav.setRoot(HomePage);
-  }
-
-  gotoAboutPage() {
-    this.nav.setRoot(AboutPage);
-  }
-
-  gotoContactsPage() {
-    this.nav.setRoot(ContactPage);
-  }
-
-  gotoVendorPage() {
-    this.nav.setRoot(VendorPage);
-  }
-
-  gotoTipsPage() {
-    this.nav.setRoot(TipsPage);
-  }
 }
