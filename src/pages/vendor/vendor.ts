@@ -8,6 +8,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   selector: 'page-vendor',
   templateUrl: 'vendor.html',
   animations: [
+    //
     trigger('cartBadge', [
         state('idle', style({
             opacity: '0.3',
@@ -23,7 +24,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
             animate('300ms ease-in-out')
         ])
     ]),
-    trigger('addButton', [
+    trigger('addButton', [ 
         state('idle', style({
             opacity: '0.3'
         })),
@@ -68,6 +69,7 @@ export class VendorPage {
     this.navCtrl.setRoot(ListVendorPage);
   }
 
+  // increments the item added to cart by 1
   addToCart(item) {
     item.quantityInCart += 1;
     this.itemsInCart.push(item);

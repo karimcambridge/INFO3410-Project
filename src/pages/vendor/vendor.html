@@ -3,13 +3,15 @@
       <ion-title>Vendor</ion-title>
     </ion-navbar>
 </ion-header>
-  
+
+<!-- Buttons to direct users to the Vendor form and list of vendors -->
 <ion-content padding class="page-vendor">
     <div id="buttons">
         <button ion-button  color="secondary" (click)="vendorForm()">Vendor Form</button>
         <button ion-button  color="secondary" (click)="vendorList()">List Vendors</button>
     </div>
-  
+    
+    <!-- Segments that allow users to viw Items, their ordered goods or items in their cart -->
     <ion-toolbar no-border-top>
         <ion-segment [(ngModel)]="products">
             <ion-segment-button value="items">Items</ion-segment-button>
@@ -20,7 +22,7 @@
         </ion-segment-button>
     </ion-segment>
     </ion-toolbar>
-    
+    <!-- A list of items available with photos, previously ordered items and items that were added to cart from the list -->
     <ion-content id="product">
         <ion-card *ngFor="let item of items">
             <div [ngSwitch]="products">
