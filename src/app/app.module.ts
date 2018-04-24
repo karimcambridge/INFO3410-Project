@@ -1,6 +1,7 @@
 import { Pro } from '@ionic/pro';
 import { NgModule, ErrorHandler, Injectable, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { Routes, RouterModule } from '@angular/router';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -93,6 +94,7 @@ export class MyErrorHandler implements ErrorHandler {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,

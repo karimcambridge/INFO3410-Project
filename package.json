@@ -12,15 +12,16 @@
     "ionic:serve": "ionic-app-scripts serve"
   },
   "dependencies": {
-    "@angular/animations": "5.2.9",
-    "@angular/common": "5.2.9",
-    "@angular/compiler": "5.2.9",
-    "@angular/compiler-cli": "5.2.9",
-    "@angular/core": "5.2.9",
-    "@angular/forms": "5.2.9",
-    "@angular/http": "5.2.9",
-    "@angular/platform-browser": "5.2.9",
-    "@angular/platform-browser-dynamic": "5.2.9",
+    "@angular/animations": "^5.2.10",
+    "@angular/common": "^5.2.10",
+    "@angular/compiler": "^5.2.10",
+    "@angular/compiler-cli": "^5.2.10",
+    "@angular/core": "^5.2.10",
+    "@angular/forms": "^5.2.10",
+    "@angular/http": "^5.2.10",
+    "@angular/platform-browser": "^5.2.10",
+    "@angular/platform-browser-dynamic": "^5.2.10",
+    "@angular/platform-server": "^5.2.10",
     "@angular/router": "^5.2.10",
     "@firebase/app": "^0.2.0",
     "@ionic-native/calendar": "^4.7.0",
@@ -59,17 +60,18 @@
     "promise-polyfill": "^7.1.2",
     "rxjs": "5.5.8",
     "sw-toolbox": "3.6.0",
+    "web-animations-js": "^2.3.1",
     "zone.js": "0.8.26"
   },
   "devDependencies": {
     "@angular/cli": "^1.7.4",
     "@ionic/app-scripts": "^3.1.9",
-    "typescript": "~2.6.2"
+    "ionic": "3.20.0",
+    "typescript": "^2.8.3"
   },
-  "description": "An Ionic project",
+  "description": "An Ionic based project for the ASK-JZ team",
   "cordova": {
     "plugins": {
-      "cordova-plugin-firebase": {},
       "cordova-plugin-ionic": {
         "APP_ID": "810dcd48",
         "CHANNEL_NAME": "Production",
@@ -78,6 +80,9 @@
         "UPDATE_API": "https://api.ionicjs.com",
         "MAX_STORE": "2"
       },
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-firebase": {},
       "cordova-plugin-googleplus": {
         "REVERSED_CLIENT_ID": "com.googleusercontent.apps.778757169371-rroareinqt09clopvolt72mmn9ffe3jc",
         "WEB_APPLICATION_CLIENT_ID": "778757169371-sfvo49oa0fspfmvocvedkfucash23d0a.apps.googleusercontent.com"
@@ -85,8 +90,6 @@
       "cordova-plugin-whitelist": {},
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
-      "cordova-plugin-ionic-webview": {},
-      "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-calendar": {},
       "cordova-plugin-email-composer": {},
       "cordova-plugin-geolocation": {

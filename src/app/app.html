@@ -1,7 +1,14 @@
-<div *ngIf="auth.user | async; then authenticated else guest">
-        <!-- template will replace this div -->
-</div>
+<ion-tabs [tabsLayout]="tabsLayout" selectedIndex=0>
+  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="Vendors" tabIcon="ios-basket"></ion-tab>
+  <ion-tab [root]="tab5Root" tabTitle="Tips" tabIcon="ios-bulb"></ion-tab>
+<ion-tabs>
 
+<ion-nav [root]="rootPage"></ion-nav>
+
+<!--
 <ng-template #guest>
   <ion-header class="head">
     <ion-navbar>
@@ -30,7 +37,7 @@
         </button>
       </ion-buttons>
     </ion-navbar>
-  </ion-header>
+  </ion-header>-->
   <!--<ion-content>
     <ion-tabs tabsPlacement="top">
       <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
@@ -43,16 +50,14 @@
   <ion-footer class="footer">
     <p text-center>Copyright ASK-JZ 2018. All rights Reserved.</p>
   </ion-footer>-->
-</ng-template>
+<!--</ng-template>
 
-<!-- User logged in -->
 <ng-template #authenticated>
   <ion-header class="head">
     <ion-navbar primary>
       <ion-title>
         <a href="/"><img alt="logo" height="40" src="/assets/imgs/GreenMarket.png"></a>ASK-JZ's Green App
       </ion-title>
-        <!--<ion-list-header *ngIf="auth.getEmail()">{{auth.getEmail()}}</ion-list-header>-->
         <ion-buttons right>
           <button ion-button (click)="gotoHomePage()" item-right>
             <span ion-text>HOME</span>
@@ -64,9 +69,4 @@
     </ion-navbar>
   </ion-header>
 </ng-template>
-
-<ion-nav [root]="rootPage" #nav swipeBackEnabled="false"></ion-nav>
-
-
-
-    
+-->
