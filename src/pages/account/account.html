@@ -13,7 +13,7 @@
   <ion-content padding>
     <h3>Hello, please log in to access your account!</h3>
     <ion-buttons>
-      <button ion-button (click)="gotoLoginPage()" *ngIf="!isLoggedIn">
+      <button ion-button (click)="gotoLoginPage()" *ngIf="!authService.isLoggedIn">
         <ion-icon item-start name="log-in"> LOG IN</ion-icon>
       </button>
     </ion-buttons>

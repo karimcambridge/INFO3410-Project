@@ -16,7 +16,6 @@ declare var google: any;
 export class HomePage {
   currentEvents;
   user: Observable<firebase.User>;
-  isLoggedIn: boolean = false;
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
@@ -29,16 +28,9 @@ export class HomePage {
               private device: Device,
               private afAuth: AngularFireAuth,
               private authService: AuthService) {
-    this.isLoggedIn = authService.authenticated();
-
-    this.afAuth.authState.subscribe(res => {
-      this.isLoggedIn = (res && res.uid) ? true : false;
-    });
-
-    console.log("is logged in: " + this.isLoggedIn);
 
     platform.ready().then(() => {
-      this.initMap();
+      //this.initMap();
     });
 
     this.ref.on('value', resp => {

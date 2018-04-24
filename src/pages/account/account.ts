@@ -11,15 +11,11 @@ import { HomePage } from '../home/home';
   templateUrl: 'account.html',
 })
 export class AccountPage {
-  isLoggedIn: boolean = false;
 
   constructor(public navCtrl: NavController,
         public navParams: NavParams,
         private afAuth: AngularFireAuth,
         public authService: AuthService) {
-    this.afAuth.authState.subscribe(res => {
-      this.isLoggedIn = (res && res.uid) ? true : false;
-    });
   }
 
   gotoLoginPage() {

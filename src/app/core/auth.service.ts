@@ -21,10 +21,15 @@ interface User {
 export class AuthService {
 	user: Observable<User>;
   private userDetails: firebase.User;
+  isLoggedIn: boolean = false;
 
 	constructor(public afAuth: AngularFireAuth,
               private afs: AngularFirestore) {
               //private router: Router) {
+    this.afAuth.authState.subscribe(res => {
+      this.isLoggedIn = (res && res.uid) ? true : false;
+    });
+    console.log("logged in? " + this.isLoggedIn);
 		this.user = this.afAuth.authState.switchMap(user => {
         if (user) {
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges()
@@ -34,13 +39,9 @@ export class AuthService {
     })
 	}
 
-  //isLoggedIn(): boolean {
-  //  return this.userDetails.currentUser != null;
-  //}
-
-  authenticated(): boolean {
+  /*authenticated(): boolean {
     return this.afAuth.authState.pipe(first()) !== Observable.of(null);
-  }
+  }*/
 
   getEmail() {
     return this.user;// && this.user.email;
