@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 //import { Router } from '@angular/router';
+import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import { first } from 'rxjs/operators';
 import 'rxjs/add/operator/switchMap';
@@ -33,8 +33,8 @@ export class AuthService {
     })
 	}
 
-  authenticated() {
-    return this.afAuth.authState.pipe(first());
+  authenticated(): boolean {
+    return this.afAuth.authState.pipe(first()) !== Observable.of(null);
   }
 
   getEmail() {

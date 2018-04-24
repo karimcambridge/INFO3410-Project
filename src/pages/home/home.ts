@@ -5,6 +5,7 @@ import * as firebase from 'firebase/app';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Device } from '@ionic-native/device';
 import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../../app/core/auth.service';
 import { LoginPage } from '../login/login';
 
 declare var google: any;
@@ -16,6 +17,7 @@ declare var google: any;
 export class HomePage {
   currentEvents;
   user: Observable<firebase.User>;
+  isLoggedIn: boolean = false;
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
@@ -26,7 +28,10 @@ export class HomePage {
               public platform: Platform,
               private geolocation: Geolocation,
               private device: Device,
-              private afAuth: AngularFireAuth) {
+              private afAuth: AngularFireAuth,
+              private authService: AuthService) {
+    this.isLoggedIn = authService.authenticated();
+    console.log("is logged in: " + this.isLoggedIn);
     platform.ready().then(() => {
       this.initMap();
     });
@@ -60,18 +65,13 @@ export class HomePage {
     ];
   }
 
-  isLoggedIn(): Observable<boolean> {
-    return this.afAuth.authState.map((auth) =>  {
-      if(auth == null) {
-        return false;
-      } else {
-        return true;
-      }
-  });
-}
-
   gotoLoginPage() {
     this.navCtrl.push(LoginPage);
+  }
+
+  logout() {
+    this.authService.signOut();
+    this.navCtrl.setRoot(HomePage);
   }
 
   onDaySelect(ev) {

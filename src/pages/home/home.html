@@ -5,8 +5,11 @@
   <ion-navbar>
     <ion-title>My Green App</ion-title>
       <ion-buttons end>
-        <button ion-button (click)="gotoLoginPage()" item-right class="button-header">
+        <button ion-button (click)="gotoLoginPage()" item-right class="button-header" *ngIf="isLoggedIn">
           <ion-icon item-start name="log-in"> LOG IN</ion-icon>
+        </button>
+        <button ion-button (click)="logout()" item-right class="button-header" *ngIf="isLoggedIn">
+          <ion-icon item-start name="log-out"> LOG OUT</ion-icon>
         </button>
       </ion-buttons>
   </ion-navbar>

@@ -27,7 +27,10 @@ export class MyApp {
   //tabsPlacement: string = 'bottom';
   tabsLayout: string = 'icon-top';
 
-  constructor(private platform: Platform, private statusBar: StatusBar, splashScreen: SplashScreen, private auth: AuthService) {
+  constructor(private platform: Platform,
+              private statusBar: StatusBar,
+              splashScreen: SplashScreen,
+              private auth: AuthService) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available. Here you can do any higher level native things you might need.
       statusBar.styleDefault();
