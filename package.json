@@ -12,15 +12,16 @@
     "ionic:serve": "ionic-app-scripts serve"
   },
   "dependencies": {
-    "@angular/animations": "5.2.9",
-    "@angular/common": "5.2.9",
-    "@angular/compiler": "5.2.9",
-    "@angular/compiler-cli": "5.2.9",
-    "@angular/core": "5.2.9",
-    "@angular/forms": "5.2.9",
-    "@angular/http": "5.2.9",
-    "@angular/platform-browser": "5.2.9",
-    "@angular/platform-browser-dynamic": "5.2.9",
+    "@angular/animations": "^5.2.10",
+    "@angular/common": "^5.2.10",
+    "@angular/compiler": "^5.2.10",
+    "@angular/compiler-cli": "^5.2.10",
+    "@angular/core": "^5.2.10",
+    "@angular/forms": "^5.2.10",
+    "@angular/http": "^5.2.10",
+    "@angular/platform-browser": "^5.2.10",
+    "@angular/platform-browser-dynamic": "^5.2.10",
+    "@angular/platform-server": "^5.2.10",
     "@angular/router": "^5.2.10",
     "@firebase/app": "^0.2.0",
     "@ionic-native/calendar": "^4.7.0",
@@ -59,12 +60,13 @@
     "promise-polyfill": "^7.1.2",
     "rxjs": "5.5.8",
     "sw-toolbox": "3.6.0",
+    "web-animations-js": "^2.3.1",
     "zone.js": "0.8.26"
   },
   "devDependencies": {
     "@angular/cli": "^1.7.4",
     "@ionic/app-scripts": "^3.1.9",
-    "typescript": "~2.6.2"
+    "typescript": "^2.8.3"
   },
   "description": "An Ionic project",
   "cordova": {
