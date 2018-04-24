@@ -18,12 +18,26 @@ export class MyApp {
   rootPage:any = HomePage;
   @ViewChild(Nav) nav: Nav;
 
+  tab1Root = HomePage;
+  tab2Root = AboutPage;
+  tab3Root = ContactPage;
+  tab4Root = VendorPage;
+  tab5Root = TipsPage;
+
+  tabsPlacement: string = 'bottom';
+  tabsLayout: string = 'icon-top';
+
   constructor(private platform: Platform, private statusBar: StatusBar, splashScreen: SplashScreen, private auth: AuthService) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      if(!platform.is('mobile')) {
+        this.tabsPlacement = 'top';
+        this.tabsLayout = 'icon-left';
+      }
+      console.log(this.tabsPlacement);
     });
   }
 
