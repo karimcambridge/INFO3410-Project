@@ -23,12 +23,12 @@
     </ion-row>
     <hr>
     <ion-row justify-content-center>
-      <h4 style="background-color:green;"><font face="Georgia" color="white">Calendar of Events</font></h4>
+      <h3><font face="Georgia" color="black">Calendar of Events</font></h3>
     </ion-row>
 
-    <ion-row justify-content-end class="calender">
+    <ion-row justify-content-center class="calender">
       <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onDaySelect($event)" (onMonthSelect)="onMonthSelect($event)"></ion-calendar>
-      <button ion-button (click)="calendar.today()">Jump to Today</button>
     </ion-row>
+    <button justify-content-center ion-button id="todayBtn" (click)="calendar.today()">Jump to Today</button>
   </ion-grid>
 </ion-content>
