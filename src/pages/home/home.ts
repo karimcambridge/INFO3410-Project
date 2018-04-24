@@ -32,12 +32,8 @@ export class HomePage {
               private authService: AuthService) {
     this.isLoggedIn = authService.authenticated();
 
-    firebase.auth().onAuthStateChanged(function(user) {
-      if(user) {
-        this.isLoggedIn = false;
-      } else {
-        this.isLoggedIn = false;
-      }
+    this.afAuth.authState.subscribe(res => {
+      this.isLoggedIn = (res && res.uid) ? true : false;
     });
 
     console.log("is logged in: " + this.isLoggedIn);
