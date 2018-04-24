@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Platform, NavController } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Device } from '@ionic-native/device';
@@ -24,7 +25,8 @@ export class HomePage {
   constructor(public navCtrl: NavController,
               public platform: Platform,
               private geolocation: Geolocation,
-              private device: Device) {
+              private device: Device,
+              private afAuth: AngularFireAuth) {
     platform.ready().then(() => {
       this.initMap();
     });
@@ -45,18 +47,28 @@ export class HomePage {
       });
     });
     this.currentEvents = [
-        {
-            year: 2018,
-            month: 4,
-            date: 22
-        },
-        {
-            year: 2018,
-            month: 6,
-            date: 16
-        }
+      {
+        year: 2018,
+        month: 4,
+        date: 22
+      },
+      {
+        year: 2018,
+        month: 6,
+        date: 16
+      }
     ];
   }
+
+  isLoggedIn(): Observable<boolean> {
+    return this.afAuth.authState.map((auth) =>  {
+      if(auth == null) {
+        return false;
+      } else {
+        return true;
+      }
+  });
+}
 
   gotoLoginPage() {
     this.navCtrl.push(LoginPage);

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Platform, NavController } from 'ionic-angular';
-import { HomePage } from '../home/home';;
-import * as firebase from 'firebase/app';
-import { SignupPage } from '../signup/signup';
-import { AuthService } from '../../app/core/auth.service';
-import { GooglePlus } from '@ionic-native/google-plus';
 import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
+import { GooglePlus } from '@ionic-native/google-plus';
+import { AuthService } from '../../app/core/auth.service';
+import { HomePage } from '../home/home';;
+import { SignupPage } from '../signup/signup';
 
 @Component({
   selector: 'page-login',
