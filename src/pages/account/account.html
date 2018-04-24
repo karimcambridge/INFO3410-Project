@@ -10,7 +10,7 @@
 
 <!-- User NOT logged in -->
 <ng-template #guest>
-  <ion-content>
+  <ion-content padding>
     <h3>Hello, please log in to access your account!</h3>
     <ion-buttons>
       <button ion-button (click)="gotoLoginPage()" *ngIf="!isLoggedIn">
@@ -22,7 +22,7 @@
 
 <!-- User logged in -->
 <ng-template #authenticated>
-  <ion-content>
+  <ion-content padding>
     <div *ngIf="authService.user | async as user">
         <h3>Howdy, {{ user.display_name }}</h3>
         <img [src]="user.photo_url">
