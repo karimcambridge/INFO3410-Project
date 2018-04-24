@@ -17,4 +17,18 @@ $bkg-color: #d8fccc;
         height: 100%;
     }
 
+    .card {
+        width: 50%;
+        height: 50%;
+    }
+    .items {
+        width: 100px;
+        height: 100px;
+    }
+
+    .cart-buttons {
+        margin: 10px;
+        float: right;
+    }
+
 }
