@@ -94,7 +94,7 @@ export class ModalContentPage {
       },
       {
         name: 'Louis Scott',
-        quote: 'I sell produce local juices',
+        quote: 'I sell local juices',
         image: 'assets/img/avatar-samwise.jpg',
         items: [
           { title: 'Lime' },

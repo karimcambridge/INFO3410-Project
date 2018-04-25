@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Shop</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="items">
+ 
+    <ion-card id="card" *ngFor="let item of items">
+ 
+        <ion-item>
+            <ion-avatar item-start *ngFor= "item in items" >
+                <img src="assets/imgs/Hugging.png">
+            </ion-avatar>
+            <h2>{{item.title}}</h2>
+            <p> by Anna Breton </p>
+        </ion-item>
+ 
+        <img id="prod-img" src="{{item.image}}">
+ 
+        <ion-card-content>
+            <p>Price: {{item.price}}</p>
+        </ion-card-content>
+ 
+        <div class="cart-buttons">
+            <button *ngIf="item.quantityInCart" [@addButton]="item.addButtonState" (@addButton.done)="addToCartFinished(item)" color="light" ion-button small>
+                {{item.quantityInCart}}
+            </button>
+            <button (click)="addToCart(item)" ion-button icon-left small>
+                <ion-icon name="add"></ion-icon>Add to Cart
+            </button>
+        </div>
+ 
+ 
+    </ion-card>
+ 
+</ion-content>
