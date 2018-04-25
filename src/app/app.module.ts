@@ -17,6 +17,7 @@ import { VendorFormPage } from '../pages/vendorForm/vendorForm';
 import { ListVendorPage, ModalContentPage } from '../pages/vendorList/vendorList';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TipsPage } from '../pages/tips/tips';
+import { AccountPage } from '../pages/account/account';
 import { ModalContentPage2 } from '../pages/tips/tips';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -36,7 +37,6 @@ import { AuthGuard } from './core/auth.guard';
 
 import { GooglePlus } from '@ionic-native/google-plus';
 import { CalendarModule } from 'ionic3-calendar-en';
-//import { UserProfileComponent } from './user-profile/user-profile.component';
 
 Pro.init('810dcd48', { // DON'T TOUCH THIS
   appVersion: '0.0.1'
@@ -80,6 +80,7 @@ export class MyErrorHandler implements ErrorHandler {
     MyApp,
     LoginPage,
     SignupPage,
+    AccountPage,
     HomePage,
     AboutPage,
     ContactPage,
@@ -90,7 +91,6 @@ export class MyErrorHandler implements ErrorHandler {
     ModalContentPage,
     TipsPage,
     ModalContentPage2
-    //UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -112,6 +112,7 @@ export class MyErrorHandler implements ErrorHandler {
     MyApp,
     LoginPage,
     SignupPage,
+    AccountPage,
     HomePage,
     AboutPage,
     ContactPage,

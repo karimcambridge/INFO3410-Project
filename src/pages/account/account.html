@@ -1,0 +1,31 @@
+<div *ngIf="authService.user | async as user; then authenticated else guest">
+        <!-- template will replace this div -->
+</div>
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Account</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- User NOT logged in -->
+<ng-template #guest>
+  <ion-content padding>
+    <h3>Hello, please log in to access your account!</h3>
+    <ion-buttons>
+      <button ion-button (click)="gotoLoginPage()">
+        <ion-icon name="log-in"> LOG IN</ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-content>
+</ng-template>
+
+<!-- User logged in -->
+<ng-template #authenticated>
+  <ion-content padding>
+      <h3>Howdy, {{ user.display_name }}</h3>
+      <img [src]="user.photo_url">
+      <p>UID: {{ user.uid }}</p>]
+      <button (click)="authService.signOut()">Logout</button>
+  </ion-content>
+</ng-template>
