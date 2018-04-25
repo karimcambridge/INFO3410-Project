@@ -5,7 +5,14 @@
 </ion-header>
 
 <!-- Buttons to direct users to the Vendor form and list of vendors -->
-<ion-content class="items">
+<ion-content padding class="page-vendor">
+    <div id="buttons">
+        <button ion-button  color="secondary" (click)="vendorForm()">Vendor Form</button>
+        <button ion-button  color="secondary" (click)="vendorList()">List Vendors</button>
+    </div>
+ 
+
+<!-- <ion-content class="items"> -->
  
     <ion-card id="card" *ngFor="let item of items">
  
@@ -17,7 +24,7 @@
             <p> by Anna Breton </p>
         </ion-item>
  
-        <img src="assets/imgs/guava.jpg">
+        <img id="prod-img" src="assets/imgs/guava.jpg">
  
         <ion-card-content>
             <p>Price: </p>
@@ -35,12 +42,9 @@
  
     </ion-card>
  
+<!-- </ion-content> -->
+
 </ion-content>
-<ion-content padding class="page-vendor">
-    <div id="buttons">
-        <button ion-button  color="secondary" (click)="vendorForm()">Vendor Form</button>
-        <button ion-button  color="secondary" (click)="vendorList()">List Vendors</button>
-    </div>
 
 <!-- 
      Segments that allow users to viw Items, their ordered goods or items in their cart 
@@ -141,5 +145,5 @@
         </div>
     </ion-card>
     </ion-content>-->
-</ion-content> 
+
   

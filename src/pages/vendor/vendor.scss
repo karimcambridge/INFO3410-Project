@@ -12,18 +12,20 @@ $bkg-color: #d8fccc;
     }
 
     //style the segments section
-    #product {
+    #prod-img {
         width: 100%;
         height: 100%;
     }
 
     .card {
-        width: 50%;
-        height: 50%;
+        width: 400px;
+        height: 500px;
+        margin-top: 40px;
+        margin-left: 400px;
     }
     .items {
-        width: 100px;
-        height: 100px;
+        width: 30px;
+        height: 30px;
     }
 
     .cart-buttons {
