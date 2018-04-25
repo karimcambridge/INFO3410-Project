@@ -35,7 +35,6 @@ import { AuthService } from './core/auth.service';
 import { CoreModule } from './core/core.module';
 import { AuthGuard } from './core/auth.guard';
 
-import { GooglePlus } from '@ionic-native/google-plus';
 import { CalendarModule } from 'ionic3-calendar-en';
 
 Pro.init('810dcd48', { // DON'T TOUCH THIS
@@ -129,7 +128,6 @@ export class MyErrorHandler implements ErrorHandler {
     SplashScreen,
     Geolocation,
     Device,
-    GooglePlus,
     IonicErrorHandler,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireAuthModule,

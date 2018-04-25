@@ -5,7 +5,6 @@ import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firesto
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
-import { GooglePlus } from '@ionic-native/google-plus';
 //import { first } from 'rxjs/operators';
 import 'rxjs/add/operator/switchMap';
 
@@ -27,11 +26,10 @@ export class AuthService {
 
   constructor(private platform: Platform,
               private afAuth: AngularFireAuth,
-              private afs: AngularFirestore,
-              private gplus: GooglePlus) {
+              private afs: AngularFirestore) {
               //private router: Router) {
     this.user = this.afAuth.authState.switchMap(user => {
-        if (user) {
+        if(user) {
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges()
         } else {
           return Observable.of(null)
@@ -76,8 +74,16 @@ export class AuthService {
 
   oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
-      .then((credential) => {
-        this.populateUserDefaults(credential.user)
+      .then((credentials) => {
+        console.log(credentials);
+        if(credentials.additionalUserInfo.isNewUser == true) {
+          this.populateUserDefaults(credentials.user);
+          console.log("Updating google plus data");
+          this.updateUser(credentials.user, { display_name: credentials.user.displayName });
+          this.updateUser(credentials.user, { photo_url: credentials.user.photoURL })
+        } else {
+          console.log("Google plus data already populated");
+        }
       })
   }
 
