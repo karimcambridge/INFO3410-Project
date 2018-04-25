@@ -34,15 +34,15 @@ export class AuthService {
               private gplus: GooglePlus,
               public fb: FormBuilder) {
               //private router: Router) {
-    this.loginForm = fb.group({
-      email: ['', Validators.compose([Validators.required, Validators.email])],
-      password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
-    });
-
     this.afAuth.authState.subscribe(res => {
       this.isLoggedIn = (res && res.uid) ? true : false;
     });
     console.log("logged in? " + this.isLoggedIn);
+
+    this.loginForm = fb.group({
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
+    });
 
 		this.user = this.afAuth.authState.switchMap(user => {
         if (user) {
@@ -52,6 +52,10 @@ export class AuthService {
         }
     })
 	}
+
+  public isAuthenticated(): boolean {
+    return this.isLoggedIn;
+  }
 
   /*authenticated(): boolean {
     return this.afAuth.authState.pipe(first()) !== Observable.of(null);
