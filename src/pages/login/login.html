@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-    <form (ngSubmit)="authService.login()" [formGroup]="authService.loginForm">
+    <form (ngSubmit)="login()" [formGroup]="loginForm">
         <ion-list inset>
 
             <ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched', 'dirty']) }">
@@ -33,7 +33,7 @@
         <div padding-horizontal>
             <div class="form-error">{{loginError}}</div>
 
-            <button ion-button full type="submit" [disabled]="!authService.loginForm.valid">Log in</button>
+            <button ion-button full type="submit" [disabled]="!loginForm.valid">Log in</button>
             <div class="login-footer">
                 <p>
                     <a href="#">Forgot password?</a>
@@ -42,7 +42,7 @@
             </div>
 
             <ion-list>
-                <button ion-button icon-left block clear (click)="authService.googleLogin()">
+                <button ion-button icon-left block clear (click)="googleLogin()">
                     <ion-icon name="logo-google"></ion-icon>
                     Log in with Google
                 </button>

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 //import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Platform } from 'ionic-angular';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -25,25 +24,12 @@ export class AuthService {
   user: Observable<User>;
   //private userDetails: firebase.User;
   isLoggedIn: boolean = false;
-  loginForm: FormGroup;
-  loginError: string;
 
   constructor(private platform: Platform,
               private afAuth: AngularFireAuth,
               private afs: AngularFirestore,
-              private gplus: GooglePlus,
-              public fb: FormBuilder) {
+              private gplus: GooglePlus) {
               //private router: Router) {
-    this.afAuth.authState.subscribe(res => {
-      this.isLoggedIn = (res && res.uid) ? true : false;
-    });
-    console.log("logged in? " + this.isLoggedIn);
-
-    this.loginForm = fb.group({
-      email: ['', Validators.compose([Validators.required, Validators.email])],
-      password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
-    });
-
     this.user = this.afAuth.authState.switchMap(user => {
         if (user) {
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges()
@@ -51,6 +37,11 @@ export class AuthService {
           return Observable.of(null)
         }
     })
+
+    this.afAuth.authState.subscribe(res => {
+      this.isLoggedIn = (res && res.uid) ? true : false;
+    });
+    console.log("[AUTH SERVICE] logged in? " + this.isLoggedIn);
   }
 
   get isAuthenticated(): boolean {
@@ -71,69 +62,16 @@ export class AuthService {
     //});
   }
 
-  signInWithEmail(credentials) {
+  login(credentials) {
     console.log('Sign in with email');
     return this.afAuth.auth.signInWithEmailAndPassword(credentials.email, credentials.password);
   }
 
   signUp(credentials) {
-    return this.afAuth.auth.createUserWithEmailAndPassword(credentials.email, credentials.password);
-  }
-
-  login() {
-    let data = this.loginForm.value;
-
-    if(!data.email) {
-      return;
-    }
-
-    let credentials = {
-      email: data.email,
-      password: data.password
-    };
-    this.signInWithEmail(credentials)
-      /*.then(
-        () => this.navCtrl.setRoot(HomePage),
-        error => this.loginError = error.message
-      );*/
-  }
-
-  async nativeGoogleLogin(): Promise<void> {
-    try {
-
-      const gplusUser = await this.gplus.login({
-        'webClientId': '833083649643-snd72roi89uhcsc47me8l96j8tocamkk.apps.googleusercontent.com',
-        'offline': true,
-        'scopes': 'profile email'
+    return this.afAuth.auth.createUserWithEmailAndPassword(credentials.email, credentials.password)
+      .then((credential) => {
+        this.updateUserData(credential.user)
       })
-
-      return await this.afAuth.auth.signInWithCredential(firebase.auth.GoogleAuthProvider.credential(gplusUser.idToken))
-
-    } catch(err) {
-      console.log(err)
-    }
-  }
-
-  async webGoogleLogin(): Promise<void> {
-    try {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      await this.afAuth.auth.signInWithPopup(provider) // const credential = 
-        //.then((credential) => {
-        //  () => this.navCtrl.setRoot(HomePage)
-        //});
-      
-    } catch(err) {
-      console.log(err)
-    }
-
-  }
-
-  googleLoginEx() {
-    if (this.platform.is('cordova')) {
-      this.nativeGoogleLogin();
-    } else {
-      this.webGoogleLogin();
-    }
   }
 
   googleLogin() {
@@ -141,7 +79,7 @@ export class AuthService {
     return this.oAuthLogin(provider);
   }
 
-  private oAuthLogin(provider) {
+  oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
         this.updateUserData(credential.user)
@@ -149,9 +87,11 @@ export class AuthService {
   }
 
   private updateUserData(user) {
-    // Sets user data to firestore on login
+    // Sets user data to firestore on signup
 
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+
+    const date = new Date();
 
     const data: User = {
       uid: user.uid,
@@ -159,12 +99,10 @@ export class AuthService {
       first_name: user.first_name || '',
       last_name: user.last_name || '',
       display_name: user.display_name || '',
-      registration_date: user.registration_date || '',
-      photo_url: user.photo_url || ''
+      registration_date: user.registration_date || date,
+      photo_url: user.photo_url || 'https://melodics.com/account/img/blank-profile-picture.png'
     }
-
     return userRef.set(data, { merge: true })
-
   }
 
 }

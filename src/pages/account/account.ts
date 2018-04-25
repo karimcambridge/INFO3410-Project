@@ -16,6 +16,7 @@ export class AccountPage {
               public navParams: NavParams,
               private afAuth: AngularFireAuth,
               public authService: AuthService) {
+    console.log("[ACCOUNT] logged in? " + this.authService.isLoggedIn);
   }
 
   gotoLoginPage() {
