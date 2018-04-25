@@ -35,7 +35,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './core/auth.service';
 import { CoreModule } from './core/core.module';
-import { AuthGuard } from './core/auth.guard';
+//import { AuthGuard } from './core/auth.guard';
 import { Component, ViewChild } from '@angular/core';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { CalendarModule } from 'ionic3-calendar-en';
@@ -133,9 +133,7 @@ export class MyErrorHandler implements ErrorHandler {
     GooglePlus,
     IonicErrorHandler,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AngularFireAuthModule,
-    AuthService,
-    AuthGuard,
+    //AuthGuard,
     EmailComposer//,
     //RouterModule
   ]

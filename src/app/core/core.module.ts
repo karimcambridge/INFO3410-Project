@@ -9,6 +9,9 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
-  providers: [AuthService]
+  providers: [
+  	AngularFireAuthModule,
+  	AuthService
+  ]
 })
 export class CoreModule { }
