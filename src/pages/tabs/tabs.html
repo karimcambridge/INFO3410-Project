@@ -1,8 +1,8 @@
-<ion-tabs [tabsLayout]="tabsLayout" selectedIndex=0>
+<ion-tabs>
   <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
   <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
   <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
   <ion-tab [root]="tab4Root" tabTitle="Vendors" tabIcon="basket"></ion-tab>
   <ion-tab [root]="tab5Root" tabTitle="Tips" tabIcon="bulb"></ion-tab>
-  <ion-tab [root]="tab6Root" tabTitle="Account" tabIcon="sync" *ngIf="!(authService.user | async)"></ion-tab>
-<ion-tabs>
+  <ion-tab [root]="tab6Root" tabTitle="Account" tabIcon="person"></ion-tab>
+</ion-tabs>

@@ -1,19 +1,17 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
-import { AuthService } from '../../app/core/auth.service';
-import { HomePage } from '../home/home'
+import { Platform } from 'ionic-angular';
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
+import { HomePage } from '../home/home';
 import { VendorPage } from '../vendor/vendor';
 import { TipsPage } from '../tips/tips';
 import { AccountPage } from '../account/account';
 
-@IonicPage()
 @Component({
-  selector: 'page-tabs',
-  templateUrl: 'tabs.html',
+  templateUrl: 'tabs.html'
 })
 export class TabsPage {
+
   tab1Root = HomePage;
   tab2Root = AboutPage;
   tab3Root = ContactPage;
@@ -24,10 +22,7 @@ export class TabsPage {
   //tabsPlacement: string = 'bottom';
   tabsLayout: string = 'icon-top';
 
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              private platform: Platform,
-  			      private authService: AuthService) {
+  constructor(private platform: Platform) {
     this.platform.ready().then(() => {
       if(!this.platform.is('mobile')) {
         //this.tabsPlacement = 'top';
@@ -35,5 +30,4 @@ export class TabsPage {
       }
     });
   }
-
 }

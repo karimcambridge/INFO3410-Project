@@ -1,11 +1,9 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Platform, NavController } from 'ionic-angular';
-import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Device } from '@ionic-native/device';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from '../../app/core/auth.service';
 
 declare var google: any;
 
@@ -25,14 +23,10 @@ export class HomePage {
   constructor(public navCtrl: NavController,
               public platform: Platform,
               private geolocation: Geolocation,
-              private device: Device,
-              private afAuth: AngularFireAuth,
-              private authService: AuthService) {
-
+              private device: Device) {
     platform.ready().then(() => {
-      //this.initMap();
+      this.initMap();
     });
-
     this.ref.on('value', resp => {
       this.deleteMarkers();
       snapshotToArray(resp).forEach(data => {
@@ -49,18 +43,17 @@ export class HomePage {
         }
       });
     });
-
     this.currentEvents = [
-      {
-        year: 2018,
-        month: 4,
-        date: 22
-      },
-      {
-        year: 2018,
-        month: 6,
-        date: 16
-      }
+        {
+            year: 2018,
+            month: 4,
+            date: 22
+        },
+        {
+            year: 2018,
+            month: 6,
+            date: 16
+        }
     ];
   }
 

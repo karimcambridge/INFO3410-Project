@@ -1,23 +1,28 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>My Green App</ion-title>
+    <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="page-home">
   <ion-grid>
     <ion-row justify-content-center>
-      <h6 ion-text text-center>We are situated in St Augustine, Trinidad. Check out our location below!</h6>
+      <h2 ion-text style="background-color:green;"><font face="Georgia" color="white">My Green App</font></h2>
+    </ion-row>
+
+    <ion-row justify-content-center>
+      <h6 ion-text>We are situated in St Augustine, Trinidad. Check out our location below!</h6>
       <div #map id="map" style="width:100%; height: 400px;"></div>
     </ion-row>
     <hr>
     <ion-row justify-content-center>
-      <h3><font face="Georgia" color="black">Calendar of Events</font></h3>
+      <h4  style="background-color:green;"><font face="Georgia" color="white">Calendar of Events</font></h4>
     </ion-row>
 
-    <ion-row justify-content-center class="calender">
+    <ion-row justify-content-end class="calender">
+
       <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onDaySelect($event)" (onMonthSelect)="onMonthSelect($event)"></ion-calendar>
+      <button ion-button (click)="calendar.today()">Jump to Today</button>
     </ion-row>
-    <button justify-content-center ion-button id="todayBtn" (click)="calendar.today()">Jump to Today</button>
   </ion-grid>
 </ion-content>

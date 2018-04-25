@@ -22,13 +22,13 @@ interface User {
 
 @Injectable()
 export class AuthService {
-	user: Observable<User>;
+  user: Observable<User>;
   //private userDetails: firebase.User;
   isLoggedIn: boolean = false;
   loginForm: FormGroup;
   loginError: string;
 
-	constructor(private platform: Platform,
+  constructor(private platform: Platform,
               private afAuth: AngularFireAuth,
               private afs: AngularFirestore,
               private gplus: GooglePlus,
@@ -44,14 +44,14 @@ export class AuthService {
       password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
     });
 
-		this.user = this.afAuth.authState.switchMap(user => {
+    this.user = this.afAuth.authState.switchMap(user => {
         if (user) {
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges()
         } else {
           return Observable.of(null)
         }
     })
-	}
+  }
 
   get isAuthenticated(): boolean {
     return this.isLoggedIn;
@@ -71,14 +71,14 @@ export class AuthService {
     //});
   }
 
-	signInWithEmail(credentials) {
-		console.log('Sign in with email');
-		return this.afAuth.auth.signInWithEmailAndPassword(credentials.email, credentials.password);
-	}
+  signInWithEmail(credentials) {
+    console.log('Sign in with email');
+    return this.afAuth.auth.signInWithEmailAndPassword(credentials.email, credentials.password);
+  }
 
-	signUp(credentials) {
-		return this.afAuth.auth.createUserWithEmailAndPassword(credentials.email, credentials.password);
-	}
+  signUp(credentials) {
+    return this.afAuth.auth.createUserWithEmailAndPassword(credentials.email, credentials.password);
+  }
 
   login() {
     let data = this.loginForm.value;
@@ -136,7 +136,7 @@ export class AuthService {
     }
   }
 
-	googleLogin() {
+  googleLogin() {
     const provider = new firebase.auth.GoogleAuthProvider()
     return this.oAuthLogin(provider);
   }

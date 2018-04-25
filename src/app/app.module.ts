@@ -1,24 +1,23 @@
 import { Pro } from '@ionic/pro';
 import { NgModule, ErrorHandler, Injectable, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { Routes, RouterModule } from '@angular/router';
-import { IonicApp, IonicModule, IonicErrorHandler, Nav } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { NgxErrorsModule } from '@ultimate/ngxerrors';
 import { MyApp } from './app.component';
 
-import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { VendorPage } from '../pages/vendor/vendor';
-import { TipsPage } from '../pages/tips/tips';
-import { AccountPage } from '../pages/account/account';
 import { VendorFormPage } from '../pages/vendorForm/vendorForm';
 import { ListVendorPage, ModalContentPage } from '../pages/vendorList/vendorList';
+import { TabsPage } from '../pages/tabs/tabs';
+import { TipsPage } from '../pages/tips/tips';
+import { AccountPage } from '../pages/account/account';
 import { ModalContentPage2 } from '../pages/tips/tips';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -30,13 +29,12 @@ import { EmailComposer } from '@ionic-native/email-composer';
 
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
-
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './core/auth.service';
 import { CoreModule } from './core/core.module';
-//import { AuthGuard } from './core/auth.guard';
-import { Component, ViewChild } from '@angular/core';
+import { AuthGuard } from './core/auth.guard';
+
 import { GooglePlus } from '@ionic-native/google-plus';
 import { CalendarModule } from 'ionic3-calendar-en';
 
@@ -65,7 +63,8 @@ export class MyErrorHandler implements ErrorHandler {
     try {
       this.ionicErrorHandler = injector.get(IonicErrorHandler);
     } catch(e) {
-      // Unable to get the IonicErrorHandler provider, ensure IonicErrorHandler has been added to the providers list below
+      // Unable to get the IonicErrorHandler provider, ensure
+      // IonicErrorHandler has been added to the providers list below
     }
   }
 
@@ -79,7 +78,6 @@ export class MyErrorHandler implements ErrorHandler {
 @NgModule({
   declarations: [
     MyApp,
-    TabsPage,
     LoginPage,
     SignupPage,
     AccountPage,
@@ -87,21 +85,23 @@ export class MyErrorHandler implements ErrorHandler {
     AboutPage,
     ContactPage,
     VendorPage,
-    TipsPage,
+    TabsPage,
     VendorFormPage,
     ListVendorPage,
     ModalContentPage,
+    TipsPage,
     ModalContentPage2
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     CoreModule,
     NgxErrorsModule,
     CalendarModule//,
@@ -110,7 +110,6 @@ export class MyErrorHandler implements ErrorHandler {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    TabsPage,
     LoginPage,
     SignupPage,
     AccountPage,
@@ -118,10 +117,11 @@ export class MyErrorHandler implements ErrorHandler {
     AboutPage,
     ContactPage,
     VendorPage,
-    TipsPage,
+    TabsPage,
     VendorFormPage,
     ListVendorPage,
     ModalContentPage,
+    TipsPage,
     ModalContentPage2
   ],
   providers: [
@@ -129,11 +129,12 @@ export class MyErrorHandler implements ErrorHandler {
     SplashScreen,
     Geolocation,
     Device,
-    Nav,
     GooglePlus,
     IonicErrorHandler,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    //AuthGuard,
+    AngularFireAuthModule,
+    AuthService,
+    AuthGuard,
     EmailComposer//,
     //RouterModule
   ]
