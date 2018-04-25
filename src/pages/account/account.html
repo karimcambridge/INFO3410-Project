@@ -27,11 +27,13 @@
 <ng-template #authenticated>
   <ion-content padding>
     <div *ngIf="authService.user | async as user">
-      <img [src]="user.photo_url">
+      <img [src]="user.photo_url" width="60" height="60">
       <h1>Welcome back {{ user.email }}!</h1>
       <h3>Howdy, {{ user.display_name }}</h3>
       <h3>You registered on {{user.registration_date | date:'yyyy-MM-dd'}}</h3>
-      <button (click)="logout()">Logout</button>
+      <button ion-button (click)="logout()">
+        <ion-icon name="log-out"> LOGOUT</ion-icon>
+      </button>
     </div>
   </ion-content>
 </ng-template>

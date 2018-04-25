@@ -70,7 +70,7 @@ export class AuthService {
   signUp(credentials) {
     return this.afAuth.auth.createUserWithEmailAndPassword(credentials.email, credentials.password)
       .then((credential) => {
-        this.updateUserData(credential.user)
+        this.populateUserDefaults(credential.user)
       })
   }
 
@@ -82,16 +82,20 @@ export class AuthService {
   oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
-        this.updateUserData(credential.user)
+        this.populateUserDefaults(credential.user)
       })
   }
 
-  private updateUserData(user) {
+  updateUser(user: User, data: any) { 
+    return this.afs.doc(`users/${user.uid}`).update(data)
+  }
+
+  private populateUserDefaults(user) {
     // Sets user data to firestore on signup
 
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
 
-    const date = new Date();
+    let date = new Date();
 
     const data: User = {
       uid: user.uid,
@@ -99,8 +103,8 @@ export class AuthService {
       first_name: user.first_name || '',
       last_name: user.last_name || '',
       display_name: user.display_name || '',
-      registration_date: user.registration_date || date,
-      photo_url: user.photo_url || 'https://melodics.com/account/img/blank-profile-picture.png'
+      registration_date: date.toDateString(),
+      photo_url: 'https://melodics.com/account/img/blank-profile-picture.png'
     }
     return userRef.set(data, { merge: true })
   }
