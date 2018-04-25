@@ -10,23 +10,29 @@ import { AuthService } from '../../app/core/auth.service';
 })
 export class SignupPage {
     signupError: string;
-    form: FormGroup;
+    signupForm: FormGroup;
 
     constructor(fb: FormBuilder,
                 private navCtrl: NavController,
                 private auth: AuthService
     ) {
-        this.form = fb.group({
-            email: ['', Validators.compose([Validators.required, Validators.email])],
-            password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
-        });
+      this.signupForm = fb.group({
+        email: ['', Validators.compose([Validators.required, Validators.email])],
+        password: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+        display_name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+        first_name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+        last_name: ['', Validators.compose([Validators.required, Validators.minLength(3)])]
+      });
   }
 
   signup() {
-        let data = this.form.value;
+        let data = this.signupForm.value;
         let credentials = {
             email: data.email,
-            password: data.password
+            password: data.password,
+            display_name: data.display_name,
+            first_name: data.first_name,
+            last_name: data.last_name
         };
         this.auth.signUp(credentials)
         .then(value => {

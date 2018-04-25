@@ -6,15 +6,14 @@
 
 <ion-content>
 
-	<form (ngSubmit)="signup()" [formGroup]="form">
+	<form [formGroup]="signupForm" (ngSubmit)="signup()">
 		<ion-list inset>
-
 			<ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched']) }">
 				<ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
 			</ion-item>
 
 			<div ngxErrors="email" #emailErrors="ngxErrors">
-				<div [ngxError]="['email', 'required']" [when]="['touched']">It should be a valid email</div>
+				<div [ngxError]="['email', 'required']" [when]="['touched']">Invalid email entered. Please try again!</div>
 			</div>
 
 			<ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
@@ -22,14 +21,38 @@
 			</ion-item>
 
 			<div ngxErrors="password" #passwordErrors="ngxErrors">
-				<div [ngxError]="['minlength', 'required']" [when]="['touched']">It should be at least 6 characters</div>
+				<div [ngxError]="['minlength', 'required']" [when]="['touched']">Your password should be at least 6 characters</div>
+			</div>
+
+			<ion-item [ngClass]="{ invalid: displayNameErrors.hasError('*', ['touched']) }">
+				<ion-input type="text" placeholder="Display Name" formControlName="display_name"></ion-input>
+			</ion-item>
+
+			<div ngxErrors="display_name" #displayNameErrors="ngxErrors">
+				<div [ngxError]="['minlength', 'required']" [when]="['touched']">Display name should be at least 3 characters</div>
+			</div>
+
+			<ion-item [ngClass]="{ invalid: firstNameErrors.hasError('*', ['touched']) }">
+				<ion-input type="text" placeholder="First Name" formControlName="first_name"></ion-input>
+			</ion-item>
+
+			<div ngxErrors="first_name" #firstNameErrors="ngxErrors">
+				<div [ngxError]="['minlength', 'required']" [when]="['touched']">First name should be at least 3 characters</div>
+			</div>
+
+			<ion-item [ngClass]="{ invalid: lastNameErrors.hasError('*', ['touched']) }">
+				<ion-input type="text" placeholder="Last Name" formControlName="last_name"></ion-input>
+			</ion-item>
+
+			<div ngxErrors="last_name" #lastNameErrors="ngxErrors">
+				<div [ngxError]="['minlength', 'required']" [when]="['touched']">Last name should be at least 3 characters</div>
 			</div>
 		</ion-list>
 
 		<div padding-horizontal>
 			<div class="form-error">{{signupError}}</div>
 
-			<button ion-button full type="submit" [disabled]="!form.valid">Sign up</button>
+			<button ion-button full type="submit" [disabled]="!signupForm.valid">Sign up</button>
 		</div>
 	</form>
 </ion-content>

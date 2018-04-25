@@ -48,14 +48,6 @@ export class AuthService {
     return this.isLoggedIn;
   }
 
-  /*authenticated(): boolean {
-    return this.afAuth.authState.pipe(first()) !== Observable.of(null);
-  }*/
-
-  /*getEmail() {
-    return this.user;// && this.user.email;
-  }*/
-
   signOut() {
     this.afAuth.auth.signOut();//.then(() => {
         //this.router.navigate(['/']);
@@ -63,14 +55,17 @@ export class AuthService {
   }
 
   login(credentials) {
-    console.log('Sign in with email');
     return this.afAuth.auth.signInWithEmailAndPassword(credentials.email, credentials.password);
   }
 
   signUp(credentials) {
     return this.afAuth.auth.createUserWithEmailAndPassword(credentials.email, credentials.password)
       .then((credential) => {
-        this.populateUserDefaults(credential.user)
+        var user = firebase.auth().currentUser;
+        this.populateUserDefaults(user);
+        this.updateUser(user, { display_name: credentials.display_name })
+        this.updateUser(user, { first_name: credentials.first_name })
+        this.updateUser(user, { last_name: credentials.last_name })
       })
   }
 
