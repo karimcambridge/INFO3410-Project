@@ -13,9 +13,9 @@ import { HomePage } from '../home/home';
 export class AccountPage {
 
   constructor(public navCtrl: NavController,
-        public navParams: NavParams,
-        private afAuth: AngularFireAuth,
-        public authService: AuthService) {
+              public navParams: NavParams,
+              private afAuth: AngularFireAuth,
+              public authService: AuthService) {
   }
 
   gotoLoginPage() {

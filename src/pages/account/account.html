@@ -1,4 +1,4 @@
-<div *ngIf="authService.user | async; then authenticated else guest">
+<div *ngIf="authService.user | async as user; then authenticated else guest">
         <!-- template will replace this div -->
 </div>
 
@@ -13,8 +13,8 @@
   <ion-content padding>
     <h3>Hello, please log in to access your account!</h3>
     <ion-buttons>
-      <button ion-button (click)="gotoLoginPage()" *ngIf="!authService.isLoggedIn">
-        <ion-icon item-start name="log-in"> LOG IN</ion-icon>
+      <button ion-button (click)="gotoLoginPage()">
+        <ion-icon name="log-in"> LOG IN</ion-icon>
       </button>
     </ion-buttons>
   </ion-content>
@@ -23,11 +23,9 @@
 <!-- User logged in -->
 <ng-template #authenticated>
   <ion-content padding>
-    <div *ngIf="authService.user | async as user">
-        <h3>Howdy, {{ user.display_name }}</h3>
-        <img [src]="user.photo_url">
-        <p>UID: {{ user.uid }}</p>]
-        <button (click)="authService.signOut()">Logout</button>
-    </div>
+      <h3>Howdy, {{ user.display_name }}</h3>
+      <img [src]="user.photo_url">
+      <p>UID: {{ user.uid }}</p>]
+      <button (click)="authService.signOut()">Logout</button>
   </ion-content>
 </ng-template>
