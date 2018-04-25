@@ -57,12 +57,8 @@ template: `
 <ion-content>
     <ion-list>
         <ion-item>
-            <h2>{{t.category}}</h2>
-            <!-- <p>{{t.tip}}</p> -->
-        </ion-item>
-
-        <ion-item *ngFor="let item of t['items']">
-            {{tip.quote}}
+            <h3>{{t.category}}</h3>
+            <p>{{t.tip}}</p>
         </ion-item>
     </ion-list>
 </ion-content> 
@@ -81,39 +77,43 @@ export class ModalContentPage2 {
       var tips = [ 
         {
             category: 'Food',
-            tip: [
-                { quote: 'Boil Cassava for 15 minutes.' },
-                { quote: 'For rich, creamy dressings made healthy, substitute half the mayo with Greek-style yogurt.'},
-                { quote: 'When chopping herbs, toss a little salt onto the cutting board; it will keep the herbs from flying around.' },
-                { quote: 'For best results when baking, leave butter and eggs at room temperature overnight.' }
-            ]
+            tip: 'Boil Cassava for 15 minutes.',
+            // tip: [
+            //     { quote: 'Boil Cassava for 15 minutes.' },
+            //     { quote: 'For rich, creamy dressings made healthy, substitute half the mayo with Greek-style yogurt.'},
+            //     { quote: 'When chopping herbs, toss a little salt onto the cutting board; it will keep the herbs from flying around.' },
+            //     { quote: 'For best results when baking, leave butter and eggs at room temperature overnight.' }
+            // ]
         },
         {
             category: 'Farming',
-            tip: [
-                { quote: 'Watermelons need to be watered everyday' },
-                { quote: 'Repect animals and ensure they are in good health.'},
-                { quote: 'Crop rotation is important to reduce pressure from insects, weeds, while supplementing nutrients in the soil.'},
-                { quote: 'Use organic fertilizer to promote healthy soil and crops.' }
-            ]
+            tip: 'Use organic fertilizer to promote healthy soil and crops.',
+            // tip: [
+            //     { quote: 'Watermelons need to be watered everyday' },
+            //     { quote: 'Repect animals and ensure they are in good health.'},
+            //     { quote: 'Crop rotation is important to reduce pressure from insects, weeds, while supplementing nutrients in the soil.'},
+            //     { quote: 'Use organic fertilizer to promote healthy soil and crops.' }
+            // ]
         },
         {
             category: 'Jewellery',
-            tip: [
-                { quote: 'Bend the wire at the end of the bracelet so that the beads do not fall off!' },
-                { quote: 'Use a bead board to make your designs.'},
-                { quote: 'Always use fireline with crystals.'},
-                { quote: 'Use strong quality jump rings that can stand constant use and weight.' }
-            ]
+            tip: 'Use a bead board to make your designs.',
+            // tip: [
+            //     { quote: 'Bend the wire at the end of the bracelet so that the beads do not fall off!' },
+            //     { quote: 'Use a bead board to make your designs.'},
+            //     { quote: 'Always use fireline with crystals.'},
+            //     { quote: 'Use strong quality jump rings that can stand constant use and weight.' }
+            // ]
         },
         {
             category: 'Body Care',
-            tip: [
-                { quote: 'Grade A organic shea butter is the best for making body lotion!' },
-                { quote: 'Use chilled tea bags to eliminate tired puffy eyes.'},
-                { quote: 'Use papaya masks to remove dead skin and revitalize face.'},
-                { quote: 'Use rasberries and coconut oil for brighter lips.' }
-            ]
+            tip: 'Use chilled tea bags to eliminate tired puffy eyes.',
+            // tip: [
+            //     { quote: 'Grade A organic shea butter is the best for making body lotion!' },
+            //     { quote: 'Use chilled tea bags to eliminate tired puffy eyes.'},
+            //     { quote: 'Use papaya masks to remove dead skin and revitalize face.'},
+            //     { quote: 'Use rasberries and coconut oil for brighter lips.' }
+            // ]
         }
 
       ];

@@ -2,8 +2,7 @@
     <ion-toolbar>
         <ion-title>Tips</ion-title>
         <ion-buttons end>
-            <!-- button to close the modal window -->
-            <button ion-button icon-only (click)="closeModal()">   
+            <button ion-button icon-only (click)="closeModal()">
                 <ion-icon item-right name="ios-close-outline"></ion-icon>
             </button>
         </ion-buttons>
@@ -12,14 +11,9 @@
           
 <ion-content>
     <ion-list>
-        <!-- Lists the tip categories -->
         <ion-item>
-            <h2>{{t.category}}</h2>
-            <!-- <p>{{t.tip}}</p> -->
-        </ion-item>
-        <!-- Loops throught the list tips for each category of items -->
-        <ion-item *ngFor="let item of t['tip']">
-            {{tip.quote}}
+            <h3>{{t.category}}</h3>
+            <p>{{t.tip}}</p>
         </ion-item>
     </ion-list>
 </ion-content> 
