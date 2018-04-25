@@ -77,8 +77,8 @@ export class AuthService {
       .then((credentials) => {
         console.log(credentials);
         if(credentials.additionalUserInfo.isNewUser == true) {
-          this.populateUserDefaults(credentials.user);
           console.log("Updating google plus data");
+          this.populateUserDefaults(credentials.user);
           this.updateUser(credentials.user, { display_name: credentials.user.displayName });
           this.updateUser(credentials.user, { photo_url: credentials.user.photoURL })
         } else {
