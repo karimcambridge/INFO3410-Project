@@ -2,7 +2,7 @@ import { Pro } from '@ionic/pro';
 import { NgModule, ErrorHandler, Injectable, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 //import { Routes, RouterModule } from '@angular/router';
 import { IonicApp, IonicModule, IonicErrorHandler, Nav } from 'ionic-angular';
 import { NgxErrorsModule } from '@ultimate/ngxerrors';
@@ -15,11 +15,11 @@ import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { VendorPage } from '../pages/vendor/vendor';
+import { TipsPage } from '../pages/tips/tips';
+import { AccountPage } from '../pages/account/account';
 import { VendorFormPage } from '../pages/vendorForm/vendorForm';
 import { ListVendorPage, ModalContentPage } from '../pages/vendorList/vendorList';
-import { TipsPage } from '../pages/tips/tips';
 import { ModalContentPage2 } from '../pages/tips/tips';
-import { AccountPage } from '../pages/account/account';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -87,17 +87,16 @@ export class MyErrorHandler implements ErrorHandler {
     AboutPage,
     ContactPage,
     VendorPage,
+    TipsPage,
     VendorFormPage,
     ListVendorPage,
     ModalContentPage,
-    TipsPage,
     ModalContentPage2
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule,
@@ -119,10 +118,10 @@ export class MyErrorHandler implements ErrorHandler {
     AboutPage,
     ContactPage,
     VendorPage,
+    TipsPage,
     VendorFormPage,
     ListVendorPage,
     ModalContentPage,
-    TipsPage,
     ModalContentPage2
   ],
   providers: [
