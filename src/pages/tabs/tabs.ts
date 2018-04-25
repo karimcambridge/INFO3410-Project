@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, Platform } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { AuthService } from '../../app/core/auth.service';
 import { HomePage } from '../home/home'
 import { AboutPage } from '../about/about';
@@ -24,7 +24,9 @@ export class TabsPage {
   //tabsPlacement: string = 'bottom';
   tabsLayout: string = 'icon-top';
 
-  constructor(public platform: Platform,
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private platform: Platform,
   			      private authService: AuthService) {
     this.platform.ready().then(() => {
       if(!this.platform.is('mobile')) {
