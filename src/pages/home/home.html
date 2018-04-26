@@ -25,7 +25,7 @@
       <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onDaySelect($event)"></ion-calendar>
     </ion-row>
 
-    <button ion-button justify-content-center (click)="calendar.today()">Jump to Today</button>
+    <button ion-button justify-content-center color="secondary" round (click)="calendar.today()">Jump to Today</button>
 
     <ion-content id="event" *ngFor="let evt of currentEvents">
       <ion-item>
