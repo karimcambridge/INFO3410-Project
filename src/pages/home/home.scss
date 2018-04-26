@@ -1,7 +1,10 @@
 $bkg-color: #d8fccc;
 
+
 .page-home {
-    background-color: $bkg-color;
+    background: $bkg-color url('assets/imgs/background1.jpg');
+    //background-image: url('assets/imgs/background1.jpg');
+    //background-color: $bkg-color;
     #home{
         font: {
             family: Verdana;
