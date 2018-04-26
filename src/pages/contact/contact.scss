@@ -38,7 +38,7 @@ textarea[type=text]{
     transition:.3s;
 }
 
-textarea[type=text]:focus{// this is code for the blue highlight surrounding the text are when it is selected
+textarea[type=text]:focus{
     border-color:dodgerBlue;
     box-shadow:0 0 15px 0 dodgerBlue;
 }
