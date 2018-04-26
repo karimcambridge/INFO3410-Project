@@ -6,15 +6,15 @@ import { NavController, ViewController, NavParams } from 'ionic-angular';
   templateUrl: 'contact.html'
 })
 export class ContactPage {
-  @ViewChild('loll') loll ;
+  //@ViewChild('feedbackText') feedbackText;
 
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, params: NavParams) {
 
   }
 
-  myFunction() {
+  submitFeedback() {
     alert("Your feedback has been duley noted!"); 
-    this.loll= " ";
-}
+    //this.feedbackText = "";
+  }
 
 }
