@@ -38,7 +38,7 @@ textarea[type=text]{
     transition:.3s;
 }
 
-// blue border backlight
+// blue border backlight on select
 textarea[type=text]:focus{ 
     border-color:dodgerBlue;
     box-shadow:0 0 15px 0 dodgerBlue;
