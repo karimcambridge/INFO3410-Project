@@ -61,7 +61,7 @@ export class ShopPage {
             vendorImage: 'assets/imgs/neutral-face.png',
             image: 'assets/imgs/nutmeg.jpg', 
             quantityInCart: 0, 
-            price: 20.00, 
+            price: 5.00, 
             addButtonState: 'idle'
           },
           {
@@ -86,7 +86,7 @@ export class ShopPage {
             title: 'Jewellery', 
             vendor: 'Brittney Chriton',
             vendorImage: 'assets/imgs/tongue.png',
-            image: 'assets/imgs/jewel1.jpg', 
+            image: 'assets/imgs/jewel2.jpg', 
             quantityInCart: 0, 
             price: 30.00, 
             addButtonState: 'idle'
