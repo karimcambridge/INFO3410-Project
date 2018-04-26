@@ -1,11 +1,18 @@
 $bkg-color: #d8fccc;
 
+
 .page-home {
+<<<<<<< HEAD
+    background: $bkg-color url('assets/imgs/background1.jpg');
+    //background-image: url('assets/imgs/background1.jpg');
+    //background-color: $bkg-color;
+=======
     background-color: $bkg-color;
     #plant {
         height: 70px;
         width: 70px;
     }
+>>>>>>> a9aaca3d7e1ff3815ec0833f0904a42197b1bea1
     #home{
         font: {
             family: Verdana;
