@@ -66,7 +66,7 @@ export class HomePage {
   }
 
   initMap() {
-    this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((resp) => {
+    this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 15000, enableHighAccuracy: true }).then((resp) => {
         let mylocation = new google.maps.LatLng(resp.coords.latitude,resp.coords.longitude);
         this.map = new google.maps.Map(this.mapElement.nativeElement, {
           zoom: 15,
