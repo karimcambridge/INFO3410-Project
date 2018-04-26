@@ -29,7 +29,7 @@ export class HomePage {
       this.initMap();
     });
     this.ref.on('value', resp => {
-      this.deleteMarkers();
+      //this.deleteMarkers();
       /*snapshotToArray(resp).forEach(data => {
         if(data.uuid !== this.device.uuid) {
           let updatelocation = new google.maps.LatLng(data.latitude,data.longitude);
@@ -69,19 +69,15 @@ export class HomePage {
   }
 
   initMap() {
+    this.deleteMarkers();
     let mylocation = new google.maps.LatLng(10.7169, -61.4764);
     this.map = new google.maps.Map(this.mapElement.nativeElement, {
       zoom: 15,
       center: mylocation
     });
-    let watch = this.geolocation.watchPosition();
-    watch.subscribe((data) => {
-      this.deleteMarkers();
-      /*this.updateGeolocation(this.device.uuid, data.coords.latitude,data.coords.longitude);*/
-      let updatelocation = new google.maps.LatLng(data.coords.latitude,data.coords.longitude);
-      this.addMarker(updatelocation);
-      this.setMapOnAll(this.map);
-    });
+    let updatelocation = new google.maps.LatLng(10.7169, -61.4764);
+    this.addMarker(updatelocation);
+    this.setMapOnAll(this.map);
   }
 
   addMarker(location) {
