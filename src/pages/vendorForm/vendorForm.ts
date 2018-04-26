@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { AuthService } from '../../app/core/auth.service';
 import { VendorPage } from '../vendor/vendor';
+import { AccountPage } from '../account/account';
+
 @Component({
   selector: 'page-vendorForm',
   templateUrl: 'vendorForm.html'
 })
 export class VendorFormPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(private navCtrl: NavController,
+              public authService: AuthService) {
 
   }
 
@@ -17,6 +21,10 @@ export class VendorFormPage {
 
   goBack() {
     this.navCtrl.setRoot(VendorPage);
+  }
+
+  redirectToAccount() {
+    this.navCtrl.push(AccountPage);
   }
 
 }
