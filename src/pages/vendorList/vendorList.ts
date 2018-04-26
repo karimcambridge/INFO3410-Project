@@ -40,7 +40,6 @@ export class ListVendorPage {
   }
 
   getVendors(ev) {
-    this.initializeVendors();
     // set val to the value of the ev target
     var val = ev.target.value;
     // if the value is an empty string don't filter the items
