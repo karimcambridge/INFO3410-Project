@@ -88,24 +88,15 @@
     <plugin name="cordova-plugin-ionic-webview" spec="^1.2.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
-    <plugin name="cordova-plugin-calendar" spec="^5.0.0" />
-    <plugin name="cordova-plugin-email-composer" spec="^5.0.0" />
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
-    </plugin>
-    <plugin name="cordova-plugin-ionic" spec="^4.1.6">
-        <variable name="APP_ID" value="810dcd48" />
-        <variable name="CHANNEL_NAME" value="Production" />
-        <variable name="UPDATE_METHOD" value="auto" />
-        <variable name="WARN_DEBUG" value="true" />
-        <variable name="UPDATE_API" value="https://api.ionicjs.com" />
-        <variable name="MAX_STORE" value="2" />
     </plugin>
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <plugin name="phonegap-plugin-push" spec="~2.1.3">
         <variable name="FCM_VERSION" value="11.6.2" />
     </plugin>
     <allow-navigation href="http://172.16.9.150:8100" />
-    <engine name="ios" spec="4.5.4" />
-    <engine name="browser" spec="5.0.3" />
+    <engine name="browser" spec="~5.0.3" />
+    <engine name="android" spec="~7.0.0" />
+    <engine name="ios" spec="~4.5.4" />
 </widget>
