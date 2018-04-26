@@ -15,6 +15,15 @@ $bkg-color: #d8fccc;
     }
 }
 
+ion-list {
+    width: 21%;
+    height: 39%;
+    text-align: center;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    //border-color: red;
+}
+
 .button_1{
     height: 5%;
     border:12px;
@@ -47,9 +56,15 @@ textarea[type=text]:focus{
 h3 {
     color: limegreen;
 }
-#sidebar2{
+
+h2{
+    color: limegreen;
+    text-align: center;
+}
+.ok{
     float:right;
     width: 20%;
-    margin-top:10px;
-    margin-right:260px;
-  }
+    margin-top:-220px;
+    margin-right:100px;
+    
+}
