@@ -67,7 +67,6 @@ export class HomePage {
   }
 
   onDaySelect(ev) {
-    //console.log('Event selected:' + this.currentEvents.event);
   
   }
 
