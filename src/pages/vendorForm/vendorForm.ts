@@ -20,7 +20,7 @@ export class VendorFormPage {
   }
 
   goBack() {
-    this.navCtrl.setRoot(VendorPage);
+    this.navCtrl.pop();
   }
 
   redirectToAccount() {

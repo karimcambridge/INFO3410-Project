@@ -30,19 +30,17 @@ export class HomePage {
     });
     this.ref.on('value', resp => {
       this.deleteMarkers();
-      snapshotToArray(resp).forEach(data => {
+      /*snapshotToArray(resp).forEach(data => {
         if(data.uuid !== this.device.uuid) {
-          let image = 'assets/imgs/pink_pin.png';
           let updatelocation = new google.maps.LatLng(data.latitude,data.longitude);
-          this.addMarker(updatelocation,image);
+          this.addMarker(updatelocation);
           this.setMapOnAll(this.map);
         } else {
-          let image = 'assets/imgs/blue_pin.png';
           let updatelocation = new google.maps.LatLng(data.latitude,data.longitude);
-          this.addMarker(updatelocation,image);
+          this.addMarker(updatelocation);
           this.setMapOnAll(this.map);
         }
-      });
+      });*/
     });
     this.currentEvents = [
         {
@@ -71,37 +69,31 @@ export class HomePage {
   }
 
   initMap() {
-    this.geolocation.getCurrentPosition({ maximumAge: 3000, enableHighAccuracy: true }).then((resp) => { //  timeout: 60000,
-        let mylocation = new google.maps.LatLng(resp.coords.latitude,resp.coords.longitude);
-        this.map = new google.maps.Map(this.mapElement.nativeElement, {
-          zoom: 15,
-          center: mylocation
-        });
-      }).catch((error) => {
-        console.log('[MAP LOCATION ERROR (' + error.code + ')]: ' + error + '.');
-      });
-      let watch = this.geolocation.watchPosition();
-      watch.subscribe((data) => {
-        this.deleteMarkers();
-        this.updateGeolocation(this.device.uuid, data.coords.latitude,data.coords.longitude);
-        let updatelocation = new google.maps.LatLng(data.coords.latitude,data.coords.longitude);
-        let image = 'assets/imgs/blue_pin.png';
-        this.addMarker(updatelocation,image);
-        this.setMapOnAll(this.map);
-      });
+    let mylocation = new google.maps.LatLng(10.7169, -61.4764);
+    this.map = new google.maps.Map(this.mapElement.nativeElement, {
+      zoom: 15,
+      center: mylocation
+    });
+    let watch = this.geolocation.watchPosition();
+    watch.subscribe((data) => {
+      this.deleteMarkers();
+      /*this.updateGeolocation(this.device.uuid, data.coords.latitude,data.coords.longitude);*/
+      let updatelocation = new google.maps.LatLng(data.coords.latitude,data.coords.longitude);
+      this.addMarker(updatelocation);
+      this.setMapOnAll(this.map);
+    });
   }
 
-  addMarker(location, image) {
+  addMarker(location) {
     let marker = new google.maps.Marker({
       position: location,
-      map: this.map,
-      icon: image
+      map: this.map
     });
     this.markers.push(marker);
   }
 
   setMapOnAll(map) {
-    for (var i = 0; i < this.markers.length; i++) {
+    for(var i = 0; i < this.markers.length; i++) {
       this.markers[i].setMap(map);
     }
   }
@@ -115,7 +107,7 @@ export class HomePage {
     this.markers = [];
   }
 
-  updateGeolocation(uuid, lat, lng) {
+  /*updateGeolocation(uuid, lat, lng) {
     if(localStorage.getItem('geoKey')) {
       firebase.database().ref('geolocations/'+localStorage.getItem('geoKey')).set({
         uuid: uuid,
@@ -131,11 +123,11 @@ export class HomePage {
       });
       localStorage.setItem('geoKey', newData.key);
     }
-  }
+  }*/
 
 }
 
-export const snapshotToArray = snapshot => {
+/*export const snapshotToArray = snapshot => {
     let returnArr = [];
 
     snapshot.forEach(childSnapshot => {
@@ -145,4 +137,4 @@ export const snapshotToArray = snapshot => {
     });
 
     return returnArr;
-};
+};*/
