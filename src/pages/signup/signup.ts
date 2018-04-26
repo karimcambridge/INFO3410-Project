@@ -37,7 +37,8 @@ export class SignupPage {
         this.auth.signUp(credentials)
         .then(value => {
           console.log('[USER SIGNED UP]');
-          this.navCtrl.setRoot(AccountPage);
+          this.navCtrl.pop();
+          this.navCtrl.pop();
         })
         .catch(err => {
           console.log('Something went wrong: ', err.message);

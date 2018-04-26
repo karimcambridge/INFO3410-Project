@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AuthService } from '../../app/core/auth.service';
 import { VendorPage } from '../vendor/vendor';
-import { AccountPage } from '../account/account';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-vendorForm',
@@ -20,11 +20,11 @@ export class VendorFormPage {
   }
 
   goBack() {
-    this.navCtrl.setRoot(VendorPage);
+    this.navCtrl.pop();
   }
 
   redirectToAccount() {
-    this.navCtrl.push(AccountPage);
+    this.navCtrl.push(LoginPage);
   }
 
 }
