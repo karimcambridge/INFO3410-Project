@@ -5,7 +5,7 @@
 </ion-header>
 
 <div *ngIf="authService.user | async; then authenticated else guest">
-        <!-- template will replace this div -->
+  <!-- template will replace this div -->
 </div>
 
 <!-- User NOT logged in -->
@@ -13,7 +13,7 @@
   <ion-content padding class="page-account">
     <h3>Hello, please log in to access your account!</h3>
     <ion-buttons>
-      <button ion-button (click)="gotoLoginPage()">
+      <button ion-button color="secondary" round (click)="gotoLoginPage()">
         <ion-icon name="log-in"> LOG IN</ion-icon>
       </button>
     </ion-buttons>
