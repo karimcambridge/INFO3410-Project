@@ -15,34 +15,44 @@ $bkg-color: #d8fccc;
     }
 }
 
-#ion-item .twitter {
+#twitter {
+    margin-left: 8%;
     width: 21%;
     height: 39%;
-    text-align: center;
-    border: 2px solid #aaa;
+    text-align: left;
+    border: 1px solid limegreen;
     border-radius: 4px;
-    //border-color: red;
+}
+#ig {
+    margin-left: 8%;
+    width: 21%;
+    height: 39%;
+    text-align: left;
+    border: 1px solid limegreen;
+    border-radius: 4px;
 }
 
 .button_1{
-    height: 5%;
+    width: 30%;
+    height: 10%;
     border:12px;
     padding-left: 10px;
     padding-right: 10px;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 15px;
     position: absolute;
-    left: 10px;
+    left: center;
+    margin: -1px;
 }
 
 textarea[type=text]{
     text-align:left;
-    width: 50%;
+    width: 100%;
     border: 2px solid #aaa;
     border-radius: 4px;
-    margin:8px;
+    margin:10px;
     outline:none;
-    padding:8px;
+    padding:20px;
     box-sizing:border-box;
     transition:.3s;
 }
@@ -55,16 +65,33 @@ textarea[type=text]:focus{
 
 h3 {
     color: limegreen;
+    text-align: center;
 }
 
 h2{
     color: limegreen;
-    //text-align: center;
+    text-align: center;
+    margin:10px;
+}
+h1{
+    color: limegreen;
+    text-align: left;
+    margin:10px;
+    padding-top:0px;
+}
+
+.butt{
+    height:50%;
+}
+.dark{
+    margin:40px;
 }
 .ok{
     float:right;
-    // width: 20%;
-    // margin-top:-220px;
-    // margin-right:100px;
-    
+    text-align:center;
+    margin: 40px;
+}
+#areYouHappyNow{
+    text-align: justify;
+    text-align: center;
 }
