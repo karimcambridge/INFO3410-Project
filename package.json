@@ -31,6 +31,7 @@
     "@ionic-native/firebase": "^4.7.0",
     "@ionic-native/geolocation": "^4.7.0",
     "@ionic-native/google-plus": "^4.7.0",
+    "@ionic-native/push": "^4.7.0",
     "@ionic-native/splash-screen": "4.6.0",
     "@ionic-native/status-bar": "4.6.0",
     "@ionic/pro": "^1.0.20",
@@ -94,6 +95,9 @@
       "cordova-plugin-email-composer": {},
       "cordova-plugin-geolocation": {
         "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
+      },
+      "phonegap-plugin-push": {
+        "FCM_VERSION": "11.6.2"
       }
     },
     "platforms": [

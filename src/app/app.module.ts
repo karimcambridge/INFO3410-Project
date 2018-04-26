@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { Routes, RouterModule } from '@angular/router';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { Push } from '@ionic-native/push';
 import { NgxErrorsModule } from '@ultimate/ngxerrors';
 import { MyApp } from './app.component';
 
@@ -138,7 +139,8 @@ export class MyErrorHandler implements ErrorHandler {
     AngularFireAuthModule,
     AuthService,
     AuthGuard,
-    EmailComposer//,
+    EmailComposer,
+    Push//,
     //RouterModule
   ]
 })
