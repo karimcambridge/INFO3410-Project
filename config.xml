@@ -99,11 +99,4 @@
         <variable name="ANDROID_SUPPORT_V13_VERSION" value="27.+" />
         <variable name="FCM_VERSION" value="11.6.2" />
     </plugin>
-<<<<<<< HEAD
-=======
-    <allow-navigation href="http://172.16.9.150:8100" />
-    <engine name="browser" spec="5.0.3" />
-    <engine name="android" spec="7.0.0" />
-    <engine name="ios" spec="4.5.4" />
->>>>>>> 7ee0c9278296cadfe30168ce3dcd47ec218629ba
 </widget>
