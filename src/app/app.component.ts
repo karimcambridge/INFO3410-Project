@@ -29,6 +29,7 @@ export class MyApp {
       splashScreen.hide();
 
       if(this.platform.is('cordova')) {
+        console.log('[CORDOVA]: ENABLED.');
         this.push.hasPermission()
           .then((res: any) => {
             if(res.isEnabled) {
@@ -38,6 +39,8 @@ export class MyApp {
               console.log('We do not have permission to send push notifications');
             }
           });
+      } else {
+        console.log('[CORDOVA]: NOT ENABLED.');
       }
     });
   }
