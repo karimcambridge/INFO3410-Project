@@ -13,7 +13,7 @@
 
 <!-- User NOT logged in -->
 <ng-template #guest>
-  <ion-content padding>
+  <ion-content padding class="page-account">
     <h3>Hello, please log in to access your account!</h3>
     <ion-buttons>
       <button ion-button (click)="gotoLoginPage()">
@@ -25,9 +25,9 @@
 
 <!-- User logged in -->
 <ng-template #authenticated>
-  <ion-content padding>
+  <ion-content padding class="page-account">
     <div *ngIf="authService.user | async as user">
-      <img [src]="user.photo_url" width="60" height="60">
+      <img [src]="user.photo_url" class="avatar">
       <h1>Welcome back {{ user.email }}!</h1>
       <h3>Howdy, {{ user.display_name }}</h3>
       <h3>You registered on {{user.registration_date | date:'yyyy-MM-dd'}}</h3>
