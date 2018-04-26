@@ -1,10 +1,10 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Vendor Form</ion-title>
+    <ion-title>Vendor Sign Up</ion-title>
   </ion-navbar>
 </ion-header>
 
-<div *ngIf="authService.user | async; then authenticated else guest">
+<div *ngIf="authService.user | async as user; then authenticated else guest">
   <!-- template will replace this div -->
 </div>
 
@@ -22,35 +22,46 @@
 <!-- User logged in -->
 <ng-template #authenticated>
   <ion-content padding class="page-vendorForm">
+    <br>
+    <br>
+    <br>
     <h2>Vendor Registration Form</h2>
-    <ion-list>
-      <ion-item>
-        <ion-label fixed>Phone</ion-label>
-        <ion-input type="tel"></ion-input>
-      </ion-item>
+    {{ authService.user.displayName }}
+    <form (ngSubmit)="vendorSignUp()" [formGroup]="vendorForm">
+      <ion-list inset>
 
-      <ion-item>
-        <ion-label>Category</ion-label>
-        <ion-select [(ngModel)]="category">
-          <ion-option value="food">Food</ion-option>
-          <ion-option value="produce">Produce</ion-option>
-          <ion-option value="jewellery">Jewellery</ion-option>
-          <ion-option value="bodycare">Body Care</ion-option>
-        </ion-select>
-      </ion-item>
+        <ion-item [ngClass]="{ invalid: telErrors.hasError('*', ['touched', 'dirty']) }">
+            <ion-label floating>Phone #</ion-label>
+            <ion-input type="text" formControlName="tel"></ion-input>
+        </ion-item>
 
-      <ion-item>
-        <ion-label fixed>Quote</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
+        <div ngxErrors="tel" #telErrors="ngxErrors">
+            <div [ngxError]="['tel', 'required']" [when]="['touched', 'dirty']">You should enter a valid tel</div>
+        </div>
 
-      <ion-item>
-        <ion-label fixed>Picture URL</ion-label>
-        <ion-input type="url"></ion-input>
-      </ion-item>
-    </ion-list>
+        <ion-item>
+          <ion-label floating>Category</ion-label>
+          <ion-select [(ngModel)]="category" formControlName="category">
+            <ion-option value="food">Food</ion-option>
+            <ion-option value="produce">Produce</ion-option>
+            <ion-option value="jewellery">Jewellery</ion-option>
+            <ion-option value="bodycare">Body Care</ion-option>
+          </ion-select>
+        </ion-item>
 
-    <button ion-button color="secondary" round (click)="vendorSignUp()">Sign Up</button>
-    <button ion-button color="secondary" round (click)="goBack()">Back</button>
+      </ion-list>
+    </form>
+
+    <div padding-horizontal>
+        <div class="form-error">{{vendorError}}</div>
+
+        <button ion-button full type="submit" [disabled]="!vendorForm.valid">Sign UP</button>
+
+        <ion-list>
+            <button ion-button icon-left block clear (click)="goBack()">
+                Go Back
+            </button>
+        </ion-list>
+    </div>
   </ion-content>
 </ng-template>
