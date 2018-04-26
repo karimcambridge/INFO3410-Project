@@ -2,11 +2,18 @@ $bkg-color: #d8fccc;
 
 .page-about{
     background-color: $bkg-color;
+    #plant {
+        height: 70px;
+        width: 70px;
+    }
     #about{
         font: {
             family: Calibri;
             size: 12px;
         }
+    }
+    #facts {
+        margin-top: 30px;
     }
 }
 
