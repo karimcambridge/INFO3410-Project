@@ -41,7 +41,7 @@ export class LoginPage {
   	this.authService.login(credentials)
     .then(value => {
       console.log('[USER LOGGED IN SUCCESSFULLY]');
-      this.navCtrl.setRoot(AccountPage);
+      this.navCtrl.setRoot(AccountPage)
     })
     .catch(err => {
       console.log('Something went wrong: ', err.message);
@@ -51,8 +51,8 @@ export class LoginPage {
   googleLogin() {
   	this.authService.googleLogin()
   	.then(value => {
-      console.log('Nice, it worked!');
-      this.navCtrl.setRoot(AccountPage);
+      console.log('[GOOGLE USER LOGGED IN SUCCESSFULLY]');
+      this.navCtrl.setRoot(AccountPage)
     })
     .catch(err => {
       console.log('Something went wrong: ', err.message);
