@@ -3,7 +3,7 @@
     <name>ask-jayz</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="karimcambridge@gmail.com" href="http://ionicframework.com/">ASK-JZ Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://10.215.1.4:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -92,11 +92,12 @@
     </plugin>
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <allow-navigation href="http://172.16.9.150:8100" />
-    <engine name="browser" spec="5.0.3" />
-    <engine name="ios" spec="4.5.4" />
-    <engine name="android" spec="7.1.0" />
     <plugin name="phonegap-plugin-push" spec="^2.2.2">
         <variable name="ANDROID_SUPPORT_V13_VERSION" value="27.+" />
         <variable name="FCM_VERSION" value="11.6.2" />
     </plugin>
+    <allow-navigation href="http://10.215.1.4:8100" />
+    <engine name="browser" spec="5.0.3" />
+    <engine name="ios" spec="4.5.4" />
+    <engine name="android" spec="7.1.0" />
 </widget>
