@@ -16,17 +16,17 @@
                 <ion-input type="text" formControlName="email"></ion-input>
             </ion-item>
 
-            <div ngxErrors="email" #emailErrors="ngxErrors">
-                <div [ngxError]="['email', 'required']" [when]="['touched', 'dirty']">You should enter a valid email</div>
-            </div>
-
             <ion-item [ngClass]="{ invalid: loginForm.get('password').hasError('*', ['touched']) }">
                 <ion-label floating>Password</ion-label>
                 <ion-input type="password" formControlName="password"></ion-input>
             </ion-item>
 
-            <div ngxErrors="password" #passwordErrors="ngxErrors">
-                <div [ngxError]="['minlength', 'required']" [when]="['touched']">Your password should be at least 5 characters</div>
+            <div ngxErrors="email" class="form-error">
+                <div [ngxError]="['email', 'required']" [when]="['touched', 'dirty']">Invalid email address. Please correct it.</div>
+            </div>
+
+            <div ngxErrors="password" class="form-error">
+                <div [ngxError]="['minlength', 'required']" [when]="['touched']">Your password should be at least 5 characters.</div>
             </div>
         </ion-list>
 

@@ -12,40 +12,40 @@
 				<ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
 			</ion-item>
 
-			<div ngxErrors="email" #emailErrors="ngxErrors">
-				<div [ngxError]="['email', 'required']" [when]="['touched']">Invalid email entered. Please try again!</div>
-			</div>
-
 			<ion-item [ngClass]="{ invalid: signupForm.get('password').hasError('*', ['touched']) }">
 				<ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
 			</ion-item>
-
-			<div ngxErrors="password" #passwordErrors="ngxErrors">
-				<div [ngxError]="['minlength', 'required']" [when]="['touched']">Your password should be at least 6 characters</div>
-			</div>
 
 			<ion-item [ngClass]="{ invalid: signupForm.get('display_name').hasError('*', ['touched']) }">
 				<ion-input type="text" placeholder="Display Name" formControlName="display_name"></ion-input>
 			</ion-item>
 
-			<div ngxErrors="display_name" #displayNameErrors="ngxErrors">
-				<div [ngxError]="['minlength', 'required']" [when]="['touched']">Display name should be at least 3 characters</div>
-			</div>
-
 			<ion-item [ngClass]="{ invalid: signupForm.get('first_name').hasError('*', ['touched']) }">
 				<ion-input type="text" placeholder="First Name" formControlName="first_name"></ion-input>
 			</ion-item>
-
-			<div ngxErrors="first_name" #firstNameErrors="ngxErrors">
-				<div [ngxError]="['minlength', 'required']" [when]="['touched']">First name should be at least 3 characters</div>
-			</div>
 
 			<ion-item [ngClass]="{ invalid: signupForm.get('last_name').hasError('*', ['touched']) }">
 				<ion-input type="text" placeholder="Last Name" formControlName="last_name"></ion-input>
 			</ion-item>
 
-			<div ngxErrors="last_name" #lastNameErrors="ngxErrors">
-				<div [ngxError]="['minlength', 'required']" [when]="['touched']">Last name should be at least 3 characters</div>
+			<div ngxErrors="email" class="form-error">
+				<div [ngxError]="['email', 'required']" [when]="['touched']">Invalid email entered. Please try again!</div>
+			</div>
+
+			<div ngxErrors="password" class="form-error">
+				<div [ngxError]="['minlength', 'required']" [when]="['touched']">Your password should be at least 6 characters.</div>
+			</div>
+
+			<div ngxErrors="display_name" class="form-error">
+				<div [ngxError]="['minlength', 'required']" [when]="['touched']">Display name should be at least 3 characters.</div>
+			</div>
+
+			<div ngxErrors="first_name" class="form-error">
+				<div [ngxError]="['minlength', 'required']" [when]="['touched']">First name should be at least 3 characters.</div>
+			</div>
+
+			<div ngxErrors="last_name" class="form-error">
+				<div [ngxError]="['minlength', 'required']" [when]="['touched']">Last name should be at least 3 characters.</div>
 			</div>
 		</ion-list>
 
