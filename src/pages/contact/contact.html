@@ -5,9 +5,11 @@
 </ion-header>
 
 <ion-content padding class="page-contact">
-  <ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
     <h2>Follow us on our Social Media Accounts!</h2>
-    <ion-item>
+    <ion-item id="twitter">
       <!-- link to our twitter page -->
       <ion-icon name="logo-twitter" item-start></ion-icon>
       <a class="item" href="https://www.twitter.com/MyGreenApp2018" target="_blank">
@@ -17,16 +19,18 @@
 
     <br>
 
-    <ion-item>
+    <ion-item id="ig">
       <!-- link to our instagram page  -->
       <ion-icon name="logo-instagram" item-start></ion-icon>
       <a class="item" href="https://www.instagram.com/MyGreenApp" target="_blank">
         @MyGreenApp2018
       </a>
     </ion-item>
-  </ion-grid>
-  <br><br>
-
+    </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col>
   <div class="dark">
     <h3>How Do You Like Our App?</h3>
     <form id="feedback">
@@ -35,13 +39,18 @@
     </form>
     <button ion-button color="secondary" round (click)="submitFeedback()" class="button_1">Submit</button>
   </div>
+  </ion-col>
 
+  <ion-col>
   <div class="ok">
      <h2> Did You Know </h2>
         <form id="areYouHappyNow"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
         </form>
   </div>
+  </ion-col>
+   </ion-row>
+  </ion-grid>
 </ion-content>
 
 
