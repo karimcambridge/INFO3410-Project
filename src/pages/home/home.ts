@@ -24,6 +24,7 @@ export class HomePage {
               public platform: Platform,
               private geolocation: Geolocation,
               private device: Device) {
+
     platform.ready().then(() => {
       this.initMap();
     });

@@ -20,7 +20,7 @@
     </ion-row>
 
     <ion-row justify-content-center class="calender">
-      <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onDaySelect($event)" (onMonthSelect)="onMonthSelect($event)"></ion-calendar>
+      <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onDaySelect($event)"></ion-calendar>
     </ion-row>
 
     <button ion-button justify-content-center (click)="calendar.today()">Jump to Today</button>
@@ -28,8 +28,8 @@
     <ion-content id="event" *ngFor="let evt of currentEvents">
       <ion-item>
         <ion-row>
-          <p>{{evt.month}}</p>
-          <p>{{evt.day}}</p>
+          <p>{{evt.month}}/</p>
+          <p>{{evt.date}}/</p>
           <p>{{evt.year}}</p>
         </ion-row>
         <p>{{evt.event}}</p>
