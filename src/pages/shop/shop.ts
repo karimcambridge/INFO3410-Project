@@ -48,7 +48,8 @@ export class ShopPage {
         this.items = [
           {
             title: 'Guava', 
-            name: 'Anna Breton',
+            vendor: 'Anna Breton',
+            vendorImage: 'assets/imgs/Hugging.png',
             image: 'assets/imgs/guava.jpg', 
             quantityInCart: 0, 
             price: 4.00, 
@@ -56,15 +57,17 @@ export class ShopPage {
           },
           {
             title: 'Nutmeg', 
-            name: 'Karim Cambridge',
-            image: '', 
+            vendor: 'Karim Cambridge',
+            vendorImage: 'assets/imgs/neutral-face.png',
+            image: 'assets/imgs/nutmeg.jpg', 
             quantityInCart: 0, 
             price: 20.00, 
             addButtonState: 'idle'
           },
           {
             title: 'Sorrel', 
-            name: 'Louis Scott',
+            vendor: 'Louis Scott',
+            vendorImage: 'assets/imgs/money.png',
             image: 'assets/imgs/sorrel.jpg', 
             quantityInCart: 0, 
             price: 10.00, 
@@ -72,7 +75,8 @@ export class ShopPage {
           },
           {
             title: 'Portugal', 
-            name: 'Xia Crawford', 
+            vendor: 'Xia Crawford', 
+            vendorImage: 'assets/imgs/hearteyes.png',
             image: 'assets/imgs/portugal.jpg',
             quantityInCart: 0, 
             price: 1.00, 
@@ -80,7 +84,8 @@ export class ShopPage {
           },
           {
             title: 'Jewellery', 
-            name: 'Brittney Chriton',
+            vendor: 'Brittney Chriton',
+            vendorImage: 'assets/imgs/tongue.png',
             image: 'assets/imgs/jewel1.jpg', 
             quantityInCart: 0, 
             price: 30.00, 

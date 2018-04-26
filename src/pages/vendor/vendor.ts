@@ -8,7 +8,7 @@ import { ShopPage } from '../shop/shop';
 @Component({
   selector: 'page-vendor',
   templateUrl: 'vendor.html'
-  
+
 })
 
 export class VendorPage {
@@ -29,7 +29,7 @@ export class VendorPage {
 
   // redirects the user to the Shop page when the Shop button is selected
   shop() {
-      this.navCtrl.setRoot(ShopPage);
+    this.navCtrl.setRoot(ShopPage);
   }
 
 }

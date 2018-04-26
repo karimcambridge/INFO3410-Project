@@ -9,17 +9,17 @@
     <ion-card id="card" *ngFor="let item of items">
  
         <ion-item>
-            <ion-avatar item-start *ngFor= "item in items" >
-                <img src="assets/imgs/Hugging.png">
+            <ion-avatar item-start>
+                <img src="{{item.vendorImage}}">
             </ion-avatar>
             <h2>{{item.title}}</h2>
-            <p> by Anna Breton </p>
+            <p> by {{item.vendor}} </p>
         </ion-item>
  
         <img id="prod-img" src="{{item.image}}">
  
         <ion-card-content>
-            <p>Price: {{item.price}}</p>
+            <p>Price: ${{item.price}}</p>
         </ion-card-content>
  
         <div class="cart-buttons">
