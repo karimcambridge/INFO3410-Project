@@ -26,7 +26,18 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-      this.pushSetup();
+
+      if(this.platform.is('cordova')) {
+        this.push.hasPermission()
+          .then((res: any) => {
+            if(res.isEnabled) {
+              this.initPush();
+              console.log('We have permission to send push notifications');
+            } else {
+              console.log('We do not have permission to send push notifications');
+            }
+          });
+      }
     });
   }
 
@@ -44,7 +55,7 @@ export class MyApp {
     this.nav.setRoot(HomePage);
   }
 
-  pushSetup() {
+  initPush() {
     const options: PushOptions = {
        android: {
          senderID: '778757169371'
