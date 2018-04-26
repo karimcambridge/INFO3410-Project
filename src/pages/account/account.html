@@ -1,15 +1,12 @@
-<div *ngIf="authService.user | async; then authenticated else guest">
-        <!-- template will replace this div -->
-</div>
-
 <ion-header>
   <ion-navbar>
     <ion-title>Account</ion-title>
-    <div *ngIf="authService.user.isLoggedIn | async">
-      <p>LOGGED IN</p>
-    </div>
   </ion-navbar>
 </ion-header>
+
+<div *ngIf="authService.user | async; then authenticated else guest">
+        <!-- template will replace this div -->
+</div>
 
 <!-- User NOT logged in -->
 <ng-template #guest>

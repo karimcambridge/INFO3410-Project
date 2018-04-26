@@ -22,7 +22,7 @@ interface User {
 export class AuthService {
   user: Observable<User>;
   //private userDetails: firebase.User;
-  isLoggedIn: boolean = false;
+  isLoggedIn: boolean = !!localStorage.getItem('loggedIn') || false;
 
   constructor(private platform: Platform,
               private afAuth: AngularFireAuth,
@@ -38,6 +38,7 @@ export class AuthService {
 
     this.afAuth.authState.subscribe(res => {
       this.isLoggedIn = (res && res.uid) ? true : false;
+      localStorage.setItem("loggedIn", this.isLoggedIn.toString());
     });
     console.log("[AUTH SERVICE] logged in? " + this.isLoggedIn);
   }
@@ -47,6 +48,7 @@ export class AuthService {
   }
 
   signOut() {
+    localStorage.removeItem("loggedIn");
     this.afAuth.auth.signOut();//.then(() => {
         //this.router.navigate(['/']);
     //});
