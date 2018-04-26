@@ -28,18 +28,14 @@
     <h2>Vendor Registration Form</h2>
     {{ authService.user.displayName }}
     <form (ngSubmit)="vendorSignUp()" [formGroup]="vendorForm">
-      <ion-list inset>
+      <ion-list>
 
-        <ion-item [ngClass]="{ invalid: telErrors.hasError('*', ['touched', 'dirty']) }">
+        <ion-item [ngClass]="{ invalid: vendorForm.get('tel').hasError('*', ['touched', 'dirty']) }">
             <ion-label floating>Phone #</ion-label>
             <ion-input type="text" formControlName="tel"></ion-input>
         </ion-item>
 
-        <div ngxErrors="tel" #telErrors="ngxErrors">
-            <div [ngxError]="['tel', 'required']" [when]="['touched', 'dirty']">You should enter a valid tel</div>
-        </div>
-
-        <ion-item>
+        <ion-item [ngClass]="{ invalid: vendorForm.get('category').hasError('*', ['touched', 'dirty']) }">
           <ion-label floating>Category</ion-label>
           <ion-select [(ngModel)]="category" formControlName="category">
             <ion-option value="food">Food</ion-option>
@@ -48,6 +44,28 @@
             <ion-option value="bodycare">Body Care</ion-option>
           </ion-select>
         </ion-item>
+
+        <div ngxErrors="category" #categoryErrors="ngxErrors">
+            <div [ngxError]="['required']" [when]="['touched']">You must choose a category!</div>
+        </div>
+
+        <ion-item [ngClass]="{ invalid: vendorForm.get('quote').hasError('*', ['touched', 'dirty']) }">
+            <ion-label floating>Quote</ion-label>
+            <ion-input type="text" formControlName="quote"></ion-input>
+        </ion-item>
+
+        <div ngxErrors="quote" #quoteErrors="ngxErrors">
+            <div [ngxError]="['minlength', 'required']" [when]="['touched']">Your quote should be at least 4 characters</div>
+        </div>
+
+        <ion-item [ngClass]="{ invalid: vendorForm.get('photo_url').hasError('*', ['touched', 'dirty']) }">
+            <ion-label floating>Photo URL</ion-label>
+            <ion-input type="text" formControlName="photo_url"></ion-input>
+        </ion-item>
+
+        <div ngxErrors="photo_url" #photoErrors="ngxErrors">
+            <div [ngxError]="['minlength', 'required']" [when]="['touched']">Your url should be at least 4 characters</div>
+        </div>
 
       </ion-list>
     </form>

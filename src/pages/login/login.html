@@ -11,7 +11,7 @@
     <form (ngSubmit)="login()" [formGroup]="loginForm">
         <ion-list inset>
 
-            <ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched', 'dirty']) }">
+            <ion-item [ngClass]="{ invalid: loginForm.get('email').hasError('*', ['touched', 'dirty']) }">
                 <ion-label floating>Email</ion-label>
                 <ion-input type="text" formControlName="email"></ion-input>
             </ion-item>
@@ -20,7 +20,7 @@
                 <div [ngxError]="['email', 'required']" [when]="['touched', 'dirty']">You should enter a valid email</div>
             </div>
 
-            <ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
+            <ion-item [ngClass]="{ invalid: loginForm.get('password').hasError('*', ['touched']) }">
                 <ion-label floating>Password</ion-label>
                 <ion-input type="password" formControlName="password"></ion-input>
             </ion-item>
