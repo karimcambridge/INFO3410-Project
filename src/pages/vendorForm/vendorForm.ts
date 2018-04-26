@@ -15,7 +15,7 @@ export class VendorFormPage {
 
   }
 
-  save() {
+  vendorSignUp() {
     alert("Your information has been saved");
   }
 
