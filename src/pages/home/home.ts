@@ -32,12 +32,12 @@ export class HomePage {
       this.deleteMarkers();
       snapshotToArray(resp).forEach(data => {
         if(data.uuid !== this.device.uuid) {
-          let image = 'assets/imgs/green-bike.png';
+          let image = 'assets/imgs/pink_pin.png';
           let updatelocation = new google.maps.LatLng(data.latitude,data.longitude);
           this.addMarker(updatelocation,image);
           this.setMapOnAll(this.map);
         } else {
-          let image = 'assets/imgs/blue-bike.png';
+          let image = 'assets/imgs/blue_pin.png';
           let updatelocation = new google.maps.LatLng(data.latitude,data.longitude);
           this.addMarker(updatelocation,image);
           this.setMapOnAll(this.map);
@@ -85,7 +85,7 @@ export class HomePage {
         this.deleteMarkers();
         this.updateGeolocation(this.device.uuid, data.coords.latitude,data.coords.longitude);
         let updatelocation = new google.maps.LatLng(data.coords.latitude,data.coords.longitude);
-        let image = 'assets/imgs/blue-bike.png';
+        let image = 'assets/imgs/blue_pin.png';
         this.addMarker(updatelocation,image);
         this.setMapOnAll(this.map);
       });
@@ -116,8 +116,8 @@ export class HomePage {
   }
 
   updateGeolocation(uuid, lat, lng) {
-    if(localStorage.getItem('mykey')) {
-      firebase.database().ref('geolocations/'+localStorage.getItem('mykey')).set({
+    if(localStorage.getItem('geoKey')) {
+      firebase.database().ref('geolocations/'+localStorage.getItem('geoKey')).set({
         uuid: uuid,
         latitude: lat,
         longitude: lng
@@ -129,7 +129,7 @@ export class HomePage {
         latitude: lat,
         longitude: lng
       });
-      localStorage.setItem('mykey', newData.key);
+      localStorage.setItem('geoKey', newData.key);
     }
   }
 
