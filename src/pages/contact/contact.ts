@@ -12,7 +12,7 @@ export class ContactPage {
 
   }
 
-  submitFeedback() {
+  submitFeedback() { //this method is responsible for alerting the user after they have posted a comment 
     alert("Your feedback has been duley noted!"); 
     //this.feedbackText = "";
   }
