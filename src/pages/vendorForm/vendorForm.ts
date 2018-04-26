@@ -18,8 +18,7 @@ export class VendorFormPage {
     this.vendorForm = fb.group({
       tel: ['', Validators.compose([Validators.required, Validators.minLength(7)])],
       category: ['', Validators.compose([Validators.required])],
-      quote: ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-      photo_url: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
+      quote: ['', Validators.compose([Validators.required, Validators.minLength(4)])]
     });
   }
 

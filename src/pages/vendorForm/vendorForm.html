@@ -50,11 +50,6 @@
             <ion-input type="text" formControlName="quote"></ion-input>
         </ion-item>
 
-        <ion-item [ngClass]="{ invalid: vendorForm.get('photo_url').hasError('*', ['touched', 'dirty']) }">
-            <ion-label floating>Photo URL</ion-label>
-            <ion-input type="text" formControlName="photo_url"></ion-input>
-        </ion-item>
-
         <div ngxErrors="tel" class="form-error">
             <div [ngxError]="['required']" [when]="['touched']">Your telephone number must be atleast 7 characters!</div>
         </div>
@@ -65,10 +60,6 @@
 
         <div ngxErrors="quote" class="form-error">
             <div [ngxError]="['minlength', 'required']" [when]="['touched']">Your quote should be at least 4 characters!</div>
-        </div>
-
-        <div ngxErrors="photo_url" class="form-error">
-            <div [ngxError]="['minlength', 'required']" [when]="['touched']">Your url should be at least 4 characters!</div>
         </div>
 
       </ion-list>
