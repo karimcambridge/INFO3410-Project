@@ -17,7 +17,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   constructor(private platform: Platform,
-              private statusBar: StatusBar,
+              statusBar: StatusBar,
               splashScreen: SplashScreen,
               private auth: AuthService,
               private push: Push,

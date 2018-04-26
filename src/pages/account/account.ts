@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthService } from '../../app/core/auth.service';
 import { LoginPage } from '../login/login';
 import { HomePage } from '../home/home';
@@ -14,7 +13,6 @@ export class AccountPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private afAuth: AngularFireAuth,
               public authService: AuthService) {
     console.log("[ACCOUNT] logged in? " + this.authService.isLoggedIn);
   }

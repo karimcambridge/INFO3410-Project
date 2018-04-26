@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 //import { Router } from '@angular/router';
-import { Platform } from 'ionic-angular';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
@@ -24,8 +23,7 @@ export class AuthService {
   //private userDetails: firebase.User;
   isLoggedIn: boolean = !!localStorage.getItem('loggedIn') || false;
 
-  constructor(private platform: Platform,
-              private afAuth: AngularFireAuth,
+  constructor(private afAuth: AngularFireAuth,
               private afs: AngularFirestore) {
               //private router: Router) {
     this.user = this.afAuth.authState.switchMap(user => {
