@@ -15,14 +15,14 @@ $bkg-color: #d8fccc;
     }
 }
 
-// ion-list {
-//     width: 21%;
-//     height: 39%;
-//     text-align: center;
-//     border: 2px solid #aaa;
-//     border-radius: 4px;
-//     //border-color: red;
-// }
+#ion-item .twitter {
+    width: 21%;
+    height: 39%;
+    text-align: center;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    //border-color: red;
+}
 
 .button_1{
     height: 5%;
@@ -63,8 +63,8 @@ h2{
 }
 .ok{
     float:right;
-    width: 20%;
-    margin-top:-220px;
-    margin-right:100px;
+    // width: 20%;
+    // margin-top:-220px;
+    // margin-right:100px;
     
 }
