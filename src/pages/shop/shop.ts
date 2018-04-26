@@ -71,6 +71,26 @@ export class ShopPage {
             delButtonState: 'idle'
           },
           {
+            title: 'Jewellery', 
+            vendor: 'Brittney Chriton',
+            vendorImage: 'assets/imgs/tongue.png',
+            image: 'assets/imgs/jewel2.jpg', 
+            quantityInCart: 0, 
+            price: 30.00, 
+            addButtonState: 'idle',
+            delButtonState: 'idle'
+          },
+          {
+            title: 'Black Soap', 
+            vendor: 'Justin Maxime',
+            vendorImage: 'assets/imgs/relieved-face.png',
+            image: 'assets/imgs/soap.jpg', 
+            quantityInCart: 0, 
+            price: 20.00, 
+            addButtonState: 'idle',
+            delButtonState: 'idle'
+          },
+          {
             title: 'Nutmeg', 
             vendor: 'Karim Cambridge',
             vendorImage: 'assets/imgs/neutral-face.png',
@@ -91,25 +111,46 @@ export class ShopPage {
             delButtonState: 'idle'
           },
           {
-            title: 'Portugal', 
-            vendor: 'Xia Crawford', 
-            vendorImage: 'assets/imgs/hearteyes.png',
-            image: 'assets/imgs/portugal.jpg',
+            title: 'Pottery', 
+            vendor: 'Ronald Browne',
+            vendorImage: 'assets/imgs/clown.png',
+            image: 'assets/imgs/pottery.jpg', 
             quantityInCart: 0, 
-            price: 1.00, 
+            price: 60.00, 
             addButtonState: 'idle',
             delButtonState: 'idle'
           },
           {
-            title: 'Jewellery', 
-            vendor: 'Brittney Chriton',
-            vendorImage: 'assets/imgs/tongue.png',
-            image: 'assets/imgs/jewel2.jpg', 
+            title: 'Shea Butter', 
+            vendor: 'Sade Bowman', 
+            vendorImage: 'assets/imgs/kiss.png',
+            image: 'assets/imgs/sheabutter.jpg',
             quantityInCart: 0, 
-            price: 30.00, 
+            price: 40.00, 
             addButtonState: 'idle',
             delButtonState: 'idle'
-          }
+          },
+          {
+            title: 'Curry', 
+            vendor: 'Xia Crawford', 
+            vendorImage: 'assets/imgs/hearteyes.png',
+            image: 'assets/imgs/curry.jpg',
+            quantityInCart: 0, 
+            price: 25.00, 
+            addButtonState: 'idle',
+            delButtonState: 'idle'
+          },
+          {
+            title: 'Beaded Anklet', 
+            vendor: 'Zaria Grant', 
+            vendorImage: 'assets/imgs/Skull.png',
+            image: 'assets/imgs/anklet.jpg',
+            quantityInCart: 0, 
+            price: 40.00, 
+            addButtonState: 'idle',
+            delButtonState: 'idle'
+          },
+
         ];
     }
 
