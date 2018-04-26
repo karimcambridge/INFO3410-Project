@@ -1,51 +1,46 @@
 <ion-header>
-    <ion-navbar>
-      <ion-title>Vendor Form</ion-title>
-    </ion-navbar>
-  </ion-header>
+  <ion-navbar>
+    <ion-title>Vendor Form</ion-title>
+  </ion-navbar>
+</ion-header>
 
-  <ion-content padding class="page-vendorForm">
-    <h2>Do You Want To Be A Vendor?</h2>
-    <ion-list>
-        <ion-item>
-          <ion-label fixed>Name</ion-label>
-          <ion-input type="text" value=""></ion-input>
-        </ion-item>
+<ion-content padding class="page-vendorForm">
+  <h2>Want to be a vendor?</h2>
+  <ion-list>
+      <ion-item>
+        <ion-label fixed>Name</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
 
-        <ion-item>
-          <ion-label>Gender</ion-label>
-          <ion-select [(ngModel)]="gender">
-            <ion-option value="male">Male</ion-option>
-            <ion-option value="female">Female</ion-option>
+      <ion-item>
+        <ion-label>Gender</ion-label>
+        <ion-select [(ngModel)]="gender">
+          <ion-option value="male">Male</ion-option>
+          <ion-option value="female">Female</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Phone</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Email</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Category</ion-label>
+          <ion-select [(ngModel)]="category">
+            <ion-option value="food">Food</ion-option>
+            <ion-option value="produce">Produce</ion-option>
+            <ion-option value="jewellery">Jewellery</ion-option>
+            <ion-option value="bodycare">Body Care</ion-option>
           </ion-select>
         </ion-item>
+    </ion-list>
 
-        <ion-item>
-          <ion-label fixed>Phone</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label fixed>Email</ion-label>
-          <ion-input type="email"></ion-input>
-        </ion-item>
-
-        <ion-item>
-            <ion-label>Category</ion-label>
-            <ion-select [(ngModel)]="category">
-              <ion-option value="food">Food</ion-option>
-              <ion-option value="produce">Produce</ion-option>
-              <ion-option value="jewellery">Jewellery</ion-option>
-              <ion-option value="bodycare">Body Care</ion-option>
-            </ion-select>
-          </ion-item>
-
-      </ion-list>
-
-      <p>
-        <button ion-button color="secondary" round (click)="save()">Save</button>
-        <button ion-button color="secondary" round (click)="goBack()">Back</button>
-      </p>
-
-
-  </ion-content>
+    <button ion-button color="secondary" round (click)="save()">Save</button>
+    <button ion-button color="secondary" round (click)="goBack()">Back</button>
+</ion-content>
