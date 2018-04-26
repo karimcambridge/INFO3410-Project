@@ -5,66 +5,62 @@
 </ion-header>
 
 <ion-content padding class="page-contact">
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-    <h1>Follow us on our Social Media Accounts!</h1>
-    <ion-item id="twitter">
-      <!-- link to our twitter page -->
-      <ion-icon name="logo-twitter" item-start></ion-icon>
-      <a class="item" href="https://www.twitter.com/MyGreenApp2018" target="_blank">
-        @MyGreenApp2018
-      </a>
-    </ion-item>
-
-    <br>
-
-    <ion-item id="ig">
-      <!-- link to our instagram page  -->
-      <ion-icon name="logo-instagram" item-start></ion-icon>
-      <a class="item" href="https://www.instagram.com/MyGreenApp" target="_blank">
-        @MyGreenApp2018
-      </a>
-    </ion-item>
-    </ion-col>
-    <ion-col>
-      <img id="paperclip" src="../../assets/imgs/Clippy.png" class="right">
-    </ion-col>
-    </ion-row>
-    
+  <ion-grid>
     <ion-row>
       <ion-col>
-  <div class="dark">
-    <h3>How Do You Like Our App?</h3>
-    <form id="feedback">
-      <textarea id="feedbackText" type="text" name="feedback" placeholder="Leave all feedback and comments here."
-                rows="8"></textarea>
-    </form>
-    <button id="butt" ion-button color="secondary" round (click)="submitFeedback()" class="button_1">Submit</button>
-  </div>
-  </ion-col>
+        <h1 class="h1-contact">Follow us on our Social Media Accounts!</h1>
+        <ion-item id="twitter">
+          <!-- link to our twitter page -->
+          <ion-icon name="logo-twitter" item-start></ion-icon>
+          <a class="item" href="https://www.twitter.com/MyGreenApp2018" target="_blank">
+            @MyGreenApp2018
+          </a>
+        </ion-item>
+        <br>
+        <ion-item id="ig">
+          <!-- link to our instagram page  -->
+          <ion-icon name="logo-instagram" item-start></ion-icon>
+          <a class="item" href="https://www.instagram.com/MyGreenApp" target="_blank">
+            @MyGreenApp2018
+          </a>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <img id="paperclip" src="../../assets/imgs/Clippy.png" class="right">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="dark">
+          <h3 class="h3-contact">How Do You Like Our App?</h3>
+          <form id="feedback">
+            <textarea id="feedbackText" type="text" name="feedback" placeholder="Leave all feedback and comments here." rows="8"></textarea>
+          </form>
+          <button id="butt" ion-button color="secondary" round (click)="submitFeedback()" class="button_1">Submit</button>
+        </div>
+      </ion-col>
 
-  <ion-col>
-  <div class="ok">
-     <h2> Did You Know? </h2>
-        <form id="areYouHappyNow"> <ul>
-          <li>The Industrial Revolution led to faster and more efficient farming technology, 
-          which helped usher in the Second Agricultural Revolution from 1700 to 1900 in developed countries. 
-          Many less developed countries are still experiencing the Second Agricultural Revolution.</li>
-          <br>
-          <li>
-              Fruit farming began sometime between 6000 and 3000 B.C. Figs were one of the first cultivated fruit crops.
-          </li>
-          <br>
-          <li>
-              armers often plant tall, dense trees on the edges of fruit farms. 
-              These trees provide a windbreak, which helps prevent soil erosion.
-          </li>
-        </ul>
-        </form>
-  </div>
-  </ion-col>
-   </ion-row>
+      <ion-col>
+        <div class="ok">
+           <h2 class="h2-contact">Did You Know?</h2>
+            <form id="areYouHappyNow"> <ul>
+              <li>The Industrial Revolution led to faster and more efficient farming technology, 
+              which helped usher in the Second Agricultural Revolution from 1700 to 1900 in developed countries. 
+              Many less developed countries are still experiencing the Second Agricultural Revolution.</li>
+              <br>
+              <li>
+                  Fruit farming began sometime between 6000 and 3000 B.C. Figs were one of the first cultivated fruit crops.
+              </li>
+              <br>
+              <li>
+                  armers often plant tall, dense trees on the edges of fruit farms. 
+                  These trees provide a windbreak, which helps prevent soil erosion.
+              </li>
+            </ul>
+          </form>
+        </div>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>
 

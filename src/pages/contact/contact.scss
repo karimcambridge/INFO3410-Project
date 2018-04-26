@@ -45,7 +45,7 @@ $bkg-color: #d8fccc;
     margin: -1px;
 }
 
-textarea[type=text]{
+#feedbackText {
     text-align:left;
     width: 100%;
     border: 2px solid #aaa;
@@ -58,35 +58,36 @@ textarea[type=text]{
 }
 
 // blue border backlight on select
-textarea[type=text]:focus{ 
+#feedbackText:focus { 
     border-color:dodgerBlue;
     box-shadow:0 0 15px 0 dodgerBlue;
 }
 
-h3 {
+.h1-contact {
     color: limegreen;
     text-align: center;
 }
 
-h2{
+.h2-contact {
     color: limegreen;
     text-align: center;
     margin:10px;
 }
-h1{
+
+.h3-contact {
     color: limegreen;
     text-align: center;
     margin:10px;
     padding-top:0px;
 }
 
-.butt{
+.butt {
     height:50%;
 }
-.dark{
+.dark {
     margin:40px;
 }
-.ok{
+.ok {
     float:right;
     text-align:center;
     margin: 30px;
