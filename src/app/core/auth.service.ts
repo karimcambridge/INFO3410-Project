@@ -43,10 +43,6 @@ export class AuthService {
     console.log("[AUTH SERVICE] logged in? " + this.isLoggedIn);
   }
 
-  public getUser(): Observable<User> {
-    return this.user;
-  }
-
   get isAuthenticated(): boolean {
     return this.isLoggedIn;
   }

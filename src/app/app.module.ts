@@ -38,7 +38,6 @@ import { CoreModule } from './core/core.module';
 import { AuthGuard } from './core/auth.guard';
 
 import { CalendarModule } from 'ionic3-calendar-en';
-import { FcmProvider } from '../providers/fcm/fcm';
 
 Pro.init('810dcd48', { // DON'T TOUCH THIS
   appVersion: '0.0.1'
@@ -139,8 +138,7 @@ export class MyErrorHandler implements ErrorHandler {
     AngularFireAuthModule,
     AuthService,
     AuthGuard,
-    EmailComposer,
-    FcmProvider//,
+    EmailComposer//,
     //RouterModule
   ]
 })
