@@ -39,14 +39,12 @@ export class ListVendorPage {
     ];
   }
 
-  getVendors(ev){
-    this.initializeVendors();
-
+  getVendors(ev) {
     this.initializeVendors();
     // set val to the value of the ev target
     var val = ev.target.value;
     // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
+    if(val && val.trim() != '') {
       this.vendors = this.vendors.filter((item) => {
         return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
@@ -54,19 +52,6 @@ export class ListVendorPage {
   }
 
 }
-
-@Component({
-  templateUrl: 'modal-content.html'
-})
-export class BasicPage {
-  constructor(public modalCtrl: ModalController) { }
-
-  openModal(characterNum) {
-    let modal = this.modalCtrl.create(ModalContentPage, characterNum);
-    modal.present();
-  }
-}
-
 
 @Component({
   template: `
@@ -216,7 +201,7 @@ export class ModalContentPage {
 
   closeModal() {
     this.navCtrl.pop();
-}
+  }
 
   sendEmail() {
     let email = {

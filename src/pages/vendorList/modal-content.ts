@@ -1,18 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController, Platform, NavParams, ViewController } from 'ionic-angular';
-
-@Component({
-  templateUrl: 'modal-content.html'
-})
-export class BasicPage {
-  constructor(public modalCtrl: ModalController) { }
-
-  openModal(characterNum) {
-    let modal = this.modalCtrl.create(ModalContentPage, characterNum);
-    modal.present();
-  }
-  
-}
+import { Platform, NavParams, ViewController } from 'ionic-angular';
 
 @Component({
   template: `
@@ -149,5 +136,4 @@ export class ModalContentPage {
     this.viewCtrl.dismiss();
   }
   
-
 }
