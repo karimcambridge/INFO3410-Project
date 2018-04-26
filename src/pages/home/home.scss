@@ -2,9 +2,14 @@ $bkg-color: #d8fccc;
 
 .page-home {
     // background: $bkg-color url('assets/imgs/background1.jpg');
+<<<<<<< HEAD
     // background-image: url('assets/imgs/background1.jpg');
     // background-repeat: no-repeat;
     // background-size: cover;
+=======
+    background-image: url('assets/imgs/background1.jpg');
+    background-color: $bkg-color;
+>>>>>>> 64a97f089bf5d4466fd4ee83c9e780023dbce3cb
     background-color: $bkg-color;
     #plant {
         height: 70px;
