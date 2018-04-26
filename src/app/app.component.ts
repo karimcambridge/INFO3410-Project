@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform, Nav } from 'ionic-angular';
+import { Platform, Nav, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
@@ -20,7 +20,8 @@ export class MyApp {
               private statusBar: StatusBar,
               splashScreen: SplashScreen,
               private auth: AuthService,
-              private push: Push) {
+              private push: Push,
+              private alert: AlertController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -73,7 +74,31 @@ export class MyApp {
 
     const pushObject: PushObject = this.push.init(options);
 
-    pushObject.on('notification').subscribe((notification: any) => console.log('Received a notification', notification));
+    pushObject.on('notification').subscribe((notification: any) => {
+      console.log('Received a notification', notification)
+
+      let alert = this.alert.create({
+          title: 'New Notification',
+          message: notification.message,
+          buttons: [
+            {
+              text: 'Cancel',
+              role: 'cancel',
+              handler: () => {
+                console.log('Cancel clicked');
+              }
+            },
+            {
+              text: 'See',
+              handler: () => {
+                this.nav.parent.select(1);
+              }
+            }
+          ]
+        });
+        alert.present();
+      }
+    );
 
     pushObject.on('registration').subscribe((registration: any) => console.log('Device registered', registration));
 
