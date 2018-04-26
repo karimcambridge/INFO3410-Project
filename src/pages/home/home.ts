@@ -52,27 +52,23 @@ export class HomePage {
             event: 'Earth Day'
         },
         {
-            year: 2018,
-            month: 5,
-            date: 16,
-            event: 'Birthday'
-        },
-        {
           year: 2018,
           month: 4,
           date: 18,
           event: 'End of Semester'
-      }
+        },
+        {
+            year: 2018,
+            month: 5,
+            date: 16,
+            event: 'Birthday'
+        }
     ];
   }
 
   onDaySelect(ev) {
     //console.log('Event selected:' + this.currentEvents.event);
   
-  }
-
-  onMonthSelect(ev) {
-    
   }
 
   initMap() {
