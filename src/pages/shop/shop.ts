@@ -188,7 +188,7 @@ export class ShopPage {
   }
 
   goBack() {
-    this.navCtrl.push(VendorPage);
+    this.navCtrl.setRoot(VendorPage);
   }
 
 }
