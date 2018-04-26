@@ -16,16 +16,16 @@ $bkg-color: #d8fccc;
 }
 
 #twitter {
-    margin-left: 8%;
-    width: 21%;
+    margin-left: 13%;
+    width: 50%;
     height: 39%;
     text-align: left;
     border: 1px solid limegreen;
     border-radius: 4px;
 }
 #ig {
-    margin-left: 8%;
-    width: 21%;
+    margin-left: 13%;
+    width: 50%;
     height: 39%;
     text-align: left;
     border: 1px solid limegreen;
@@ -89,9 +89,16 @@ h1{
 .ok{
     float:right;
     text-align:center;
-    margin: 40px;
+    margin: 30px;
 }
 #areYouHappyNow{
     text-align: justify;
     text-align: center;
+}
+#paperclip{
+    width: 11%;
+    height: 90%;
+    margin-left: 45%;
+    //align-content: center;
+
 }
