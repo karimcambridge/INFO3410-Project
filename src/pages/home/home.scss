@@ -2,6 +2,10 @@ $bkg-color: #d8fccc;
 
 .page-home {
     background-color: $bkg-color;
+    #plant {
+        height: 100px;
+        width: 100px;
+    }
     #home{
         font: {
             family: Verdana;
