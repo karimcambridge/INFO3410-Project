@@ -78,20 +78,14 @@ export class MyApp {
       console.log('Received a notification', notification)
 
       let alert = this.alert.create({
-          title: 'New Notification',
+          title: 'Notification Received!',
           message: notification.message,
           buttons: [
             {
-              text: 'Cancel',
+              text: 'Thanks!',
               role: 'cancel',
               handler: () => {
                 console.log('Cancel clicked');
-              }
-            },
-            {
-              text: 'See',
-              handler: () => {
-                this.nav.parent.select(1);
               }
             }
           ]
