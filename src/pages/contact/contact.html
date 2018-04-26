@@ -8,7 +8,7 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-    <h2>Follow us on our Social Media Accounts!</h2>
+    <h1>Follow us on our Social Media Accounts!</h1>
     <ion-item id="twitter">
       <!-- link to our twitter page -->
       <ion-icon name="logo-twitter" item-start></ion-icon>
@@ -37,15 +37,27 @@
       <textarea id="feedbackText" type="text" name="feedback" placeholder="Leave all feedback and comments here."
                 rows="8"></textarea>
     </form>
-    <button ion-button color="secondary" round (click)="submitFeedback()" class="button_1">Submit</button>
+    <button id="butt" ion-button color="secondary" round (click)="submitFeedback()" class="button_1">Submit</button>
   </div>
   </ion-col>
 
   <ion-col>
   <div class="ok">
-     <h2> Did You Know </h2>
-        <form id="areYouHappyNow"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+     <h2> Did You Know? </h2>
+        <form id="areYouHappyNow"> <ul>
+          <li>The Industrial Revolution led to faster and more efficient farming technology, 
+          which helped usher in the Second Agricultural Revolution from 1700 to 1900 in developed countries. 
+          Many less developed countries are still experiencing the Second Agricultural Revolution.</li>
+          <br>
+          <li>
+              Fruit farming began sometime between 6000 and 3000 B.C. Figs were one of the first cultivated fruit crops.
+          </li>
+          <br>
+          <li>
+              armers often plant tall, dense trees on the edges of fruit farms. 
+              These trees provide a windbreak, which helps prevent soil erosion.
+          </li>
+        </ul>
         </form>
   </div>
   </ion-col>
