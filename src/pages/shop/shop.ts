@@ -1,6 +1,7 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { VendorPage } from '../vendor/vendor';
 
 @Component({
     selector: 'page-shop',
@@ -184,6 +185,10 @@ export class ShopPage {
   delFromCartFinished(item){
     this.cartBadgeState = 'idle';
     item.delButtonState = 'idle';
+  }
+
+  goBack() {
+    this.navCtrl.push(VendorPage);
   }
 
 }

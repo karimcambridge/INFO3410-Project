@@ -1,14 +1,10 @@
-<html>
-
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
+    <ion-title>Contact</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content class="page-contact">
+<ion-content padding class="page-contact">
   <ion-list>
     <ion-list-header>Follow us on our Social Media Accounts!</ion-list-header>
     <ion-item>
@@ -22,33 +18,23 @@
 
     <ion-item>
         <ion-icon name="logo-instagram" item-start></ion-icon>
-        <a class= "item" href="https://www.Instagram.com/MyGreenApp" target="_blank">
+        <a class= "item" href="https://www.instagram.com/MyGreenApp" target="_blank">
         @MyGreenApp2018
         </a>
       </ion-item>
   </ion-list>
   <br><br>
 
-  <style>
-
-
-  </style>
-
   <div class="dark">
     <h3>How Do You Like Our App? </h3>
     <form id="feedback">
+<<<<<<< HEAD
       <textarea id="loll" type="text" name="feeback" placeholder="Leave all feedback and comments here." rows="15" >
+=======
+      <textarea id="feedbackText" type="text" name="feeback" placeholder="Leave all feedback and comments here." rows="15">
+>>>>>>> 5bbbd97b2373b686f251a6ea618aab6108fdcb30
       </textarea>
     </form>
-
-    <!-- <button class="button_1" onclick="myFunction()">Submit</button> -->
-    <button ion-button color="secondary" round (click)="myFunction()" class="button_1">Submit</button>
+    <button ion-button color="secondary" round (click)="submitFeedback()" class="button_1">Submit</button>
   </div>
-
 </ion-content>
-
-
-
-</html>
-
-

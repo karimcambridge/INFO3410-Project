@@ -19,17 +19,17 @@ export class VendorPage {
 
   // redirects the user to the Vendor Form page when the Vendor Form button is selected
   vendorForm() {
-    this.navCtrl.setRoot(VendorFormPage);
+    this.navCtrl.push(VendorFormPage);
   }
 
   // redirects the user to the Vendor List page when the Vendor List button is selected
   vendorList() {
-    this.navCtrl.setRoot(ListVendorPage);
+    this.navCtrl.push(ListVendorPage);
   }
 
   // redirects the user to the Shop page when the Shop button is selected
   shop() {
-    this.navCtrl.setRoot(ShopPage);
+    this.navCtrl.push(ShopPage);
   }
 
 }
