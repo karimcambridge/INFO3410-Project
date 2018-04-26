@@ -1,7 +1,10 @@
-$bkg-color: #d8fccc;
+$bkg-color: transparent;
 
 
 .page-home {
+    // background: $bkg-color url('assets/imgs/background1.jpg');
+    background-image: url('assets/imgs/background1.jpg');
+    background-color: $bkg-color;
     background-color: $bkg-color;
     #plant {
         height: 60px;
