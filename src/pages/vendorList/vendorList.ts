@@ -194,10 +194,6 @@ export class ModalContentPage {
     this.navCtrl.setRoot(ListVendorPage);
   }
 
-  goBack() {
-    this.navCtrl.setRoot(VendorPage);
-  }
-
   closeModal() {
     this.navCtrl.pop();
   }
