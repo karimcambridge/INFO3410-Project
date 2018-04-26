@@ -155,7 +155,7 @@ export class ShopPage {
         ];
     }
 
-    // increments the item added to cart by 1
+  // increments the item added to cart by 1
   addToCart(item) {
     item.quantityInCart += 1;
     this.itemsInCart.push(item);

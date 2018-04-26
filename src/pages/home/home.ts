@@ -46,19 +46,28 @@ export class HomePage {
     this.currentEvents = [
         {
             year: 2018,
-            month: 4,
-            date: 22
+            month: 3,
+            date: 22,
+            event: 'Earth Day'
         },
         {
             year: 2018,
-            month: 6,
-            date: 16
-        }
+            month: 5,
+            date: 16,
+            event: 'Birthday'
+        },
+        {
+          year: 2018,
+          month: 4,
+          date: 18,
+          event: 'End of Semester'
+      }
     ];
   }
 
   onDaySelect(ev) {
-
+    //console.log('Event selected:' + this.currentEvents.event);
+  
   }
 
   onMonthSelect(ev) {
