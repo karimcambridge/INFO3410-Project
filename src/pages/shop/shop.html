@@ -32,8 +32,14 @@
             <button *ngIf="item.quantityInCart" [@addButton]="item.addButtonState" (@addButton.done)="addToCartFinished(item)" color="light" ion-button small>
                 {{item.quantityInCart}}
             </button>
+            <button *ngIf="item.quantityInCart" [@delButton]="item.delButtonState" (@delButton.done)="delFromCartFinished(item)" color="light" ion-button small>
+                {{item.quantityInCart}}
+            </button>
             <button (click)="addToCart(item)" ion-button icon-left small>
                 <ion-icon name="add"></ion-icon>Add to Cart
+            </button>
+            <button (click)="delFromCart(item)" ion-button icon-left small>
+                <ion-icon name="del"></ion-icon>Remove from Cart
             </button>
         </div>
  

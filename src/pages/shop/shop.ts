@@ -33,8 +33,22 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
           transition('void => *', [
               style({transform: 'translateX(200%)'}),
               animate('300ms ease-in-out')
-          ])
-      ])
+          ]),
+      ]),
+      trigger('delButton', [ 
+        state('idle', style({
+            opacity: '0.3'
+        })),
+        state('removing', style({
+            opacity: '1',
+            fontWeight: 'bold'
+        })),
+        transition('idle <=> removing', animate('300ms linear')),
+        transition('void => *', [
+            style({transform: 'translateX(200%)'}),
+            animate('300ms ease-in-out')
+        ])
+    ])
   ]
 })
 
@@ -53,7 +67,8 @@ export class ShopPage {
             image: 'assets/imgs/guava.jpg', 
             quantityInCart: 0, 
             price: 4.00, 
-            addButtonState: 'idle'
+            addButtonState: 'idle',
+            delButtonState: 'idle'
           },
           {
             title: 'Nutmeg', 
@@ -62,7 +77,8 @@ export class ShopPage {
             image: 'assets/imgs/nutmeg.jpg', 
             quantityInCart: 0, 
             price: 5.00, 
-            addButtonState: 'idle'
+            addButtonState: 'idle',
+            delButtonState: 'idle'
           },
           {
             title: 'Sorrel', 
@@ -71,7 +87,8 @@ export class ShopPage {
             image: 'assets/imgs/sorrel.jpg', 
             quantityInCart: 0, 
             price: 10.00, 
-            addButtonState: 'idle'
+            addButtonState: 'idle',
+            delButtonState: 'idle'
           },
           {
             title: 'Portugal', 
@@ -80,7 +97,8 @@ export class ShopPage {
             image: 'assets/imgs/portugal.jpg',
             quantityInCart: 0, 
             price: 1.00, 
-            addButtonState: 'idle'
+            addButtonState: 'idle',
+            delButtonState: 'idle'
           },
           {
             title: 'Jewellery', 
@@ -89,7 +107,8 @@ export class ShopPage {
             image: 'assets/imgs/jewel2.jpg', 
             quantityInCart: 0, 
             price: 30.00, 
-            addButtonState: 'idle'
+            addButtonState: 'idle',
+            delButtonState: 'idle'
           }
         ];
     }
@@ -97,7 +116,6 @@ export class ShopPage {
     // increments the item added to cart by 1
   addToCart(item) {
     item.quantityInCart += 1;
-    item.price += item.price;
     this.itemsInCart.push(item);
 
     item.addButtonState = 'adding';
@@ -109,6 +127,22 @@ export class ShopPage {
   addToCartFinished(item){
     this.cartBadgeState = 'idle';
     item.addButtonState = 'idle';
+  }
+
+  // this function decrements the item in the cart by 1
+  delFromCart(item) {
+    item.quantityInCart -= 1;
+    this.itemsInCart.splice(item);
+
+    item.delButtonState = 'removing';
+    this.cartBadgeState = 'removing';
+    this.changeDetector.detectChanges();
+  }
+
+  //this fucntion resets the states of the buttons back to idle
+  delFromCartFinished(item){
+    this.cartBadgeState = 'idle';
+    item.delButtonState = 'idle';
   }
 
 }
