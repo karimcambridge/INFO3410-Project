@@ -73,12 +73,12 @@ export class HomePage {
           center: mylocation
         });
       }).catch((error) => {
-        console.log('Error getting location ' + error);
+        console.log('[MAP LOCATION ERROR (' + error.code + ')]: ' + error + '.');
       });
       let watch = this.geolocation.watchPosition();
       watch.subscribe((data) => {
         this.deleteMarkers();
-        //this.updateGeolocation(this.device.uuid, data.coords.latitude,data.coords.longitude);
+        this.updateGeolocation(this.device.uuid, data.coords.latitude,data.coords.longitude);
         let updatelocation = new google.maps.LatLng(data.coords.latitude,data.coords.longitude);
         let image = 'assets/imgs/blue-bike.png';
         this.addMarker(updatelocation,image);
