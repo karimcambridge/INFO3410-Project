@@ -10,18 +10,21 @@
 </ion-header>
 
 <ion-content>
-    <ion-list>
-        <ion-item>
-            <ion-avatar item-start>
-            <img src="{{vendor.image}}">
-            </ion-avatar>
-            <h2>{{vendor.name}}</h2>
-            <p>{{vendor.quote}}</p>
-        </ion-item>
+    <ion-card>
+        <ion-list>
+                <ion-item>
+                    <ion-avatar item-start>
+                    <img src="{{vendor.image}}">
+                    </ion-avatar>
+                    <h2>{{vendor.name}}</h2>
+                    <p>{{vendor.quote}}</p>
+                </ion-item>
+        
+                <ion-item *ngFor="let item of vendor['items']">
+                    {{item.title}}
+                </ion-item>
+            </ion-list>
+        </ion-card>
 
-        <ion-item *ngFor="let item of vendor['items']">
-            {{item.title}}
-        </ion-item>
-    </ion-list>
     <button ion-button color="secondary" round (click)="sendEmail()">Send Email</button>
 </ion-content>

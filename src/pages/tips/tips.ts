@@ -10,14 +10,13 @@ export class TipsPage {
 
     constructor(public navCtrl: NavController, 
         public modalCtrl: ModalController) {
-    this.initializeTips();
-}
+        this.initializeTips();
+    }
 
-
-openModal(characterNum) {
-    let modal = this.modalCtrl.create(ModalContentPage2, characterNum);
-    modal.present();
-  }
+    openModal(characterNum) {
+        let modal = this.modalCtrl.create(ModalContentPage2, characterNum);
+        modal.present();
+    }
     // Categories of tips
     initializeTips() {
         this.tips = [
@@ -27,18 +26,6 @@ openModal(characterNum) {
         "Body Care Tips"
         ];
     }
-}
-
-@Component({
-templateUrl: 'modal-tips.html'
-})
-export class BasicPage {
-constructor(public modalCtrl: ModalController) { }
-
-openModal(characterNum) {
-    let modal = this.modalCtrl.create(ModalContentPage2, characterNum);
-    modal.present();
-}
 }
 
 @Component({
