@@ -6,11 +6,16 @@
 
 <!-- Buttons to direct users to the Vendor form and list of vendors -->
 <ion-content padding class="page-vendor">
-    <div id="buttons">
-        <button ion-button  color="secondary" (click)="vendorForm()">Vendor Form</button>
-        <button ion-button  color="secondary" (click)="vendorList()">List Vendors</button>
-        <button ion-button  color="secondary" (click)="shop()">Shop</button>
+    <div>
+        <ion-row justify-content-center id="buttons">
+            <button ion-button  color="secondary" (click)="vendorForm()">Vendor Form</button>
+        </ion-row>
+        <ion-row justify-content-center id="buttons">
+            <button ion-button  color="secondary" (click)="vendorList()">List Vendors</button>
+        </ion-row>
+        <ion-row  justify-content-center id="buttons">
+            <button ion-button  color="secondary" (click)="shop()">Shop</button>
+        </ion-row>   
     </div>
-
 </ion-content>
 

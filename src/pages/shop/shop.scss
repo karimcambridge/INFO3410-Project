@@ -3,4 +3,9 @@ $bkg-color: #d8fccc;
 .page-shop {
     // set the background colour of the page
     background-color: $bkg-color; 
+
+    .cart-buttons {
+        margin: 10px;
+        float: right;
+    }
 }
