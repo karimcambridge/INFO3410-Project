@@ -60,18 +60,18 @@
         </div>
 
       </ion-list>
+
+      <div padding-horizontal>
+          <div class="form-error">{{vendorError}}</div>
+
+          <button ion-button full type="submit" [disabled]="!vendorForm.valid">SIGN UP</button>
+
+          <ion-list>
+              <button ion-button icon-left block clear (click)="goBack()">
+                  GO BACK
+              </button>
+          </ion-list>
+      </div>
     </form>
-
-    <div padding-horizontal>
-        <div class="form-error">{{vendorError}}</div>
-
-        <button ion-button full type="submit" [disabled]="!vendorForm.valid">SIGN UP</button>
-
-        <ion-list>
-            <button ion-button icon-left block clear (click)="goBack()">
-                GO BACK
-            </button>
-        </ion-list>
-    </div>
   </ion-content>
 </ng-template>

@@ -24,16 +24,16 @@ export class VendorFormPage {
 
   vendorSignUp() {
     let data = this.vendorForm.value;
-    alert("Your information has been saved");
 
-    /*this.authService.addVendor(this.authService.user, data)
+    this.authService.addVendor(this.authService.user, data)
     .then(function() {
       console.log("Vendor successfully added!");
-      alert("Your information has been saved");
+      alert("Your information has been saved.");
     })
     .catch(err => {
       console.log('[VENDOR SIGN UP ERROR]: ', err.message);
-    });*/
+      alert("Vendor signup failed. Please wait and try again!");
+    });
   }
 
   goBack() {
