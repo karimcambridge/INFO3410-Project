@@ -22,6 +22,7 @@ export class AuthService {
   user: Observable<User>;
   //private userDetails: firebase.User;
   isLoggedIn: boolean = !!sessionStorage.getItem('loggedIn') || false;
+  justRegistered: boolean = false;
 
   constructor(private afAuth: AngularFireAuth,
               private afs: AngularFirestore) {
@@ -47,6 +48,7 @@ export class AuthService {
 
   signOut() {
     sessionStorage.removeItem("loggedIn");
+    this.justRegistered = false;
     this.afAuth.auth.signOut();//.then(() => {
         //this.router.navigate(['/']);
     //});
@@ -64,6 +66,7 @@ export class AuthService {
         this.updateUser(user, { display_name: credentials.display_name })
         this.updateUser(user, { first_name: credentials.first_name })
         this.updateUser(user, { last_name: credentials.last_name })
+        this.justRegistered = true;
       })
   }
 
@@ -81,6 +84,7 @@ export class AuthService {
           this.populateUserDefaults(credentials.user);
           this.updateUser(credentials.user, { display_name: credentials.user.displayName });
           this.updateUser(credentials.user, { photo_url: credentials.user.photoURL })
+          this.justRegistered = true;
         } else {
           console.log("Google plus data already populated");
         }

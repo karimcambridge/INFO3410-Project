@@ -11,7 +11,7 @@
 <!-- User NOT logged in -->
 <ng-template #guest>
   <ion-content padding class="page-account">
-    <h3>Hello, please log in to access your account!</h3>
+    <h3>Welcome, please log in to access your account!</h3>
     <ion-buttons>
       <button ion-button color="secondary" round (click)="gotoLoginPage()">
         <ion-icon name="log-in"> LOG IN</ion-icon>
@@ -26,7 +26,12 @@
     <div *ngIf="authService.user | async as user">
       <br><br><br>
       <img [src]="user.photo_url" class="avatar">
-      <h1>Welcome back {{ user.email }}!</h1>
+      <!--<div *ngIf="authService.justRegistered | async">-->
+      <h1>Welcome {{ user.email }}!</h1>
+      <!--</div>
+      <div *ngIf="!authService.justRegistered | async">
+        <h1>Welcome back {{ user.email }}!</h1>
+      </div>-->
       <h3>Howdy, {{ user.display_name }}</h3>
       <h3>You registered on {{user.registration_date | date:'yyyy-MM-dd'}}</h3>
       <button ion-button (click)="logout()">
