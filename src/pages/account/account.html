@@ -24,10 +24,7 @@
 <ng-template #authenticated>
   <ion-content padding class="page-account">
     <div *ngIf="authService.user | async as user">
-      <br>
-      <br>
-      <br>
-      <br>
+      <br><br><br>
       <img [src]="user.photo_url" class="avatar">
       <h1>Welcome back {{ user.email }}!</h1>
       <h3>Howdy, {{ user.display_name }}</h3>
