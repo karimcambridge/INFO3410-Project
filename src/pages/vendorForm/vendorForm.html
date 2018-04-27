@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Vendor Sign Up</ion-title>
+    <ion-title>Vendor Registration Prompt</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -22,12 +22,9 @@
 <!-- User logged in -->
 <ng-template #authenticated>
   <ion-content padding class="page-vendorForm">
-    <br>
-    <br>
-    <br>
+    <br><br><br>
     <h2>Vendor Registration Form</h2>
-    {{ authService.user.displayName }}
-    <form (ngSubmit)="vendorSignUp()" [formGroup]="vendorForm">
+    <form [formGroup]="vendorForm" (ngSubmit)="vendorSignUp()">
       <ion-list>
 
         <ion-item [ngClass]="{ invalid: vendorForm.get('tel').hasError('*', ['touched', 'dirty']) }">
