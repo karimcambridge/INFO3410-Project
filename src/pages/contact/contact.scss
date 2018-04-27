@@ -23,7 +23,6 @@ $bkg-color: #d8fccc;
     border: 2px solid #aaa;
     border-radius: 4px;
     outline:none;
-    padding:20px;
     box-sizing:border-box;
     transition:.3s;
 }
@@ -37,9 +36,4 @@ $bkg-color: #d8fccc;
 .header-contact {
     color: limegreen;
     text-align: center;
-}
-
-#paperclip {
-    width: 11%;
-    height: 90%;
 }
