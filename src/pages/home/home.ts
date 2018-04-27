@@ -1,7 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Platform, NavController } from 'ionic-angular';
 import * as firebase from 'firebase/app';
-import { Geolocation } from '@ionic-native/geolocation';
 import { Device } from '@ionic-native/device';
 import { Observable } from 'rxjs/Observable';
 
@@ -18,19 +17,20 @@ export class HomePage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   markers = [];
-  ref = firebase.database().ref('geolocations/');
+  //ref = firebase.database().ref('geolocations/');
 
   constructor(public navCtrl: NavController,
-              public platform: Platform,
-              private geolocation: Geolocation,
-              private device: Device) {
+              public platform: Platform
+              //private geolocation: Geolocation,
+              //private device: Device
+              ) {
 
     platform.ready().then(() => {
       this.initMap();
     });
-    this.ref.on('value', resp => {
+    /*this.ref.on('value', resp => {
       //this.deleteMarkers();
-      /*snapshotToArray(resp).forEach(data => {
+      snapshotToArray(resp).forEach(data => {
         if(data.uuid !== this.device.uuid) {
           let updatelocation = new google.maps.LatLng(data.latitude,data.longitude);
           this.addMarker(updatelocation);
@@ -40,8 +40,8 @@ export class HomePage {
           this.addMarker(updatelocation);
           this.setMapOnAll(this.map);
         }
-      });*/
-    });
+      });
+    });*/
     this.currentEvents = [
         {
             year: 2018,

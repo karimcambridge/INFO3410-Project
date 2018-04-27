@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController } from 'ionic-angular';
-import { AccountPage } from '../account/account';
 import { AuthService } from '../../app/core/auth.service';
 
 @Component({
@@ -26,22 +25,22 @@ export class SignupPage {
   }
 
   signup() {
-        let data = this.signupForm.value;
-        let credentials = {
-            email: data.email,
-            password: data.password,
-            display_name: data.display_name,
-            first_name: data.first_name,
-            last_name: data.last_name
-        };
-        this.auth.signUp(credentials)
-        .then(value => {
-          console.log('[USER SIGNED UP]');
-          this.navCtrl.pop();
-          this.navCtrl.pop();
-        })
-        .catch(err => {
-          console.log('Something went wrong: ', err.message);
-        });
-    }
+    let data = this.signupForm.value;
+    let credentials = {
+        email: data.email,
+        password: data.password,
+        display_name: data.display_name,
+        first_name: data.first_name,
+        last_name: data.last_name
+    };
+    this.auth.signUp(credentials)
+    .then(value => {
+      console.log('[USER SIGNED UP]');
+      this.navCtrl.pop();
+      this.navCtrl.pop();
+    })
+    .catch(err => {
+      console.log('Something went wrong: ', err.message);
+    });
+  }
 }

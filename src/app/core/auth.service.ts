@@ -110,4 +110,18 @@ export class AuthService {
     return userRef.set(data, { merge: true })
   }
 
+  public addVendor(user, data) {
+    // Sets user data to firestore on signup
+
+    const vendorRef: AngularFirestoreDocument<any> = this.afs.doc(`vendors/${user.uid}`);
+
+    const dataDoc = {
+      uid: user.uid || '',
+      tel: data.tel || '',
+      email: data.category || '',
+      first_name: data.quote || ''
+    }
+    return vendorRef.set(dataDoc, { merge: true })
+  }
+
 }

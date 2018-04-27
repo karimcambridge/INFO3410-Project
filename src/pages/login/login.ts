@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../app/core/auth.service';
 import { SignupPage } from '../signup/signup';
-import { AccountPage } from '../account/account';
 
 @Component({
   selector: 'page-login',
