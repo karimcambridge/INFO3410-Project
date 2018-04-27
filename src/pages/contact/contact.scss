@@ -2,47 +2,19 @@ $bkg-color: #d8fccc;
 
 .page-contact{
     background-color: $bkg-color;
-    #contact{
-        font: {
-            family: Calibri;
-            size: 12px;
-        }
-    }
-    #input[type="text"]{
-        padding: 4px;
-        height: 25px;
-        width: 250px;
-    }
 }
 
 #twitter {
-    margin-left: 25%;
     width: 50%;
-    height: 39%;
-    text-align: left;
+    height: 25%;
     border: 1px solid limegreen;
     border-radius: 4px;
 }
 #ig {
-    margin-left: 25%;
     width: 50%;
-    height: 39%;
-    text-align: left;
+    height: 25%;
     border: 1px solid limegreen;
     border-radius: 4px;
-}
-
-.button_1{
-    width: 30%;
-    height: 10%;
-    border:12px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #ffffff;
-    font-size: 15px;
-    position: absolute;
-    left: 35%;
-    margin: -1px;
 }
 
 #feedbackText {
@@ -50,7 +22,6 @@ $bkg-color: #d8fccc;
     width: 100%;
     border: 2px solid #aaa;
     border-radius: 4px;
-    margin:10px;
     outline:none;
     padding:20px;
     box-sizing:border-box;
@@ -63,43 +34,12 @@ $bkg-color: #d8fccc;
     box-shadow:0 0 15px 0 dodgerBlue;
 }
 
-.h1-contact {
+.header-contact {
     color: limegreen;
     text-align: center;
 }
 
-.h2-contact {
-    color: limegreen;
-    text-align: center;
-    margin:10px;
-}
-
-.h3-contact {
-    color: limegreen;
-    text-align: center;
-    margin:10px;
-    padding-top:0px;
-}
-
-.butt {
-    height:50%;
-}
-.dark {
-    margin:40px;
-}
-.ok {
-    float:right;
-    text-align:center;
-    margin: 30px;
-}
-#areYouHappyNow{
-    text-align: justify;
-    text-align: center;
-}
-#paperclip{
+#paperclip {
     width: 11%;
     height: 90%;
-    margin-left: 45%;
-    //align-content: center;
-
 }

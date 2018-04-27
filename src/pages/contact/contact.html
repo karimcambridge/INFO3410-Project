@@ -7,42 +7,41 @@
 <ion-content padding class="page-contact">
   <ion-grid>
     <ion-row>
-      <ion-col>
-        <h1  ion-text class="h1-contact">Follow us on our Social Media Accounts!</h1>
+      <ion-col text-center>
+        <h1 ion-text class="header-contact">Follow us on our Social Media Accounts!</h1>
         <ion-item id="twitter">
           <!-- link to our twitter page -->
-          <ion-icon name="logo-twitter" item-start></ion-icon>
-          <a class="item" href="https://www.twitter.com/MyGreenApp2018" target="_blank">
+          <a ion-item href="https://www.twitter.com/MyGreenApp2018" target="_blank">
+            <ion-icon name="logo-twitter" item-start></ion-icon>
             @MyGreenApp2018
           </a>
         </ion-item>
         <br>
         <ion-item id="ig">
-          <!-- link to our instagram page  -->
-          <ion-icon name="logo-instagram" item-start></ion-icon>
-          <a class="item" href="https://www.instagram.com/MyGreenApp" target="_blank">
+          <!-- link to our instagram page -->
+          <a ion-item href="https://www.instagram.com/MyGreenApp" target="_blank">
+            <ion-icon name="logo-instagram" item-start></ion-icon>
             @MyGreenApp2018
           </a>
         </ion-item>
       </ion-col>
-      <ion-col>
-        <img id="paperclip" src="../../assets/imgs/Clippy.png" class="right">
+      <ion-col text-center>
+        <img src="../../assets/imgs/Clippy.png" id="paperclip" text-center>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
-        <div class="dark">
-          <h3  ion-text class="h3-contact">How Do You Like Our App?</h3>
+      <ion-col text-center>
+        <div>
+          <h3 ion-text class="header-contact">How Do You Like Our App?</h3>
           <form id="feedback">
             <textarea id="feedbackText" type="text" name="feedback" placeholder="Leave all feedback and comments here." rows="8"></textarea>
           </form>
-          <button id="butt" ion-button color="secondary" round (click)="submitFeedback()" class="button_1">Submit</button>
+          <button ion-button color="secondary" round (click)="submitFeedback()">Submit</button>
         </div>
       </ion-col>
-
-      <ion-col>
-        <div class="ok">
-          <h2 ion-text class="h2-contact">Did You Know?</h2>
+      <ion-col text-center>
+        <div>
+          <h2 ion-text class="header-contact">Did You Know?</h2>
           <ul>
             <li>The Industrial Revolution led to faster and more efficient farming technology, 
             which helped usher in the Second Agricultural Revolution from 1700 to 1900 in developed countries. 
