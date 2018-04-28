@@ -3,7 +3,7 @@
     <name>ask-jayz</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="karimcambridge@gmail.com" href="http://ionicframework.com/">ASK-JZ Team</author>
-    <content original-src="index.html" src="http://172.16.9.112:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
