@@ -4,7 +4,7 @@ Reminders:
 
 Commands setup:
 
-	- npm install (installs all the dependencies from package.json)
+	- npm install --save (installs all the dependencies from package.json)
 	- ionic monitoring syncmaps (syncs sourcemaps for error checking / monitoring) [https://ionicframework.com/docs/pro/monitoring/]
 	- ionic serve (starts the server)
 
