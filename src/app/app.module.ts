@@ -9,9 +9,9 @@ import { Push } from '@ionic-native/push';
 import { NgxErrorsModule } from '@ultimate/ngxerrors';
 import { MyApp } from './app.component';
 
+import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
-import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { VendorPage } from '../pages/vendor/vendor';
@@ -80,10 +80,10 @@ export class MyErrorHandler implements ErrorHandler {
 @NgModule({
   declarations: [
     MyApp,
+    HomePage,
     LoginPage,
     SignupPage,
     AccountPage,
-    HomePage,
     AboutPage,
     ContactPage,
     VendorPage,
@@ -114,10 +114,10 @@ export class MyErrorHandler implements ErrorHandler {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    HomePage,
     LoginPage,
     SignupPage,
     AccountPage,
-    HomePage,
     AboutPage,
     ContactPage,
     VendorPage,
