@@ -1,6 +1,9 @@
 Reminders:
 
-	- 
+	- Link adding vendors to accounts
+	- Finish cart
+	- Link calender / events to notifications
+	- Make tests
 
 Commands setup:
 
